@@ -1,0 +1,37 @@
+{
+  "name": "lucleray.me",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "dev": "next",
+    "setup-cname": "echo 'lucleray.me' > docs/CNAME",
+    "build": "next build && next export -o docs && npm run setup-cname"
+  },
+  "author": "lucleray",
+  "license": "MIT",
+  "dependencies": {
+    "color": "^2.0.1",
+    "next": "^4.2.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "styled-components": "^2.4.0"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^1.4.0"
+  },
+  "babel": {
+    "presets": [
+      "next/babel"
+    ],
+    "plugins": [
+      [
+        "styled-components",
+        {
+          "ssr": true,
+          "displayName": true,
+          "preprocess": false
+        }
+      ]
+    ]
+  }
+}

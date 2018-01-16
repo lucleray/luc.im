@@ -1,0 +1,357 @@
+{
+  "count": 30,
+  "results": [
+    {
+      "id": "1",
+      "name": "VCR Coffee & Cakes",
+      "type": "Cafe",
+      "opening_times": [
+        "8:30 AM to 11 PM (Mon-Sun)"
+      ],
+      "rating": "4.9",
+      "location": "Bukit Bintang",
+      "adress": "2, Jalan Galloway, Bukit Bintang, Kuala Lumpur 50150"
+    },
+    {
+      "id": "2",
+      "name": "Greyhound Cafe",
+      "type": "Thai",
+      "opening_times": [
+        "8 AM to 11 PM (Mon, Tue, Wed, Thu, Sun)",
+        "8 AM to 12 Midnight (Fri-Sat)"
+      ],
+      "rating": "4.3",
+      "location": "Bukit Bintang",
+      "adress": "2, Ground Floor, Ansa Hotel, 101, Jalan Bukit Bintang, Bukit Bintang, Kuala Lumpur 55100"
+    },
+    {
+      "id": "3",
+      "name": "Jogoya",
+      "type": "Japanese",
+      "opening_times": [
+        "11:30 AM to 12 Midnight (Mon-Fri)",
+        "11 AM to 12 Midnight (Sat-Sun)"
+      ],
+      "rating": "4.3",
+      "location": "Starhill Gallery",
+      "adress": "T3, Relish Floor, Starhill Gallery, 181, Jalan Bukit Bintang, Bukit Bintang, Kuala Lumpur 55100"
+    },
+    {
+      "id": "4",
+      "name": "Yellow Brick Road",
+      "type": "Western",
+      "opening_times": [
+        "9 AM to 6 PM (Mon-Thu)",
+        "9 AM to 10 PM (Fri-Sun)"
+      ],
+      "rating": "4.3",
+      "location": "Plaza Batai",
+      "adress": "8.7, Plaza Batai, Jalan Batai, Bukit Damansara, Kuala Lumpur 50490"
+    },
+    {
+      "id": "5",
+      "name": "Heli Lounge Bar",
+      "type": "Western",
+      "opening_times": [
+        "5 PM to 12 Midnight (Mon-Wed)",
+        "5 PM to 2 AM (Thu)",
+        "5 PM to 3 AM (Fri-Sat)",
+        "5 PM to 11 PM (Sun)"
+      ],
+      "rating": "4.4",
+      "location": "Kuala Lumpur City Center",
+      "adress": "Level 34, Menara KH, Jalan Sultan Ismail, Kuala Lumpur City Center, Kuala Lumpur 50250"
+    },
+    {
+      "id": "6",
+      "name": "Naughty Nuri's",
+      "type": "Indonesian",
+      "opening_times": [
+        "12 Noon to 12 Midnight (Mon-Sun)"
+      ],
+      "rating": "4.2",
+      "location": "Desa Sri Hartamas",
+      "adress": "2, Ground Floor, Jalan 24/70A, Desa Sri Hartamas, Kuala Lumpur 50480"
+    },
+    {
+      "id": "7",
+      "name": "Botanica + Co",
+      "type": "Healthy Food",
+      "opening_times": [
+        "11:30 AM to 10 PM (Mon-Thu)",
+        "11:30 AM to 12 Midnight (Fri)",
+        "9:30 AM to 12 Midnight (Sat)",
+        "9:30 AM to 10 PM (Sun)"
+      ],
+      "rating": "4.1",
+      "location": "Bangsar South",
+      "adress": "G5 Podium, The Vertical, 8, Jalan Kerinchi, Bangsar South, Kuala Lumpur 59200"
+    },
+    {
+      "id": "8",
+      "name": "Hanbing Korean Dessert Cafe",
+      "type": "Korean",
+      "opening_times": [
+        "12 Noon to 12 Midnight (Mon-Sun)"
+      ],
+      "rating": "4.4",
+      "location": "Bangsar Baru",
+      "adress": "33, Jalan Telawi 3, Bangsar Baru, Bangsar, Kuala Lumpur 59100"
+    },
+    {
+      "id": "9",
+      "name": "paperfish",
+      "type": "Healthy Food",
+      "opening_times": [
+        "10 AM to 10 PM (Mon-Sun)"
+      ],
+      "rating": "4.3",
+      "location": "Taman Tun Dr Ismail",
+      "adress": "26, Jalan Datuk Sulaiman, Taman Tun Dr Ismail, Kuala Lumpur 60000"
+    },
+    {
+      "id": "10",
+      "name": "Nanda Chicken",
+      "type": "Korean",
+      "opening_times": [
+        "11 AM to 12 Midnight (Mon-Sun)"
+      ],
+      "rating": "4.0",
+      "location": "Mont Kiara",
+      "adress": "11, Jalan Solaris 2, Solaris Mont Kiara, Mont Kiara, Kuala Lumpur 50480"
+    },
+    {
+      "id": "11",
+      "name": "Okonomi",
+      "type": "Japanese",
+      "opening_times": [
+        "11 AM to 11 PM (Mon-Sun)"
+      ],
+      "rating": "4.2",
+      "location": "Publika",
+      "adress": "A4.G2.02, Ground Floor, Block A4, Publika, Solaris Dutamas, 1, Jalan Dutamas, Kuala Lumpur 50480"
+    },
+    {
+      "id": "12",
+      "name": "Acme Bar & Coffee - The Troika",
+      "type": "Western",
+      "opening_times": [
+        "11 AM to 12 Midnight (Mon-Thu)",
+        "11 AM to 1 AM (Fri-Sun)"
+      ],
+      "rating": "4.4",
+      "location": "The Troika",
+      "adress": "G1, Ground Floor, Tower A, The Troika, 19, Persiaran KLCC, Kuala Lumpur City Center, Kuala Lumpur 50450"
+    },
+    {
+      "id": "13",
+      "name": "The Owls Cafe",
+      "type": "Western",
+      "opening_times": [
+        "Closed (Mon)",
+        "10 AM to 7 PM (Tue, Wed, Thu, Sun)",
+        "10 AM to 11 PM (Fri-Sat)"
+      ],
+      "rating": "4.4",
+      "location": "Bukit Jalil",
+      "adress": "12.1, Jalan Jalil Jaya 6, Jalil Link, Bukit Jalil, Kuala Lumpur 57000"
+    },
+    {
+      "id": "14",
+      "name": "Feeka Coffee Roasters",
+      "type": "Cafe",
+      "opening_times": [
+        "9 AM to 10 PM (Mon-Thu)",
+        "9 AM to 11 PM (Fri-Sun)"
+      ],
+      "rating": "4.2",
+      "location": "Bukit Bintang",
+      "adress": "19, Jalan Mesui, Bukit Bintang, Kuala Lumpur 50200"
+    },
+    {
+      "id": "15",
+      "name": "PULP by Papa Palheta",
+      "type": "Cafe",
+      "opening_times": [
+        "7:30 AM to 10 PM (Mon-Fri)",
+        "9 AM to 11 PM (Sat-Sun)"
+      ],
+      "rating": "3.9",
+      "location": "APW Bangsar",
+      "adress": "29.01, APW Bangsar, Jalan Riong, Off Jalan Bangsar, Bangsar, Kuala Lumpur 59100"
+    },
+    {
+      "id": "16",
+      "name": "Menya Shi Shi Do",
+      "type": "Japanese",
+      "opening_times": [
+        "11 AM to 10 PM (Mon, Wed, Thu, Fri, Sat, Sun)",
+        "Closed (Tue)"
+      ],
+      "rating": "4.0",
+      "location": "Sri Petaling",
+      "adress": "12A, Jalan Radin Bagus 9, Sri Petaling, Kuala Lumpur 57000"
+    },
+    {
+      "id": "17",
+      "name": "Tous les Jours",
+      "type": "French",
+      "opening_times": [
+        "7:30 AM to 12 Midnight (Mon-Sun)"
+      ],
+      "rating": "4.0",
+      "location": "Bukit Bintang",
+      "adress": "126A.C, Jalan Bukit Bintang, Bukit Bintang, Kuala Lumpur 55100"
+    },
+    {
+      "id": "18",
+      "name": "Nasi Kandar Pelita",
+      "type": "Indian",
+      "opening_times": [
+        "24 Hours (Mon-Sun)"
+      ],
+      "rating": "4.0",
+      "location": "Kuala Lumpur City Center",
+      "adress": "149, Jalan Ampang, Kuala Lumpur City Center, Kuala Lumpur 50450"
+    },
+    {
+      "id": "19",
+      "name": "Kingstreet Cafe",
+      "type": "Cafe",
+      "opening_times": [
+        "10:30 AM to 9:30 PM (Mon, Wed, Thu, Fri, Sat, Sun)",
+        "Closed (Tue)"
+      ],
+      "rating": "4.5",
+      "location": "Seputeh",
+      "adress": "621, Jalan 2/87G, Taman, Seputeh, Kuala Lumpur 58000"
+    },
+    {
+      "id": "20",
+      "name": "Rocku Yakiniku",
+      "type": "Japanese",
+      "opening_times": [
+        "11 AM to 11 PM (Mon, Tue, Wed, Thu, Sun)",
+        "11 AM to 12 Midnight (Fri-Sat)"
+      ],
+      "rating": "4.4",
+      "location": "Pavilion Mall",
+      "adress": "7.01.03, Level 7, Pavilion Mall, 168, Jalan Bukit Bintang, Bukit Bintang, Kuala Lumpur 55100"
+    },
+    {
+      "id": "21",
+      "name": "Sushi Zanmai",
+      "type": "Japanese",
+      "opening_times": [
+        "10 AM to 10 PM (Mon-Sun)"
+      ],
+      "rating": "3.8",
+      "location": "NU Sentral",
+      "adress": "5.02, Fifth Level, NU Sentral, 201, Jalan Tun Sambathan, Brickfields, Kuala Lumpur 50470"
+    },
+    {
+      "id": "22",
+      "name": "New Chapter by The Owls Cafe",
+      "type": "Cafe",
+      "opening_times": [
+        "10 AM to 10 PM (Mon-Thu)",
+        "10 AM to 11 PM (Fri-Sat)",
+        "11 AM to 10 PM (Sun)"
+      ],
+      "rating": "4.0",
+      "location": "Bukit Jalil",
+      "adress": "Calvary Convention Centre, 1, Jalan Jalil Perkasa, Taman Teknologi Malaysia, Bukit Jalil, Kuala Lumpur 57000"
+    },
+    {
+      "id": "23",
+      "name": "Alexis",
+      "type": "Italian",
+      "opening_times": [
+        "10 AM to 10 PM (Mon-Sun)"
+      ],
+      "rating": "3.5",
+      "location": "The Gardens Mall",
+      "adress": "F.209 & F.209.A, First Floor, The Gardens Mall, Lingkaran Syed Putra, Mid Valley City, Kuala Lumpur 59200"
+    },
+    {
+      "id": "24",
+      "name": "Hard Rock Cafe",
+      "type": "American",
+      "opening_times": [
+        "11:30 AM to 2 AM (Mon, Tue, Wed, Thu, Sun)",
+        "11:30 AM to 3 AM (Fri-Sat)"
+      ],
+      "rating": "4.6",
+      "location": "Kuala Lumpur City Center",
+      "adress": "Ground Floor, Wisma Concorde, 2, Jalan Sultan Ismail, Kuala Lumpur City Center, Kuala Lumpur 50250"
+    },
+    {
+      "id": "25",
+      "name": "Straits Food Company",
+      "type": "Peranakan",
+      "opening_times": [
+        "10 AM to 10 PM (Mon-Sun)"
+      ],
+      "rating": "3.9",
+      "location": "Bangsar Utama",
+      "adress": "2, Jalan Abdullah, Bangsar Utama, Bangsar 59000"
+    },
+    {
+      "id": "26",
+      "name": "Yeast Bistronomy",
+      "type": "French",
+      "opening_times": [
+        "8 AM to 10 PM (Mon, Tue, Wed, Thu, Sun)",
+        "8 AM to 10:30 PM (Fri-Sat)"
+      ],
+      "rating": "4.1",
+      "location": "Bangsar Baru",
+      "adress": "24, Jalan Telawi 2, Kuala Lumpur, Bangsar Baru, Bangsar 59100"
+    },
+    {
+      "id": "27",
+      "name": "Eatomo Food Company",
+      "type": "Japanese",
+      "opening_times": [
+        "12 Noon to 3 PM,6 PM to 10:30 PM (Mon-Sun)"
+      ],
+      "rating": "2.7",
+      "location": "Plaza Danau 2",
+      "adress": "11.1.1, Plaza Danau 2, Jalan 3/109F, Taman Danau Desa, Taman Desa, Kuala Lumpur 58100"
+    },
+    {
+      "id": "28",
+      "name": "Merchant's Lane",
+      "type": "Cafe",
+      "opening_times": [
+        "11:30 AM to 10 PM (Mon, Tue, Thu, Fri, Sat, Sun)",
+        "Closed (Wed)"
+      ],
+      "rating": "4.2",
+      "location": "Kuala Lumpur City Center",
+      "adress": "150, Jalan Petaling, Kuala Lumpur City Center, Kuala Lumpur 59000"
+    },
+    {
+      "id": "29",
+      "name": "Michelangelo's",
+      "type": "Italian",
+      "opening_times": [
+        "11 AM to 1 AM (Mon-Sun)"
+      ],
+      "rating": "4.2",
+      "location": "Pavilion Mall",
+      "adress": "C3.04.00, Level 3, Pavilion Mall, 168, Jalan Bukit Bintang, Bukit Bintang, Kuala Lumpur 55100"
+    },
+    {
+      "id": "30",
+      "name": "Le Pont Boulangerie Cafe",
+      "type": "Cafe",
+      "opening_times": [
+        "10:30 AM to 12 Midnight (Mon-Sun)"
+      ],
+      "rating": "3.7",
+      "location": "Taman United",
+      "adress": "6, Ground Floor, Wisma Elken, Lorong 1/137C, Jalan Klang Lama, Taman United, Kuala Lumpur 58000"
+    }
+  ]
+}
