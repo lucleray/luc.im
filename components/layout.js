@@ -56,8 +56,8 @@ injectGlobal`
 
 const Layout = styled.div`
   width: 84%;
-  /* margin: 40px 8%; */
-  margin: 40px auto;
+  margin: 40px 8%;
+  /* margin: 40px auto; */
 
   @media only screen and (min-width: 700px) {
     width: 550px;
