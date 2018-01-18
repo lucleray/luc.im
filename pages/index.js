@@ -11,7 +11,7 @@ const mywork = [
     id: 'front-end-job-interview',
     date: 'Sept 2017',
     title: 'Take-away project for a "front-end" job interview',
-    link: 'articles?id=front-end-job-interview'
+    link: 'work/front-end-interview'
   },
   {
     id: 'ocr-neural-network',
@@ -108,11 +108,5 @@ export default () => (
         <Button>Read more</Button>
       </Container> */}
     </ContentContainer>
-
-    <BottomContainer align='center'>
-      <LightText>
-        Made with next.js ・ <A newtab color='lightFg2' href='https://github.com/lucleray/lucleray.me'>Code on Github</A>
-      </LightText>
-    </BottomContainer>
   </Layout>
 )

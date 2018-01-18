@@ -1,5 +1,8 @@
 import styled, { ThemeProvider, injectGlobal } from 'styled-components'
 import color from 'color'
+import { BottomContainer } from './container'
+import { LightText } from './inline'
+import A from './a'
 
 const themes = {
   global: {
@@ -30,6 +33,7 @@ const themes = {
 const theme = Object.assign({}, themes.global, themes.blue)
 
 theme.lightFg = color(theme.fg).fade(0.5).string()
+theme.lightFg2 = color(theme.fg).fade(0.7).string()
 theme.lightBlue = color(theme.blue).fade(0.1).string()
 
 injectGlobal`
@@ -52,16 +56,24 @@ injectGlobal`
 
 const Layout = styled.div`
   width: 84%;
-  margin: 40px 8%;
+  /* margin: 40px 8%; */
+  margin: 40px auto;
 
   @media only screen and (min-width: 700px) {
     width: 550px;
-    margin: 40px 80px;
+    /* margin: 40px 80px; */
   }
 `
 
 export default (props) => (
   <ThemeProvider theme={theme}>
-    <Layout>{props.children}</Layout>
+    <Layout>
+      {props.children}
+      <BottomContainer align='center'>
+        <LightText>
+          Made with next.js and styled components ・ <A newtab href='https://github.com/lucleray/lucleray.me'>Code on Github</A>
+        </LightText>
+      </BottomContainer>
+    </Layout>
   </ThemeProvider>
 )

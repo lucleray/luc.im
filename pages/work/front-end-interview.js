@@ -1,14 +1,13 @@
 import Head from 'next/head'
-import Layout from '../components/layout'
-import { Container, BottomContainer } from '../components/container'
-import { Card, H2, H3 } from '../components/paragraphs'
-import A from '../components/a'
-import { LightText } from '../components/inline'
+import Layout from '../../components/layout'
+import { Container, BottomContainer } from '../../components/container'
+import { Card, H2, H3 } from '../../components/paragraphs'
+import A from '../../components/a'
 
 export default () => (
   <Layout>
     <Head>
-      <title>Luc Leray</title>
+      <title>Front-end job interview - Luc Leray</title>
     </Head>
 
     <Container>
@@ -84,13 +83,6 @@ export default () => (
     <BottomContainer>
       <p>
         <A link='/'>← back to homepage</A>
-      </p>
-    </BottomContainer>
-    <BottomContainer align='center'>
-      <p>
-        <LightText>
-          Made with next.js ・ <A newtab color='lightFg2' href='https://github.com/lucleray/lucleray.me'>Code on Github</A>
-        </LightText>
       </p>
     </BottomContainer>
   </Layout>
