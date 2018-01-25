@@ -52,6 +52,11 @@ injectGlobal`
     line-height: 27px;
     margin: 3.8em 0 3.9em 0;
   }
+
+  ::selection {
+    background: ${theme.blue};
+    color: ${theme.bg};
+  }
 `
 
 const Layout = styled.div`
