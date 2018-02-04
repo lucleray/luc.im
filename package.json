@@ -4,9 +4,7 @@
   "description": "",
   "scripts": {
     "dev": "next",
-    "setup-cname": "echo 'lucleray.me' > docs/CNAME",
-    "no-jekyll": "echo '' > docs/.nojekyll",
-    "build": "next build && next export -o docs && npm run setup-cname && npm run no-jekyll"
+    "build": "next build && next export -o docs && cp CNAME docs/ && cp .nojekyll docs/"
   },
   "author": "lucleray",
   "license": "MIT",

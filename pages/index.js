@@ -29,6 +29,18 @@ const mywork = [
 
 const links = [
   {
+    id: 'react-performance',
+    title: 'React performance',
+    url: 'http://blog.vjeux.com/2013/javascript/react-performance.html',
+    about: 'Some explanation on what makes React faster (2013)'
+  },
+  {
+    id: 'what-is-a-blockchain',
+    title: 'Everything You Wanted To Know About Blockchains',
+    url: 'https://unwttng.com/what-is-a-blockchain',
+    about: 'Simple and visual explanation of the blockchain.'
+  },
+  {
     id: 'submithub',
     title: 'Submithub on IndieHackers',
     url: 'https://www.indiehackers.com/businesses/submithub',
@@ -62,11 +74,11 @@ export default () => (
       </Card>
 
       <Card>
-        I am currently working as a Freelance Full Stack Developer.
+        I am currently working as a Freelance Developer in Paris.
       </Card>
 
       <Card>
-        Previously, I worked as a Full Stack Developer at <A newtab href='https://www.supahands.com/'>Supahands</A>.
+        Previously, I worked as a Full Stack Developer at <A newtab href='https://www.supahands.com/'>Supahands</A> in Kuala Lumpur.
       </Card>
 
       <Card>
