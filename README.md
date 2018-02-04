@@ -1,14 +1,19 @@
-This website is running on github.io, using [static HTML export](https://github.com/zeit/next.js/#static-html-export) of next.js.
+**Running this repo locally** :
+clone, `npm install`, `npm run dev`
 
-I configured the github repo to use the source from `/docs` and lucleray.me as a custom domain.
+**Deploy** : `npm run build`, commit, push
 
-I configured next.js to export to `/docs` folder :
-`next export -o docs`
+This website is running on [github.io](https://github.io/), using [static HTML export](https://github.com/zeit/next.js/#static-html-export) of next.js.
 
-I also need to recreate `CNAME` et `.nojekyll` in the `/docs` folder because they get deleted during the export :
-`cp CNAME docs/ && cp .nojekyll docs/`
+I configured the github repo to use the source from `/docs` and [lucleray.me](https://lucleray.me) as a custom domain.
 
-The configuration is in package.json :
+I configured next.js to export to `/docs` folder :<br>
+**`next export -o docs`**
+
+I also need to recreate `CNAME` et `.nojekyll` in the `/docs` folder because they get deleted during the export :<br>
+**`cp CNAME docs/ && cp .nojekyll docs/`**
+
+**package.json**
 ```json
 {
   "scripts": {
@@ -17,8 +22,3 @@ The configuration is in package.json :
   }
 }
 ```
-
-**Running this repo locally** :
-clone, `npm install`, `npm run dev`
-
-**Deploy** : `npm run build`, commit, push
