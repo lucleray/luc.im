@@ -29,10 +29,16 @@ const mywork = [
 
 const links = [
   {
+    id: 'critical-thinking-software-development',
+    title: 'Critical thinking in software development',
+    url: 'https://hackernoon.com/critical-thinking-in-software-development-the-word-should-and-why-you-shouldn-t-listen-to-563090144331',
+    about: 'Making better decisions.'
+  },
+  {
     id: 'react-performance',
     title: 'React performance',
     url: 'http://blog.vjeux.com/2013/javascript/react-performance.html',
-    about: 'Some explanation on what makes React faster (2013)'
+    about: 'Some explanation on what makes React faster (2013).'
   },
   {
     id: 'what-is-a-blockchain',
