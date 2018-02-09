@@ -73,18 +73,10 @@ export default () => (
     </Head>
 
     <ContentContainer>
-      <H2>☻ Me</H2>
+      <H2>☻ hi</H2>
 
       <Card>
-        Hello. My name is Luc Leray.
-      </Card>
-
-      <Card>
-        I am currently working as a Freelance Developer in Paris.
-      </Card>
-
-      <Card>
-        Previously, I worked as a Full Stack Developer at <A newtab href='https://www.supahands.com/'>Supahands</A> in Kuala Lumpur.
+        I'm Luc. I'm a french developer working in Kuala Lumpur, Malaysia.
       </Card>
 
       <Card>
@@ -94,7 +86,7 @@ export default () => (
       </Card>
 
       <Card>
-        I now work on Front-end, Back-end and Data Analysis.<br />
+        I worked on Front-end, Back-end and Data Analysis at <A newtab href='https://www.supahands.com/'>Supahands</A>, <A newtab href='https://www.supahands.com/'>Worldline</A> and <A newtab href='https://www.supahands.com/'>Content-Square</A>.
         You can read more in my <A href='static/resume-luc-leray.pdf'>CV</A> ✍.
       </Card>
 
@@ -104,7 +96,7 @@ export default () => (
     </ContentContainer>
 
     <ContentContainer>
-      <H2>My work</H2>
+      <H2>projects</H2>
       {mywork.map(work => (
         <Card key={work.id}>
           {work.date} ∙ <A newtab={!!work.url} href={work.url} link={work.link}>{work.title}</A>
@@ -116,7 +108,7 @@ export default () => (
     </ContentContainer>
 
     <ContentContainer>
-      <H2>Links I like</H2>
+      <H2>links I like</H2>
       {links.map(link => (
         <Card key={link.id}>
           <A newtab href={link.url}>{link.title}</A> {link.about}
