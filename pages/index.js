@@ -33,6 +33,12 @@ const mywork = [
 
 const links = [
   {
+    id: 'the-best-ux-is-no-ui',
+    title: 'The Best UX is No User Interface at All',
+    url: 'https://css-tricks.com/best-ux-no-user-interface/',
+    about: 'The future of UX might be AI.'
+  },
+  {
     id: 'human-centered-machine-learning',
     title: 'Human-Centered Machine Learning',
     url:
