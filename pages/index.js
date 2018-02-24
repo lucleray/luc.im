@@ -1,6 +1,10 @@
 import Head from 'next/head'
 import Layout from '../components/layout'
-import { Container, ContentContainer, BottomContainer } from '../components/container'
+import {
+  Container,
+  ContentContainer,
+  BottomContainer
+} from '../components/container'
 import Button from '../components/button'
 import A from '../components/a'
 import { H2, Card } from '../components/paragraphs'
@@ -31,7 +35,8 @@ const links = [
   {
     id: 'critical-thinking-software-development',
     title: 'Critical thinking in software development',
-    url: 'https://hackernoon.com/critical-thinking-in-software-development-the-word-should-and-why-you-shouldn-t-listen-to-563090144331',
+    url:
+      'https://hackernoon.com/critical-thinking-in-software-development-the-word-should-and-why-you-shouldn-t-listen-to-563090144331',
     about: 'Making better decisions.'
   },
   {
@@ -50,7 +55,8 @@ const links = [
     id: 'submithub',
     title: 'Submithub on IndieHackers',
     url: 'https://www.indiehackers.com/businesses/submithub',
-    about: 'I always wanted to build something related to music. I think this idea is brilliant.'
+    about:
+      'I always wanted to build something related to music. I think this idea is brilliant.'
   },
   {
     id: 'visited-hack',
@@ -62,7 +68,8 @@ const links = [
     id: 'spotify-brand',
     title: 'My work with Spotify by Rasmus Andersson',
     url: 'https://rsms.me/about/spotify/',
-    about: 'Rasmus Andersson explains how he created the first version of the Spotify brand.'
+    about:
+      'Rasmus Andersson explains how he created the first version of the Spotify brand.'
   }
 ]
 
@@ -80,18 +87,40 @@ export default () => (
       </Card>
 
       <Card>
-        I started learning about
-        websites <A newtab href='http://lu.leray.free.fr/acceuil.html'>13 years ago</A> with
-        XHMTL, <A newtab href='https://notepad-plus-plus.org/'>Notepad++</A> and <A newtab href='http://www.easyphp.org/'>EasyPHP</A>.
+        I started learning about websites{' '}
+        <A newtab href='http://lu.leray.free.fr/acceuil.html'>
+          13 years ago
+        </A>{' '}
+        with XHMTL,{' '}
+        <A newtab href='https://notepad-plus-plus.org/'>
+          Notepad++
+        </A>{' '}
+        and{' '}
+        <A newtab href='http://www.easyphp.org/'>
+          EasyPHP
+        </A>.
       </Card>
 
       <Card>
-        I worked on Front-end, Back-end and Data Analysis at <A newtab href='https://www.supahands.com/'>Supahands</A>, <A newtab href='https://www.supahands.com/'>Worldline</A> and <A newtab href='https://www.supahands.com/'>Content-Square</A>.
-        You can read more in my <A href='static/resume-luc-leray.pdf'>CV</A> ✍.
+        I worked on Front-end, Back-end and Data Analysis at{' '}
+        <A newtab href='https://www.supahands.com/'>
+          Supahands
+        </A>,{' '}
+        <A newtab href='https://worldline.com/'>
+          Worldline
+        </A>{' '}
+        and{' '}
+        <A newtab href='https://www.contentsquare.com/'>
+          Content-Square
+        </A>. You can read more in my{' '}
+        <A href='static/resume-luc-leray.pdf'>CV</A> ✍.
       </Card>
 
       <Card>
-        I am on <A href='https://www.linkedin.com/in/lucleray/'>LinkedIn</A>, <A href='https://github.com/lucleray'>Github</A>, <A href='https://www.instagram.com/lucleray/'>Instagram</A>, <A href='https://twitter.com/lucleray'>Twitter</A>.
+        I am on <A href='https://www.linkedin.com/in/lucleray/'>LinkedIn</A>,{' '}
+        <A href='https://github.com/lucleray'>Github</A>,{' '}
+        <A href='https://www.instagram.com/lucleray/'>Instagram</A>,{' '}
+        <A href='https://twitter.com/lucleray'>Twitter</A>.
       </Card>
     </ContentContainer>
 
@@ -99,7 +128,10 @@ export default () => (
       <H2>projects</H2>
       {mywork.map(work => (
         <Card key={work.id}>
-          {work.date} ∙ <A newtab={!!work.url} href={work.url} link={work.link}>{work.title}</A>
+          {work.date} ∙{' '}
+          <A newtab={!!work.url} href={work.url} link={work.link}>
+            {work.title}
+          </A>
         </Card>
       ))}
       {/* <Container align='center'>
@@ -111,7 +143,10 @@ export default () => (
       <H2>links I like</H2>
       {links.map(link => (
         <Card key={link.id}>
-          <A newtab href={link.url}>{link.title}</A> {link.about}
+          <A newtab href={link.url}>
+            {link.title}
+          </A>{' '}
+          {link.about}
         </Card>
       ))}
       {/* <Container align='center'>
