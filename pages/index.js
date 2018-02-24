@@ -33,6 +33,19 @@ const mywork = [
 
 const links = [
   {
+    id: 'human-centered-machine-learning',
+    title: 'Human-Centered Machine Learning',
+    url:
+      'https://medium.com/google-design/human-centered-machine-learning-a770d10562cd',
+    about: 'AI to help build great products and not the other way around.'
+  },
+  {
+    id: 'nine-states-of-design',
+    title: 'The Nine Stages of Design',
+    url: 'https://medium.com/swlh/the-nine-states-of-design-5bfe9b3d6d85',
+    about: 'The ideal state of an interface is just the tip of the iceberg.'
+  },
+  {
     id: 'critical-thinking-software-development',
     title: 'Critical thinking in software development',
     url:
