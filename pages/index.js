@@ -107,39 +107,39 @@ export default () => (
 
       <Card>
         I started learning about websites{' '}
-        <A newtab href='http://lu.leray.free.fr/acceuil.html'>
+        <A newtab href="http://lu.leray.free.fr/acceuil.html">
           13 years ago
         </A>{' '}
         with XHMTL,{' '}
-        <A newtab href='https://notepad-plus-plus.org/'>
+        <A newtab href="https://notepad-plus-plus.org/">
           Notepad++
         </A>{' '}
         and{' '}
-        <A newtab href='http://www.easyphp.org/'>
+        <A newtab href="http://www.easyphp.org/">
           EasyPHP
         </A>.
       </Card>
 
       <Card>
         I worked on Front-end, Back-end and Data Analysis at{' '}
-        <A newtab href='https://www.supahands.com/'>
+        <A newtab href="https://www.supahands.com/">
           Supahands
         </A>,{' '}
-        <A newtab href='https://worldline.com/'>
+        <A newtab href="https://worldline.com/">
           Worldline
         </A>{' '}
         and{' '}
-        <A newtab href='https://www.contentsquare.com/'>
+        <A newtab href="https://www.contentsquare.com/">
           Content-Square
         </A>. You can read more in my{' '}
-        <A href='static/resume-luc-leray.pdf'>CV</A> ✍.
+        <A href="static/resume-luc-leray.pdf">CV</A> ✍.
       </Card>
 
       <Card>
-        I am on <A href='https://www.linkedin.com/in/lucleray/'>LinkedIn</A>,{' '}
-        <A href='https://github.com/lucleray'>Github</A>,{' '}
-        <A href='https://www.instagram.com/lucleray/'>Instagram</A>,{' '}
-        <A href='https://twitter.com/lucleray'>Twitter</A>.
+        I am on <A href="https://www.linkedin.com/in/lucleray/">LinkedIn</A>,{' '}
+        <A href="https://github.com/lucleray">Github</A>,{' '}
+        <A href="https://www.instagram.com/lucleray/">Instagram</A>,{' '}
+        <A href="https://twitter.com/lucleray">Twitter</A>.
       </Card>
     </ContentContainer>
 

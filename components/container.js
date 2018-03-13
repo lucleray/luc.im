@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const Container = styled.div`
-  text-align: ${p => p.align ? p.align : 'left'};
+  text-align: ${p => (p.align ? p.align : 'left')};
 `
 
 const ContentContainer = styled(Container)`
@@ -12,8 +12,4 @@ const BottomContainer = styled(Container)`
   margin: 4em 0 2em 0;
 `
 
-export {
-  Container,
-  ContentContainer,
-  BottomContainer
-}
+export { Container, ContentContainer, BottomContainer }

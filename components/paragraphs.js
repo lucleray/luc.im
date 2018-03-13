@@ -19,23 +19,19 @@ const H3 = styled.h3`
 
 const Card = styled.div`
   margin: 0 0 0.4em 0;
-  background: ${p => p.highlight ? p.theme.blue : p.theme.bg};
+  background: ${p => (p.highlight ? p.theme.blue : p.theme.bg)};
   border-radius: 10px;
   padding: 0.4em 2em;
   transition: 0.2s;
-  color: ${p => p.highlight ? p.theme.bg : p.theme.fg};
+  color: ${p => (p.highlight ? p.theme.bg : p.theme.fg)};
   transform: rotate(${p => Math.floor(Math.random() * 6 - 3) + 'deg'});
-  border: ${p => p.highlight ? '0px' : '1px'} solid ${p => p.theme.border};
+  border: ${p => (p.highlight ? '0px' : '1px')} solid ${p => p.theme.border};
   /* background: linear-gradient(to bottom right, #fff, #fbfbfb); */
 
   &:hover {
-    transform: translateX(20px) rotate(${p => Math.floor(Math.random() * 6 - 3) + 'deg'});
+    transform: translateX(20px)
+      rotate(${p => Math.floor(Math.random() * 6 - 3) + 'deg'});
   }
 `
 
-export {
-  H1,
-  H2,
-  H3,
-  Card
-}
+export { H1, H2, H3, Card }

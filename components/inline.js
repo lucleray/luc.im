@@ -6,6 +6,4 @@ const LightText = styled.span`
   line-height: 3px;
 `
 
-export {
-  LightText
-}
+export { LightText }

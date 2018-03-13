@@ -32,9 +32,15 @@ const themes = {
 
 const theme = Object.assign({}, themes.global, themes.blue)
 
-theme.lightFg = color(theme.fg).fade(0.5).string()
-theme.lightFg2 = color(theme.fg).fade(0.7).string()
-theme.lightBlue = color(theme.blue).fade(0.1).string()
+theme.lightFg = color(theme.fg)
+  .fade(0.5)
+  .string()
+theme.lightFg2 = color(theme.fg)
+  .fade(0.7)
+  .string()
+theme.lightBlue = color(theme.blue)
+  .fade(0.1)
+  .string()
 
 injectGlobal`
   @font-face {
@@ -70,13 +76,16 @@ const Layout = styled.div`
   }
 `
 
-export default (props) => (
+export default props => (
   <ThemeProvider theme={theme}>
     <Layout>
       {props.children}
-      <BottomContainer align='center'>
+      <BottomContainer align="center">
         <LightText>
-          Made with next.js and styled components ・ <A newtab href='https://github.com/lucleray/lucleray.me'>Code on Github</A>
+          Made with next.js and styled components ・{' '}
+          <A newtab href="https://github.com/lucleray/lucleray.me">
+            Code on Github
+          </A>
         </LightText>
       </BottomContainer>
     </Layout>
