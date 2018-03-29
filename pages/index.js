@@ -33,6 +33,12 @@ const mywork = [
 
 const links = [
   {
+    id: 'esmodules',
+    title: 'ES modules: A cartoon deep-dive',
+    url: 'https://hacks.mozilla.org/2018/03/es-modules-a-cartoon-deep-dive/',
+    about: 'ES Modules are coming soon to all major browsers.'
+  },
+  {
     id: 'the-best-ux-is-no-ui',
     title: 'The Best UX is No User Interface at All',
     url: 'https://css-tricks.com/best-ux-no-user-interface/',
