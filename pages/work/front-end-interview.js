@@ -44,7 +44,7 @@ export default () => (
 
         <p>
           Build a simple web page displaying the data of this json file :{' '}
-          <A newtab href="static/articles/restaurants.json">
+          <A newtab href="/static/articles/restaurants.json">
             restaurants.json
           </A>
         </p>
