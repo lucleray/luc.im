@@ -108,7 +108,16 @@ export default () => (
       <H2>☻ hi</H2>
 
       <Card>
-        I'm Luc. I'm a french developer working in Kuala Lumpur, Malaysia.
+        {/* I'm Luc. I'm a french developer working in Kuala Lumpur, Malaysia. */}
+        I'm Luc. I'm a french software engineer working in Paris, France.
+      </Card>
+
+      <Card>
+        I am currently building{' '}
+        <A newtab href="https://sequence.work">
+          Sequence.work
+        </A>, a platform helping data scientists outsource manual and repetitive
+        tasks to the crowd.
       </Card>
 
       <Card>
@@ -127,7 +136,7 @@ export default () => (
       </Card>
 
       <Card>
-        I worked on Front-end, Back-end and Data Analysis at{' '}
+        Previously, I worked on Front-end, Back-end and Data Analysis at{' '}
         <A newtab href="https://www.supahands.com/">
           Supahands
         </A>,{' '}

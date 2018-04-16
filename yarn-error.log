@@ -1,0 +1,70 @@
+Arguments: 
+  /usr/local/Cellar/node/9.8.0/bin/node /usr/local/bin/yarn run buil
+
+PATH: 
+  /Users/luc/.rvm/gems/ruby-2.4.1/bin:/Users/luc/.rvm/gems/ruby-2.4.1@global/bin:/Users/luc/.rvm/rubies/ruby-2.4.1/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/luc/.rvm/bin
+
+Yarn version: 
+  1.5.1
+
+Node version: 
+  9.8.0
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "lucleray.me",
+    "version": "0.0.1",
+    "description": "",
+    "scripts": {
+      "dev": "next",
+      "build":
+        "next build && next export -o docs && cp CNAME docs/ && cp .nojekyll docs/"
+    },
+    "author": "lucleray",
+    "license": "MIT",
+    "dependencies": {
+      "color": "^2.0.1",
+      "next": "^5.0.0",
+      "react": "^16.2.0",
+      "react-dom": "^16.2.0",
+      "styled-components": "^2.4.0"
+    },
+    "devDependencies": {
+      "babel-plugin-styled-components": "^1.5.1"
+    },
+    "babel": {
+      "presets": ["next/babel"],
+      "plugins": [
+        [
+          "styled-components",
+          {
+            "ssr": true,
+            "displayName": true,
+            "preprocess": false
+          }
+        ]
+      ]
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: Command "buil" not found. Did you mean "build"?
+      at new MessageError (/usr/local/lib/node_modules/yarn/lib/cli.js:186:110)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:87307:17
+      at Generator.next (<anonymous>)
+      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:98:30)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:116:14
+      at new Promise (<anonymous>)
+      at new F (/usr/local/lib/node_modules/yarn/lib/cli.js:23451:28)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:95:12
+      at runCommand (/usr/local/lib/node_modules/yarn/lib/cli.js:87312:22)
+      at Object.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:87412:14)
