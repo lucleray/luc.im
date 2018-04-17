@@ -38,6 +38,14 @@ export default class MyDocument extends Document {
             sizes="16x16"
             href="static/favicon-16x16.png"
           />
+          <meta
+            property="og:image"
+            content="https://lucleray.me/static/cover.png"
+          />
+          <meta
+            property="og:image:secure_url"
+            content="https://lucleray.me/static/cover.png"
+          />
           {this.props.styleTags}
         </Head>
         <body>
