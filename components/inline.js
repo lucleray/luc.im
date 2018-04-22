@@ -6,4 +6,12 @@ const LightText = styled.span`
   line-height: 3px;
 `
 
-export { LightText }
+const InlineCode = styled.span`
+  font-family: Hack, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo,
+    Courier, monospace;
+  background: rgba(32, 89, 246, 0.06);
+  padding: 5px;
+  margin: -5px;
+`
+
+export { LightText, InlineCode }

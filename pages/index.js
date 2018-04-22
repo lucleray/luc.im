@@ -8,9 +8,24 @@ import {
 import Button from '../components/button'
 import A from '../components/a'
 import { H2, Card } from '../components/paragraphs'
-import { LightText } from '../components/inline'
+import { LightText, InlineCode } from '../components/inline'
 
 const mywork = [
+  {
+    id: 'hyper-opacity',
+    date: 'April 2018',
+    title: [
+      <InlineCode>hyper-opacity</InlineCode>,
+      ' - set the opacity of your Hyper terminal'
+    ],
+    url: 'https://hyper.is/plugins/hyper-opacity'
+  },
+  {
+    id: 'personal-website',
+    date: 'December 2017',
+    title: [<InlineCode>lucleray.me</InlineCode>, ' - my personal website'],
+    url: 'https://github.com/lucleray/lucleray.me'
+  },
   {
     id: 'front-end-job-interview',
     date: 'Sept 2017',
@@ -32,6 +47,13 @@ const mywork = [
 ]
 
 const links = [
+  {
+    id: 'unit-of-value',
+    title: 'Designing very large (JavaScript) applications',
+    url:
+      'https://medium.com/@cramforce/designing-very-large-javascript-applications-6e013a3291a3',
+    about: ''
+  },
   {
     id: 'esmodules',
     title: 'ES modules: A cartoon deep-dive',
