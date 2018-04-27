@@ -15,8 +15,17 @@ const mywork = [
     id: 'hyper-opacity',
     date: 'April 2018',
     title: [
+      <InlineCode>next-progressbar</InlineCode>,
+      ' - add a progress bar to next.js'
+    ],
+    url: 'https://github.com/lucleray/next-progressbar'
+  },
+  {
+    id: 'hyper-opacity',
+    date: 'April 2018',
+    title: [
       <InlineCode>hyper-opacity</InlineCode>,
-      ' - set the opacity of your Hyper terminal'
+      ' - set the opacity of your hyper terminal'
     ],
     url: 'https://hyper.is/plugins/hyper-opacity'
   },
