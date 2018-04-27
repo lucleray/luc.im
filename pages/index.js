@@ -34,7 +34,16 @@ const mywork = [
   },
   {
     id: 'ocr-neural-network',
-    date: '2013',
+    date: 'May 2013',
+    title: [
+      <InlineCode>perceptron</InlineCode>,
+      ' - an introduction to perceptrons with a demo'
+    ],
+    url: 'https://github.com/lucleray/perceptron'
+  },
+  {
+    id: 'ocr-neural-network',
+    date: 'Jan to April 2013',
     title: 'OCR with Artificial Neural Networks (in french)',
     url: 'https://drive.google.com/file/d/0B9XryYiAipZ_a0w0b25BYkE4cTg/view'
   },
