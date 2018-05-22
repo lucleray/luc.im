@@ -66,6 +66,13 @@ const mywork = [
 
 const links = [
   {
+    id: 'open-source-enterprise',
+    title: 'Building software : The lessons from open source',
+    url:
+      'https://www.slideshare.net/icecrime/building-software-the-lessons-from-open-source',
+    about: 'Applying open-source learnings to the enterprise'
+  },
+  {
     id: 'unit-of-value',
     title: 'Designing very large (JavaScript) applications',
     url:
