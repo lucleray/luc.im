@@ -12,7 +12,16 @@ import { LightText, InlineCode } from '../components/inline'
 
 const mywork = [
   {
-    id: 'hyper-opacity',
+    id: 'terminal-markdown',
+    date: 'June 2018',
+    title: [
+      <InlineCode>terminal-markdown</InlineCode>,
+      ' - markdown in your terminal'
+    ],
+    url: 'https://github.com/lucleray/terminal-markdown'
+  },
+  {
+    id: 'next-progressbar',
     date: 'April 2018',
     title: [
       <InlineCode>next-progressbar</InlineCode>,
