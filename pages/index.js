@@ -12,6 +12,15 @@ import { LightText, InlineCode } from '../components/inline'
 
 const mywork = [
   {
+    id: 'sql',
+    date: 'August 2018',
+    title: [
+      <InlineCode>sql</InlineCode>,
+      ' - Javascript tag to format SQL template literals'
+    ],
+    url: 'https://github.com/sequencework/sql'
+  },
+  {
     id: 'terminal-markdown',
     date: 'June 2018',
     title: [
@@ -74,6 +83,13 @@ const mywork = [
 ]
 
 const links = [
+  {
+    id: 'react-fibers-algebraic-effects',
+    title: 'Algebraic Effects, Fibers, Coroutines... - Brandon Dail',
+    url: 'https://www.youtube.com/watch?v=cWY1QzyFhfk',
+    about:
+      'Clear explanation of how algebraic effects and fibers work and how they are used by React'
+  },
   {
     id: 'open-source-enterprise',
     title: 'Building software : The lessons from open source',
@@ -172,7 +188,8 @@ export default () => (
         I am currently building{' '}
         <A newtab href="https://sequence.work">
           Sequence.work
-        </A>, a platform helping data scientists outsource manual and repetitive
+        </A>
+        , a platform helping data scientists outsource manual and repetitive
         tasks to the crowd.
       </Card>
 
@@ -188,22 +205,25 @@ export default () => (
         and{' '}
         <A newtab href="http://www.easyphp.org/">
           EasyPHP
-        </A>.
+        </A>
+        .
       </Card>
 
       <Card>
         Previously, I worked on Front-end, Back-end and Data Analysis at{' '}
         <A newtab href="https://www.supahands.com/">
           Supahands
-        </A>,{' '}
+        </A>
+        ,{' '}
         <A newtab href="https://worldline.com/">
           Worldline
         </A>{' '}
         and{' '}
         <A newtab href="https://www.contentsquare.com/">
           Content-Square
-        </A>. You can read more in my{' '}
-        <A href="static/resume-luc-leray.pdf">CV</A> ✍.
+        </A>
+        . You can read more in my <A href="static/resume-luc-leray.pdf">CV</A>{' '}
+        ✍.
       </Card>
 
       <Card>
