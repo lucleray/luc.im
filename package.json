@@ -4,8 +4,7 @@
   "description": "",
   "scripts": {
     "dev": "next",
-    "build":
-      "next build && next export -o docs && cp CNAME docs/ && cp .nojekyll docs/"
+    "build": "next build && next export -o docs && cp CNAME docs/ && cp .nojekyll docs/"
   },
   "author": "lucleray",
   "license": "MIT",
@@ -17,10 +16,12 @@
     "styled-components": "^2.4.0"
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.5.1"
+    "babel-plugin-styled-components": "^1.6.0"
   },
   "babel": {
-    "presets": ["next/babel"],
+    "presets": [
+      "next/babel"
+    ],
     "plugins": [
       [
         "styled-components",
