@@ -180,12 +180,11 @@ export default () => (
       <H2>☻ hi</H2>
 
       <Card>
-        {/* I'm Luc. I'm a french developer working in Kuala Lumpur, Malaysia. */}
-        I'm Luc. I'm a french software engineer working in Paris, France.
+        I'm Luc. I'm a french software engineer working in Kuala Lumpur, Malaysia.
       </Card>
 
       <Card>
-        I am currently building{' '}
+        I am founder and CTO at{' '}
         <A newtab href="https://sequence.work">
           Sequence.work
         </A>
