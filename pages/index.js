@@ -84,6 +84,13 @@ const mywork = [
 
 const links = [
   {
+    id: 'marketing-engineering',
+    title:
+      'Why Marketing is Too important to be left to the Marketing Department',
+    url: 'https://www.youtube.com/watch?v=XDHnGNc-3LM',
+    about: ''
+  },
+  {
     id: 'react-fibers-algebraic-effects',
     title: 'Algebraic Effects, Fibers, Coroutines... - Brandon Dail',
     url: 'https://www.youtube.com/watch?v=cWY1QzyFhfk',
@@ -180,7 +187,8 @@ export default () => (
       <H2>☻ hi</H2>
 
       <Card>
-        I'm Luc. I'm a french software engineer working in Kuala Lumpur, Malaysia.
+        I'm Luc. I'm a french software engineer working in Kuala Lumpur,
+        Malaysia.
       </Card>
 
       <Card>
