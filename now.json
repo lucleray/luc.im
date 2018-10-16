@@ -1,7 +1,7 @@
 {
   "name": "lucleray",
   "type": "static",
-  "alias": "lucleray.now.sh",
+  "alias": "web.lucleray.me",
   "static": {
     "directoryListing": false,
     "trailingSlash": true,
