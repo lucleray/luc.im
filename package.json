@@ -8,30 +8,14 @@
     "export": "next export"
   },
   "author": "lucleray",
-  "license": "MIT",
   "dependencies": {
     "color": "^2.0.1",
-    "next": "^5.0.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0",
-    "styled-components": "^2.4.0"
+    "next": "7.0.2",
+    "react": "16.5.2",
+    "react-dom": "16.5.2",
+    "styled-components": "4.0.0"
   },
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.6.0"
-  },
-  "babel": {
-    "presets": [
-      "next/babel"
-    ],
-    "plugins": [
-      [
-        "styled-components",
-        {
-          "ssr": true,
-          "displayName": true,
-          "preprocess": false
-        }
-      ]
-    ]
+    "babel-plugin-macros": "2.4.2"
   }
 }

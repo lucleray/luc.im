@@ -1,4 +1,7 @@
-import styled, { ThemeProvider, injectGlobal } from 'styled-components'
+import styled, {
+  ThemeProvider,
+  createGlobalStyle
+} from 'styled-components/macro'
 import color from 'color'
 import { BottomContainer } from './container'
 import { LightText } from './inline'
@@ -42,7 +45,7 @@ theme.lightBlue = color(theme.blue)
   .fade(0.1)
   .string()
 
-injectGlobal`
+const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'Inter UI';
     font-style: normal;
@@ -79,6 +82,7 @@ const Layout = styled.div`
 export default props => (
   <ThemeProvider theme={theme}>
     <Layout>
+      <GlobalStyle />
       {props.children}
       <BottomContainer align="center">
         <LightText>

@@ -1,5 +1,5 @@
 import Document, { Head, Main, NextScript } from 'next/document'
-import { ServerStyleSheet } from 'styled-components'
+import { ServerStyleSheet } from 'styled-components/macro'
 
 export default class MyDocument extends Document {
   static getInitialProps({ renderPage }) {
@@ -15,7 +15,6 @@ export default class MyDocument extends Document {
     return (
       <html>
         <Head>
-          <title>lucleray.me</title>
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0"
