@@ -12,6 +12,15 @@ import { LightText, InlineCode } from '../components/inline'
 
 const mywork = [
   {
+    id: 'babel-macro-styled-components',
+    date: 'October 2018',
+    title: [
+      <InlineCode>styled-components/macro</InlineCode>,
+      ' - A babel macro for styled-components'
+    ],
+    url: 'https://www.styled-components.com/docs/tooling#babel-macro'
+  },
+  {
     id: 'sql',
     date: 'August 2018',
     title: [
