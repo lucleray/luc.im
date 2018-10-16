@@ -1,4 +1,7 @@
-import styled, { ThemeProvider, createGlobalStyle } from 'styled-components'
+import styled, {
+  ThemeProvider,
+  createGlobalStyle
+} from 'styled-components/macro'
 import color from 'color'
 import { BottomContainer } from './container'
 import { LightText } from './inline'

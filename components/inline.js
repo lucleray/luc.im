@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 const LightText = styled.span`
   color: ${p => p.theme.lightFg};
