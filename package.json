@@ -4,7 +4,8 @@
   "description": "",
   "scripts": {
     "dev": "next",
-    "build": "next build && next export -o docs && cp CNAME docs/ && cp .nojekyll docs/"
+    "build": "next build",
+    "export": "next export"
   },
   "author": "lucleray",
   "license": "MIT",
