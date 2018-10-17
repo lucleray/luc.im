@@ -23,7 +23,7 @@ const AComp = ({ newtab, link, href, children, className }) => {
 }
 
 const A = styled(AComp)`
-  color: ${p => (p.white ? p.theme.bg : p.theme.lightBlue)};
+  color: ${p => (p.white ? p.theme.bg : p.theme.blue)};
   border-bottom: 1px solid ${p => (p.white ? p.theme.bg : p.theme.lightBlue)};
   text-decoration: none;
   // transition: all 0.2s ease-in;

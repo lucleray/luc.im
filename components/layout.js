@@ -36,7 +36,7 @@ const themes = {
 const theme = Object.assign({}, themes.global, themes.blue)
 
 theme.lightFg = color(theme.fg)
-  .fade(0.5)
+  .fade(0.4)
   .string()
 theme.lightFg2 = color(theme.fg)
   .fade(0.7)
