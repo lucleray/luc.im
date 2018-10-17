@@ -3,7 +3,12 @@ import Link from 'next/link'
 
 const AComp = ({ newtab, link, href, children, className }) => {
   const a = newtab ? (
-    <a className={className} target="_blank" rel="noreferer" href={href}>
+    <a
+      className={className}
+      target="_blank"
+      rel="noreferer noopener"
+      href={href}
+    >
       {children}
     </a>
   ) : (
