@@ -244,10 +244,9 @@ export default () => (
       </Card>
 
       <Card>
-        I am on <A href="https://www.linkedin.com/in/lucleray/">LinkedIn</A>,{' '}
-        <A href="https://github.com/lucleray">Github</A>,{' '}
-        <A href="https://www.instagram.com/lucleray/">Instagram</A>,{' '}
-        <A href="https://twitter.com/lucleray">Twitter</A>.
+        I am on <A href="https://twitter.com/lucleray">Twitter</A>,{' '}
+        <A href="https://github.com/lucleray">Github</A> and{' '}
+        <A href="https://www.linkedin.com/in/lucleray/">LinkedIn</A>.
       </Card>
     </ContentContainer>
 
