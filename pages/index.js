@@ -226,7 +226,7 @@ export default () => (
       </Card>
 
       <Card>
-        I am founder and CTO at{' '}
+        I am cofounder and CTO at{' '}
         <A newtab href="https://sequence.work">
           Sequence.work
         </A>
