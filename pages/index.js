@@ -13,11 +13,20 @@ import { LightText, InlineCode } from '../components/inline'
 
 const mywork = [
   {
+    id: 'next-size',
+    date: 'November 2018',
+    title: [
+      <InlineCode>next-size</InlineCode>,
+      ' - next.js plugin to print browser assets sizes'
+    ],
+    url: 'https://github.com/lucleray/next-size'
+  },
+  {
     id: 'babel-macro-styled-components',
     date: 'October 2018',
     title: [
       <InlineCode>styled-components/macro</InlineCode>,
-      ' - A babel macro for styled-components'
+      ' - a babel macro for styled-components'
     ],
     url: 'https://www.styled-components.com/docs/tooling#babel-macro'
   },
@@ -26,7 +35,7 @@ const mywork = [
     date: 'August 2018',
     title: [
       <InlineCode>sql</InlineCode>,
-      ' - Javascript tag to format SQL template literals'
+      ' - javascript tag to format SQL template literals'
     ],
     url: 'https://github.com/sequencework/sql'
   },
