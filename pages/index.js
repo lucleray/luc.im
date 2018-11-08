@@ -22,6 +22,12 @@ const mywork = [
     url: 'https://github.com/lucleray/next-size'
   },
   {
+    id: 'emoji-machine',
+    date: 'October 2018',
+    title: '🎰Emoji Machine, emoji suggestions for your thoughts',
+    url: 'http://emoji-machine.now.sh/'
+  },
+  {
     id: 'babel-macro-styled-components',
     date: 'October 2018',
     title: [
@@ -49,6 +55,15 @@ const mywork = [
     url: 'https://github.com/lucleray/terminal-markdown'
   },
   {
+    id: 'next-purgecss',
+    date: 'April 2018',
+    title: [
+      <InlineCode>next-purgecss</InlineCode>,
+      ' - next.js + purgecss for faster websites'
+    ],
+    url: 'https://github.com/lucleray/next-purgecss'
+  },
+  {
     id: 'next-progressbar',
     date: 'April 2018',
     title: [
@@ -59,7 +74,7 @@ const mywork = [
   },
   {
     id: 'hyper-opacity',
-    date: 'April 2018',
+    date: 'March 2018',
     title: [
       <InlineCode>hyper-opacity</InlineCode>,
       ' - set the opacity of your hyper terminal'
