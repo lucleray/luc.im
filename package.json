@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "export": "next export"
+    "export": "next export",
+    "now-build": "next build && next export -o dist && cp -r build-stats dist/"
   },
   "author": "lucleray",
   "dependencies": {
