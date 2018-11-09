@@ -2,6 +2,7 @@
   "name": "lucleray",
   "type": "static",
   "alias": "web.lucleray.me",
+  "version": 1,
   "static": {
     "directoryListing": false,
     "trailingSlash": true,
