@@ -2,30 +2,6 @@
   "name": "lucleray",
   "type": "static",
   "alias": "web.lucleray.me",
-  "version": 1,
-  "static": {
-    "directoryListing": false,
-    "trailingSlash": true,
-    "cleanUrls": true,
-    "headers": [
-      {
-        "source": "**/*",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "max-age=3600, s-maxage=31536000"
-          }
-        ]
-      },
-      {
-        "source": "_next/**/*",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=31536000, immutable"
-          }
-        ]
-      }
-    ]
-  }
+  "version": 2,
+  "builds": [{ "src": "package.json", "use": "@now/static-build" }]
 }
