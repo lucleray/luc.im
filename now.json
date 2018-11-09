@@ -3,5 +3,8 @@
   "type": "static",
   "alias": "web.lucleray.me",
   "version": 2,
-  "builds": [{ "src": "package.json", "use": "@now/static-build" }]
+  "builds": [
+    { "src": "package.json", "use": "@now/static-build" },
+    { "src": "analytics/index.js", "use": "@now/node" }
+  ]
 }
