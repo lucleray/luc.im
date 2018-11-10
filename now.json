@@ -3,5 +3,17 @@
   "type": "static",
   "alias": "web.lucleray.me",
   "version": 2,
-  "builds": [{ "src": "package.json", "use": "@now/static-build" }]
+  "builds": [{ "src": "package.json", "use": "@now/static-build" }],
+  "routes": [
+    {
+      "src": "(/_next/.*)",
+      "dest": "$1",
+      "headers": { "cache-control": "public, max-age=31536000, immutable" }
+    },
+    {
+      "src": "(/.*)",
+      "dest": "$1",
+      "headers": { "cache-control": "max-age=3600, s-maxage=31536000" }
+    }
+  ]
 }
