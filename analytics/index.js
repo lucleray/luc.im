@@ -33,7 +33,7 @@ module.exports = async (req, res) => {
       }
       nbViews[page]++
 
-      send(res, 200, {})
+      send(res, 200)
       return
     }
 
@@ -42,7 +42,7 @@ module.exports = async (req, res) => {
       return
     }
 
-    throw createError(404, 'page not found')
+    send(res, 404)
   } catch (_error) {
     const error = _error._apiError ? _error : createError()
     send(res, error.status, { error: error.message })
