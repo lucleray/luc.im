@@ -118,6 +118,12 @@ const mywork = [
 
 const links = [
   {
+    id: 'node-js-http',
+    title: 'Node.js Fundamentals: Web Server Without Dependencies',
+    url: 'https://blog.bloomca.me/2018/12/22/writing-a-web-server-node.html',
+    about: "All the knowledge about nodejs' http condensed in one article"
+  },
+  {
     id: 'aws-incremental-scaling',
     title: 'Scaling Up to Your First 10 Million Users',
     url: 'https://www.youtube.com/watch?v=vg5onp8TU6Q',
