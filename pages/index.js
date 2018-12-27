@@ -118,6 +118,12 @@ const mywork = [
 
 const links = [
   {
+    id: 'aws-incremental-scaling',
+    title: 'Scaling Up to Your First 10 Million Users',
+    url: 'https://www.youtube.com/watch?v=vg5onp8TU6Q',
+    about: 'Incremental steps to scale a system on the cloud'
+  },
+  {
     id: 'marketing-engineering',
     title:
       'Why Marketing is Too important to be left to the Marketing Department',
