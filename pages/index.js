@@ -121,7 +121,7 @@ const links = [
     id: 'node-js-http',
     title: 'Node.js Fundamentals: Web Server Without Dependencies',
     url: 'https://blog.bloomca.me/2018/12/22/writing-a-web-server-node.html',
-    about: "All the knowledge about nodejs' http condensed in one article"
+    about: <span>All the knowledge about nodejs{"'"} <InlineCode>http</InlineCode> condensed in one article</span>
   },
   {
     id: 'aws-incremental-scaling',
