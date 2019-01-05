@@ -1,5 +1,4 @@
 const withBundleAnalyzer = require('@zeit/next-bundle-analyzer')
-const withSize = require('next-size')
 const { PHASE_PRODUCTION_BUILD } = require('next/constants')
 
 module.exports = phase =>
