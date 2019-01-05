@@ -12,8 +12,8 @@
   "dependencies": {
     "color": "^2.0.1",
     "next": "8.0.0-canary.2",
-    "react": "16.5.2",
-    "react-dom": "16.5.2",
+    "react": "16.7.0",
+    "react-dom": "16.7.0",
     "styled-components": "4.0.0"
   },
   "devDependencies": {
