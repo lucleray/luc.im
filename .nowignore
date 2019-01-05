@@ -1,5 +1,4 @@
-node_modules
 .next
 build-stats
+node_modules
 readme.md
-rules.json
