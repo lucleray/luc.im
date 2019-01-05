@@ -12,7 +12,7 @@ module.exports = phase =>
         openAnalyzer: false
       },
       server: {
-        reportFilename: `../build-stats/webpack-server.html`,
+        reportFilename: `../../build-stats/webpack-server.html`,
         analyzerMode: 'static',
         openAnalyzer: false
       }
