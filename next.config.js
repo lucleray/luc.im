@@ -9,6 +9,11 @@ module.exports = phase =>
         reportFilename: `../build-stats/webpack-browser.html`,
         analyzerMode: 'static',
         openAnalyzer: false
+      },
+      server: {
+        reportFilename: `../build-stats/webpack-server.html`,
+        analyzerMode: 'static',
+        openAnalyzer: false
       }
     }
   })
