@@ -19,5 +19,9 @@
   "devDependencies": {
     "@zeit/next-bundle-analyzer": "^0.1.2",
     "babel-plugin-macros": "2.4.2"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
   }
 }
