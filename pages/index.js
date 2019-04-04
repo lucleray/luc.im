@@ -13,6 +13,31 @@ import { LightText, InlineCode } from '../components/inline'
 
 const mywork = [
   {
+    id: 'serverless-machine-learning',
+    date: 'April 2019',
+    title: [
+      "Serverless Machine Learning - Posted on ZEIT's blog"
+    ],
+    url: 'https://zeit.co/blog/serverless-machine-learning'
+  },
+  {
+    id: 'object-detection',
+    date: 'March 2019',
+    title: [
+      "Object Detection - an API built with Tensorflow and Lambda functions to predict objects on images"
+    ],
+    url: 'https://object-detection.now.sh'
+  },
+  {
+    id: 'tensorflow-lambda',
+    date: 'March 2019',
+    title: [
+      <InlineCode>tensorflow-lambda</InlineCode>,
+      ' - a package to run tensorflow on lambda functions'
+    ],
+    url: 'https://github.com/lucleray/tensorflow-lambda'
+  },
+  {
     id: 'next-size',
     date: 'November 2018',
     title: [
@@ -24,7 +49,7 @@ const mywork = [
   {
     id: 'emoji-machine',
     date: 'October 2018',
-    title: '🎰Emoji Machine, emoji suggestions for your thoughts',
+    title: '🎰Emoji Machine - emoji suggestions for your thoughts',
     url: 'http://emoji-machine.now.sh/'
   },
   {
