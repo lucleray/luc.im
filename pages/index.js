@@ -261,11 +261,11 @@ export default () => (
     </Head>
 
     <ContentContainer>
-      <H2>☻ hi</H2>
+      <H2>☻ hi, i{"'"}m luc</H2>
 
       <Card>
-        I'm Luc. I'm a french software engineer working in Kuala Lumpur,
-        Malaysia.
+        I'm a french software engineer working in Paris,
+        France.
       </Card>
 
       <Card>
