@@ -34,6 +34,7 @@ const Card = styled.div`
   transform: rotate(${p => Math.floor(Math.random() * 6 - 3) + 'deg'});
   border: ${p => (p.highlight ? '0px' : '1px')} solid
     ${p => p.theme.light.border};
+  transition: transform 0.2s ease 0.1s;
 
   body.dark & {
     background: ${p => (p.highlight ? p.theme.dark.blue : p.theme.dark.bg)};

@@ -30,9 +30,7 @@ const Toggle = styled.div`
     border-radius: 14px;
     background: ${p => p.theme.light.bg};
     box-shadow: ${p => p.theme.light.fg} 0px 1px 3px 0px;
-    transition-duration: 0.28s;
-    transition-property: left;
-    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    transition: left 0.28s cubic-bezier(0, 0, 0.2, 1) 0s;
   }
 
   body.dark & .track {

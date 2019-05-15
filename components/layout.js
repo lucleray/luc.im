@@ -11,10 +11,6 @@ const GlobalStyle = createGlobalStyle`
     src: local('Inter UI'), local('Inter-UI-Regular'), url(../static/font/Inter-UI-Regular.woff2) format('woff2');
   }
 
-  * {
-    transition: 0.2s;
-  }
-
   body {
     font-family: ${p => p.theme.font};
     color: ${p => p.theme.light.fg};
