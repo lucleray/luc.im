@@ -1,9 +1,13 @@
 import styled from 'styled-components/macro'
 
 const LightText = styled.span`
-  color: ${p => p.theme.lightFg};
+  color: ${p => p.theme.light.lightFg};
   font-size: 0.8em;
   line-height: 3px;
+
+  body.dark & {
+    color: ${p => p.theme.dark.lightFg};
+  }
 `
 
 const InlineCode = styled.span`

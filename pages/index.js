@@ -6,25 +6,25 @@ import {
   ContentContainer,
   BottomContainer
 } from '../components/container'
+import { Theme } from '../components/theme'
 import Button from '../components/button'
 import A from '../components/a'
 import { H2, Card } from '../components/paragraphs'
 import { LightText, InlineCode } from '../components/inline'
+import ToggleDarkMode from '../components/toggle'
 
 const mywork = [
   {
     id: 'serverless-machine-learning',
     date: 'April 2019',
-    title: [
-      "Serverless Machine Learning - Posted on ZEIT's blog"
-    ],
+    title: ["Serverless Machine Learning - Posted on ZEIT's blog"],
     url: 'https://zeit.co/blog/serverless-machine-learning'
   },
   {
     id: 'object-detection',
     date: 'March 2019',
     title: [
-      "Object Detection - an API built with Tensorflow and Lambda functions to predict objects on images"
+      'Object Detection - an API built with Tensorflow and Lambda functions to predict objects on images'
     ],
     url: 'https://object-detection.now.sh'
   },
@@ -152,7 +152,12 @@ const links = [
     id: 'node-js-http',
     title: 'Node.js Fundamentals: Web Server Without Dependencies',
     url: 'https://blog.bloomca.me/2018/12/22/writing-a-web-server-node.html',
-    about: <span>All the knowledge about nodejs{"'"} <InlineCode>http</InlineCode> condensed in one article</span>
+    about: (
+      <span>
+        All the knowledge about nodejs{"'"} <InlineCode>http</InlineCode>{' '}
+        condensed in one article
+      </span>
+    )
   },
   {
     id: 'aws-incremental-scaling',
@@ -248,97 +253,105 @@ const links = [
   }
 ]
 
-export default () => (
-  <Layout>
-    <Head>
-      <title>Luc Leray</title>
-    </Head>
+export default function() {
+  return (
+    <Theme>
+      <Layout>
+        <Head>
+          <title>Luc Leray</title>
+        </Head>
 
-    <ContentContainer>
-      <H2>☻ hi, i{"'"}m luc</H2>
+        <ContentContainer>
+          <H2>☻ hi, i{"'"}m luc</H2>
 
-      <Card>
-        I'm a french software engineer working in Paris,
-        France.
-      </Card>
+          <Card>I'm a french software engineer working in Paris, France.</Card>
 
-      <Card>
-        I am cofounder and CTO at{' '}
-        <A newtab href="https://sequence.work">
-          Sequence.work
-        </A>
-        , a platform helping data scientists outsource manual and repetitive
-        tasks to the crowd.
-      </Card>
+          <Card>
+            I am cofounder and CTO at{' '}
+            <A newtab href="https://sequence.work">
+              Sequence.work
+            </A>
+            , a platform helping data scientists outsource manual and repetitive
+            tasks to the crowd.
+          </Card>
 
-      <Card>
-        I started learning about websites{' '}
-        <A newtab href="http://lu.leray.free.fr/acceuil.html">
-          13 years ago
-        </A>{' '}
-        with XHMTL,{' '}
-        <A newtab href="https://notepad-plus-plus.org/">
-          Notepad++
-        </A>{' '}
-        and{' '}
-        <A newtab href="http://www.easyphp.org/">
-          EasyPHP
-        </A>
-        .
-      </Card>
+          <Card>
+            I started learning about websites{' '}
+            <A newtab href="http://lu.leray.free.fr/acceuil.html">
+              13 years ago
+            </A>{' '}
+            with XHMTL,{' '}
+            <A newtab href="https://notepad-plus-plus.org/">
+              Notepad++
+            </A>{' '}
+            and{' '}
+            <A newtab href="http://www.easyphp.org/">
+              EasyPHP
+            </A>
+            .
+          </Card>
 
-      <Card>
-        Previously, I worked on Front-end, Back-end and Data Analysis at{' '}
-        <A newtab href="https://www.supahands.com/">
-          Supahands
-        </A>
-        ,{' '}
-        <A newtab href="https://worldline.com/">
-          Worldline
-        </A>{' '}
-        and{' '}
-        <A newtab href="https://www.contentsquare.com/">
-          Content-Square
-        </A>
-        . You can read more in my <A href="static/resume-luc-leray.pdf">CV</A>{' '}
-        ✍.
-      </Card>
+          <Card>
+            Previously, I worked on Front-end, Back-end and Data Analysis at{' '}
+            <A newtab href="https://www.supahands.com/">
+              Supahands
+            </A>
+            ,{' '}
+            <A newtab href="https://worldline.com/">
+              Worldline
+            </A>{' '}
+            and{' '}
+            <A newtab href="https://www.contentsquare.com/">
+              Content-Square
+            </A>
+            . You can read more in my{' '}
+            <A href="static/resume-luc-leray.pdf">CV</A> ✍.
+          </Card>
 
-      <Card>
-        I am on <A href="https://twitter.com/lucleray">Twitter</A>,{' '}
-        <A href="https://github.com/lucleray">Github</A> and{' '}
-        <A href="https://www.linkedin.com/in/lucleray/">LinkedIn</A>.
-      </Card>
-    </ContentContainer>
+          <Card>
+            I am on <A href="https://twitter.com/lucleray">Twitter</A>,{' '}
+            <A href="https://github.com/lucleray">Github</A> and{' '}
+            <A href="https://www.linkedin.com/in/lucleray/">LinkedIn</A>.
+          </Card>
 
-    <ContentContainer>
-      <H2>projects</H2>
-      {mywork.map(work => (
-        <Card key={work.id}>
-          {work.date} ∙{' '}
-          <A newtab={!!work.url} href={work.url} link={work.link}>
-            {work.title}
-          </A>
-        </Card>
-      ))}
-      {/* <Container align='center'>
+          <p style={{ textAlign: 'center', marginTop: '3em' }}>
+            <label htmlFor="toggle-darkmode">
+              Do you prefer to browse this website in Dark Mode?
+            </label>
+            <ToggleDarkMode />
+          </p>
+        </ContentContainer>
+
+        <ContentContainer>
+          <H2>projects</H2>
+          {mywork.map(work => (
+            <Card key={work.id}>
+              {work.date} ∙{' '}
+              <A newtab={!!work.url} href={work.url} link={work.link}>
+                {work.title}
+              </A>
+            </Card>
+          ))}
+          {/* <Container align='center'>
         <Button>Read more</Button>
       </Container> */}
-    </ContentContainer>
+        </ContentContainer>
 
-    <ContentContainer>
-      <H2>links I like</H2>
-      {links.map(link => (
-        <Card key={link.id}>
-          <A newtab href={link.url}>
-            {link.title}
-          </A>{' '}
-          {link.about}
-        </Card>
-      ))}
-      {/* <Container align='center'>
+        <ContentContainer>
+          <H2>links I like</H2>
+          {links.map(link => (
+            <Card key={link.id}>
+              <A newtab href={link.url}>
+                {link.title}
+              </A>{' '}
+              {link.about}
+            </Card>
+          ))}
+          {/* <Container align='center'>
         <Button>Read more</Button>
       </Container> */}
-    </ContentContainer>
-  </Layout>
-)
+        </ContentContainer>
+      </Layout>
+    </Theme>
+  )
+}

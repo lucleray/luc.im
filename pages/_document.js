@@ -1,6 +1,25 @@
 import Document, { Head, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components/macro'
 
+const darkModeCode = `(function() {
+
+  function setDarkMode(v) {
+    window.__darkMode = v
+    localStorage.setItem('dark', v ? 'yes' : 'no');
+    document.body.className = v ? 'dark' : 'light';
+  }
+
+  function toggleDarkMode() {
+    setDarkMode(!window.__darkMode);
+  }
+
+  try { setDarkMode(localStorage.getItem('dark') === 'yes'); }
+  catch (err) { setDarkMode(false); }
+
+  window.__toggleDarkMode = toggleDarkMode
+
+})();`
+
 export default class MyDocument extends Document {
   static getInitialProps({ renderPage }) {
     const sheet = new ServerStyleSheet()
@@ -53,6 +72,11 @@ export default class MyDocument extends Document {
           />
         </Head>
         <body>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: darkModeCode
+            }}
+          />
           <Main />
           <NextScript />
         </body>
