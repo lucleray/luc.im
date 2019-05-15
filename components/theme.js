@@ -28,25 +28,25 @@ const themes = {
   }
 }
 
-const blueMainColor = '#111'
-const blueSecondaryColor = '#2059f6'
+const lightMainColor = '#111'
+const lightSecondaryColor = '#2059f6'
 const darkMainColor = '#999'
 const darkSecondaryColor = '#fff'
 
 const theme = {
   font: 'Inter UI, Helvetica Neue, Helvetica, sans-serif',
   light: {
-    fg: blueMainColor,
-    lightFg: color(blueMainColor)
+    fg: lightMainColor,
+    lightFg: color(lightMainColor)
       .fade(0.4)
       .string(),
-    lightFg2: color(blueMainColor)
+    lightFg2: color(lightMainColor)
       .fade(0.7)
       .string(),
     bg: '#fff',
     border: 'rgba(32,89,246,0.2)',
-    blue: blueSecondaryColor,
-    lightBlue: color(blueSecondaryColor)
+    blue: lightSecondaryColor,
+    lightBlue: color(lightSecondaryColor)
       .fade(0.1)
       .string()
   },

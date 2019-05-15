@@ -316,8 +316,11 @@ export default function() {
 
           <div style={{ textAlign: 'center', marginTop: '3em' }}>
             <label htmlFor="toggle-darkmode">
-              Do you prefer to browse this website in Dark Mode?
+              Do you prefer to browse this website in Dark Mode?{' '}
             </label>
+            {/* <br /> */}
+            {/* <span style={{ opacity: 0.3 }}>light</span> &nbsp;
+            <span style={{ fontWeight: 'bold' }}>dark</span> */}
             <ToggleDarkMode />
           </div>
         </ContentContainer>

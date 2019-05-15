@@ -98,7 +98,7 @@ const ReactToggleStyle = createGlobalStyle`
   background-color: #bbb;
 }
 
-.react-toggle--checked .react-toggle-track {
+body.dark .react-toggle-track {
   background-color: #19ab27;
 }
 
@@ -123,7 +123,7 @@ const ReactToggleStyle = createGlobalStyle`
   transition: opacity 0.25s ease;
 }
 
-.react-toggle--checked .react-toggle-track-check {
+body.dark .react-toggle-track-check {
   opacity: 1;
   -webkit-transition: opacity 0.25s ease;
   -moz-transition: opacity 0.25s ease;
@@ -146,7 +146,7 @@ const ReactToggleStyle = createGlobalStyle`
   transition: opacity 0.25s ease;
 }
 
-.react-toggle--checked .react-toggle-track-x {
+body.dark .react-toggle-track-x {
   opacity: 0;
 }
 
@@ -170,7 +170,7 @@ const ReactToggleStyle = createGlobalStyle`
   transition: all 0.25s ease;
 }
 
-.react-toggle--checked .react-toggle-thumb {
+body.dark .react-toggle-thumb {
   left: 16px;
   border-color: #19ab27;
 }
