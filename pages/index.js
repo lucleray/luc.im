@@ -314,12 +314,12 @@ export default function() {
             <A href="https://www.linkedin.com/in/lucleray/">LinkedIn</A>.
           </Card>
 
-          <p style={{ textAlign: 'center', marginTop: '3em' }}>
+          <div style={{ textAlign: 'center', marginTop: '3em' }}>
             <label htmlFor="toggle-darkmode">
               Do you prefer to browse this website in Dark Mode?
             </label>
             <ToggleDarkMode />
-          </p>
+          </div>
         </ContentContainer>
 
         <ContentContainer>
