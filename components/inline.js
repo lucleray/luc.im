@@ -13,9 +13,13 @@ const LightText = styled.span`
 const InlineCode = styled.span`
   font-family: Hack, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo,
     Courier, monospace;
-  background: rgba(32, 89, 246, 0.06);
+  background: ${p => p.theme.light.lightBlue2};
   padding: 5px;
   margin: -5px;
+
+  body.dark & {
+    background: ${p => p.theme.dark.lightBlue2};
+  }
 `
 
 export { LightText, InlineCode }

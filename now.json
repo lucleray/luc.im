@@ -13,5 +13,8 @@
       "src": "/.*",
       "headers": { "cache-control": "max-age=3600, s-maxage=31536000" }
     }
-  ]
+  ],
+  "github": {
+    "silent": true
+  }
 }

@@ -48,7 +48,8 @@ const theme = {
     blue: lightSecondaryColor,
     lightBlue: color(lightSecondaryColor)
       .fade(0.1)
-      .string()
+      .string(),
+    lightBlue2: 'rgba(32, 89, 246, 0.06)'
   },
   dark: {
     fg: darkMainColor,
@@ -63,7 +64,8 @@ const theme = {
     blue: darkSecondaryColor,
     lightBlue: color(darkSecondaryColor)
       .fade(0.1)
-      .string()
+      .string(),
+    lightBlue2: 'rgba(255, 255, 255, 0.06)'
   }
 }
 
