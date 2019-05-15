@@ -143,10 +143,10 @@ const mywork = [
 
 const links = [
   {
-    id: 'internals-of-postgres',
-    title: 'The Internals of PostgreSQL',
-    url: 'http://www.interdb.jp/pg/',
-    about: ''
+    id: 'local-first-software',
+    title: 'Local-first software',
+    url: 'https://www.inkandswitch.com/local-first.html',
+    about: 'The challenge is to build an alternative to cloud softwares'
   },
   {
     id: 'node-js-http',
@@ -206,12 +206,6 @@ const links = [
     url:
       'https://medium.com/google-design/human-centered-machine-learning-a770d10562cd',
     about: 'AI to help build great products and not the other way around.'
-  },
-  {
-    id: 'nine-states-of-design',
-    title: 'The Nine Stages of Design',
-    url: 'https://medium.com/swlh/the-nine-states-of-design-5bfe9b3d6d85',
-    about: 'The ideal state of an interface is just the tip of the iceberg.'
   },
   {
     id: 'critical-thinking-software-development',
