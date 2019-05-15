@@ -16,7 +16,7 @@ const Toggle = styled.div`
     position: relative;
     cursor: pointer;
     border-radius: 16px;
-    background: ${p => p.theme.light.fg};
+    background: ${p => p.theme.light.lightFg2};
     display: inline-block;
   }
 
@@ -29,7 +29,7 @@ const Toggle = styled.div`
     position: relative;
     border-radius: 14px;
     background: ${p => p.theme.light.bg};
-    box-shadow: ${p => p.theme.light.fg} 0px 1px 3px 0px;
+    box-shadow: ${p => p.theme.light.lightFg2} 0px 1px 2px 0px;
     transition: left 0.28s cubic-bezier(0, 0, 0.2, 1) 0s;
   }
 
