@@ -59,7 +59,6 @@ export default function ToggleDarkMode() {
         setDark(window.__darkMode)
       }}
     >
-      <input type="checkbox" checked={dark} />
       <div className="track">
         <div className="thumb" />
       </div>
