@@ -34,7 +34,8 @@ const darkMainColor = '#999'
 const darkSecondaryColor = '#fff'
 
 const theme = {
-  font: 'Inter UI, Helvetica Neue, Helvetica, sans-serif',
+  font:
+    'Inter UI,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol',
   light: {
     fg: lightMainColor,
     lightFg: color(lightMainColor)

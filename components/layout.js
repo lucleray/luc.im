@@ -5,10 +5,14 @@ import A from './a'
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
-    font-family: 'Inter UI';
+    font-family: "Inter UI";
     font-style: normal;
     font-weight: 400;
-    src: local('Inter UI'), local('Inter-UI-Regular'), url(../static/font/Inter-UI-Regular.woff2) format('woff2');
+    src: 
+      local("Inter UI"), 
+      url("/static/font/Inter-Regular.woff2") format("woff2"),
+      url("/static/font/Inter-Regular.woff") format("woff");
+    font-display: swap;
   }
 
   body {
