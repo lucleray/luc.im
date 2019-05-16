@@ -1,5 +1,5 @@
 {
-  "name": "lucleray.me",
+  "name": "luc.im",
   "version": "0.0.1",
   "description": "",
   "scripts": {
@@ -17,8 +17,7 @@
     "styled-components": "4.2.0"
   },
   "devDependencies": {
-    "babel-plugin-macros": "2.5.1",
-    "next-size": "^2.0.2"
+    "babel-plugin-macros": "2.5.1"
   },
   "prettier": {
     "semi": false,

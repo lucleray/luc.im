@@ -1,6 +1,6 @@
 {
   "name": "lucleray",
-  "alias": ["lucleray.me", "luc.im"],
+  "alias": ["luc.im"],
   "version": 2,
   "public": true,
   "builds": [{ "src": "package.json", "use": "@now/static-build" }],
