@@ -3,10 +3,19 @@ import { ServerStyleSheet } from 'styled-components/macro'
 
 const darkModeCode = `(function() {
 
+  function changeFavicon(v) {
+    var src = 'static/favicon-' + (v ? 'dark' : 'light');
+    try {
+      document.getElementById('favicon-32').href = src + '-32x32.png';
+      document.getElementById('favicon-16').href = src + '-16x16.png';
+    } catch (err) {}
+  }
+
   function setDarkMode(v) {
     window.__darkMode = v
     localStorage.setItem('dark', v ? 'yes' : 'no');
     document.body.className = v ? 'dark' : 'light';
+    changeFavicon(v);
   }
 
   function toggleDarkMode() {
@@ -45,16 +54,18 @@ export default class MyDocument extends Document {
             key="description"
           />
           <link
+            id="favicon-32"
             rel="icon"
             type="image/png"
             sizes="32x32"
-            href="static/favicon-32x32.png"
+            href="static/favicon-light-32x32.png"
           />
           <link
+            id="favicon-16"
             rel="icon"
             type="image/png"
             sizes="16x16"
-            href="static/favicon-16x16.png"
+            href="static/favicon-light-16x16.png"
           />
           <meta
             property="og:image"
