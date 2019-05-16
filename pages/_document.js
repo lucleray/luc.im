@@ -67,8 +67,9 @@ export default class MyDocument extends Document {
           {this.props.styleTags}
           <script
             async
+            defer
             type="text/javascript"
-            src="https://plausible.io/js/analytics.js"
+            src="https://plausible.io/js/plausible.js"
           />
         </Head>
         <body>
