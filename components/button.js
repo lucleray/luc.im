@@ -1,19 +1,20 @@
 import styled from 'styled-components/macro'
+import { theme } from './theme'
 
 const Button = styled.button`
   margin-top: 1em;
-  color: ${p => p.theme.light.bg};
+  color: ${theme.light.bg};
   border-radius: 5px;
   border: 0;
-  background: ${p => p.theme.light.lightBlue};
+  background: ${theme.light.lightBlue};
   font-weight: bold;
   padding: 0.5em;
   font-size: 0.9em;
   cursor: pointer;
 
   body.dark & {
-    color: ${p => p.theme.dark.bg};
-    background: ${p => p.theme.dark.lightBlue};
+    color: ${theme.dark.bg};
+    background: ${theme.dark.lightBlue};
   }
 `
 

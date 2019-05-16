@@ -33,7 +33,7 @@ const lightSecondaryColor = '#2059f6'
 const darkMainColor = '#999'
 const darkSecondaryColor = '#fff'
 
-const theme = {
+export const theme = {
   font:
     'Inter UI,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol',
   light: {

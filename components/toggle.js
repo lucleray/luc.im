@@ -1,5 +1,6 @@
 import styled from 'styled-components/macro'
 import { useState, useEffect } from 'react'
+import { theme } from './theme'
 
 const Toggle = styled.div`
   display: inline-block;
@@ -16,7 +17,7 @@ const Toggle = styled.div`
     position: relative;
     cursor: pointer;
     border-radius: 16px;
-    background: ${p => p.theme.light.lightFg2};
+    background: ${theme.light.lightFg2};
     display: inline-block;
   }
 
@@ -28,17 +29,17 @@ const Toggle = styled.div`
     height: 12px;
     position: relative;
     border-radius: 14px;
-    background: ${p => p.theme.light.bg};
-    box-shadow: ${p => p.theme.light.lightFg2} 0px 1px 2px 0px;
+    background: ${theme.light.bg};
+    box-shadow: ${theme.light.lightFg2} 0px 1px 2px 0px;
     transition: left 0.28s cubic-bezier(0, 0, 0.2, 1) 0s;
   }
 
   body.dark & .track {
-    background: ${p => p.theme.dark.blue};
+    background: ${theme.dark.blue};
   }
 
   body.dark & .thumb {
-    background: ${p => p.theme.dark.bg};
+    background: ${theme.dark.bg};
     box-shadow: none;
     left: 13px;
   }

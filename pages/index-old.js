@@ -6,12 +6,12 @@ import {
   ContentContainer,
   BottomContainer
 } from '../components/container'
-import { Theme } from '../components/theme'
 import Button from '../components/button'
 import A from '../components/a'
 import { H2, Card } from '../components/paragraphs'
 import { LightText, InlineCode } from '../components/inline'
 import ToggleDarkMode from '../components/toggle'
+import { Theme } from '../components/theme'
 
 const mywork = [
   {
@@ -255,103 +255,97 @@ const links = [
 
 export default function() {
   return (
-    <Theme>
-      <Layout>
-        <Head>
-          <title>Luc Leray</title>
-        </Head>
+    <Layout meta={{ title: '' }}>
+      <ContentContainer>
+        <H2>☻ hi, i{"'"}m luc</H2>
 
-        <ContentContainer>
-          <H2>☻ hi, i{"'"}m luc</H2>
+        <Card>I'm a french software engineer working in Paris, France.</Card>
 
-          <Card>I'm a french software engineer working in Paris, France.</Card>
+        <Card>
+          I am cofounder and CTO at{' '}
+          <A newtab href="https://sequence.work">
+            Sequence.work
+          </A>
+          , a platform helping data scientists outsource manual and repetitive
+          tasks to the crowd.
+        </Card>
 
-          <Card>
-            I am cofounder and CTO at{' '}
-            <A newtab href="https://sequence.work">
-              Sequence.work
-            </A>
-            , a platform helping data scientists outsource manual and repetitive
-            tasks to the crowd.
-          </Card>
+        <Card>
+          I started learning about websites{' '}
+          <A newtab href="http://lu.leray.free.fr/acceuil.html">
+            13 years ago
+          </A>{' '}
+          with XHMTL,{' '}
+          <A newtab href="https://notepad-plus-plus.org/">
+            Notepad++
+          </A>{' '}
+          and{' '}
+          <A newtab href="http://www.easyphp.org/">
+            EasyPHP
+          </A>
+          .
+        </Card>
 
-          <Card>
-            I started learning about websites{' '}
-            <A newtab href="http://lu.leray.free.fr/acceuil.html">
-              13 years ago
-            </A>{' '}
-            with XHMTL,{' '}
-            <A newtab href="https://notepad-plus-plus.org/">
-              Notepad++
-            </A>{' '}
-            and{' '}
-            <A newtab href="http://www.easyphp.org/">
-              EasyPHP
-            </A>
-            .
-          </Card>
+        <Card>
+          Previously, I worked on Front-end, Back-end and Data Analysis at{' '}
+          <A newtab href="https://www.supahands.com/">
+            Supahands
+          </A>
+          ,{' '}
+          <A newtab href="https://worldline.com/">
+            Worldline
+          </A>{' '}
+          and{' '}
+          <A newtab href="https://www.contentsquare.com/">
+            Content-Square
+          </A>
+          . You can read more in my <A href="static/resume-luc-leray.pdf">CV</A>{' '}
+          ✍.
+        </Card>
 
-          <Card>
-            Previously, I worked on Front-end, Back-end and Data Analysis at{' '}
-            <A newtab href="https://www.supahands.com/">
-              Supahands
-            </A>
-            ,{' '}
-            <A newtab href="https://worldline.com/">
-              Worldline
-            </A>{' '}
-            and{' '}
-            <A newtab href="https://www.contentsquare.com/">
-              Content-Square
-            </A>
-            . You can read more in my{' '}
-            <A href="static/resume-luc-leray.pdf">CV</A> ✍.
-          </Card>
+        <Card>
+          I am on <A href="https://twitter.com/lucleray">Twitter</A>,{' '}
+          <A href="https://github.com/lucleray">Github</A> and{' '}
+          <A href="https://www.linkedin.com/in/lucleray/">LinkedIn</A>.
+        </Card>
 
-          <Card>
-            I am on <A href="https://twitter.com/lucleray">Twitter</A>,{' '}
-            <A href="https://github.com/lucleray">Github</A> and{' '}
-            <A href="https://www.linkedin.com/in/lucleray/">LinkedIn</A>.
-          </Card>
-
-          <div style={{ textAlign: 'center', marginTop: '3em' }}>
-            Do you prefer to browse this website in Dark Mode? {/* <br /> */}
-            {/* <span style={{ opacity: 0.3 }}>light</span> &nbsp;
+        <div style={{ textAlign: 'center', marginTop: '3em' }}>
+          Do you prefer to browse this website in Dark Mode? {/* <br /> */}
+          {/* <span style={{ opacity: 0.3 }}>light</span> &nbsp;
             <span style={{ fontWeight: 'bold' }}>dark</span> */}
-            <ToggleDarkMode />
-          </div>
-        </ContentContainer>
+          <ToggleDarkMode />
+        </div>
+      </ContentContainer>
 
-        <ContentContainer>
-          <H2>projects</H2>
-          {mywork.map(work => (
-            <Card key={work.id}>
-              {work.date} ∙{' '}
-              <A newtab={!!work.url} href={work.url} link={work.link}>
-                {work.title}
-              </A>
-            </Card>
-          ))}
-          {/* <Container align='center'>
+      <ContentContainer>
+        <H2>projects</H2>
+        {mywork.map(work => (
+          <Card key={work.id}>
+            {work.date} ∙{' '}
+            <A newtab={!!work.url} href={work.url} link={work.link}>
+              {work.title}
+            </A>
+          </Card>
+        ))}
+        {/* <Container align='center'>
         <Button>Read more</Button>
       </Container> */}
-        </ContentContainer>
+      </ContentContainer>
 
-        <ContentContainer>
-          <H2>links I like</H2>
-          {links.map(link => (
-            <Card key={link.id}>
-              <A newtab href={link.url}>
-                {link.title}
-              </A>{' '}
-              {link.about}
-            </Card>
-          ))}
-          {/* <Container align='center'>
+      <ContentContainer>
+        <H2>links I like</H2>
+        {links.map(link => (
+          <Card key={link.id}>
+            <A newtab href={link.url}>
+              {link.title}
+            </A>{' '}
+            {link.about}
+          </Card>
+        ))}
+        {/* <Container align='center'>
         <Button>Read more</Button>
       </Container> */}
-        </ContentContainer>
-      </Layout>
-    </Theme>
+      </ContentContainer>
+    </Layout>
   )
 }
