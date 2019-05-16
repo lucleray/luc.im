@@ -2,16 +2,7 @@ import { MDXProvider } from '@mdx-js/react'
 import A from './a'
 import { H1, H2, H3 } from './paragraphs'
 import { InlineCode } from './inline'
-
-import styled from 'styled-components/macro'
-import { theme } from './theme'
-
-const HR = styled.hr`
-  height: 1px;
-  background: ${theme.light.lightBlue2};
-  border: 0;
-  margin: 2em 0;
-`
+import HR from './hr'
 
 const components = {
   a: A,

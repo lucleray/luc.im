@@ -2,36 +2,14 @@ import React from 'react'
 import { ThemeProvider } from 'styled-components/macro'
 import color from 'color'
 
-const themes = {
-  global: {
-    font: 'Inter UI, Helvetica Neue, Helvetica, sans-serif'
-  },
-  blue: {
-    fg: '#111',
-    bg: '#fff',
-    border: 'rgba(32,89,246,0.2)',
-    blue: '#2059f6'
-  },
-  light: {
-    fg: '#888',
-    bg: '#fff',
-    border: '#ddd',
-    red: '#ff1c1c',
-    blue: '#000',
-    green: '#00BB66'
-  },
-  dark: {
-    fg: '#999',
-    bg: '#000',
-    border: '#444',
-    blue: '#fff'
-  }
-}
-
 const lightMainColor = '#111'
 const lightSecondaryColor = '#2059f6'
+
 const darkMainColor = '#999'
 const darkSecondaryColor = '#fff'
+
+const light2MainColor = '#888'
+const light2SecondaryColor = '#000'
 
 export const theme = {
   font:
@@ -67,6 +45,22 @@ export const theme = {
       .fade(0.1)
       .string(),
     lightBlue2: 'rgba(255, 255, 255, 0.06)'
+  },
+  light2: {
+    fg: light2MainColor,
+    lightFg: color(light2MainColor)
+      .fade(0.4)
+      .string(),
+    lightFg2: color(light2MainColor)
+      .fade(0.7)
+      .string(),
+    bg: '#fff',
+    border: '#ddd',
+    blue: light2SecondaryColor,
+    lightBlue: color(light2SecondaryColor)
+      .fade(0.1)
+      .string(),
+    lightBlue2: 'rgba(0, 0, 0, 0.06)'
   }
 }
 
