@@ -18,14 +18,17 @@ const darkModeCode = `(function() {
     changeFavicon(v);
   }
 
-  function toggleDarkMode() {
+  var q = window.matchMedia('(prefers-color-scheme: dark)');
+  q.addListener(function(e) { setDarkMode(e.matches); });
+
+  var darkLS
+  try { darkLS = localStorage.getItem('dark'); }
+  catch (err) { }
+  setDarkMode(darkLS ? darkLS === 'yes' : q.matches);
+
+  window.__toggleDarkMode = function() {
     setDarkMode(!window.__darkMode);
   }
-
-  try { setDarkMode(localStorage.getItem('dark') === 'yes'); }
-  catch (err) { setDarkMode(false); }
-
-  window.__toggleDarkMode = toggleDarkMode
 
 })();`
 
