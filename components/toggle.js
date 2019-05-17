@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { theme } from './theme'
 
 const Toggle = styled.div`
@@ -43,10 +43,17 @@ const Toggle = styled.div`
     box-shadow: none;
     left: 13px;
   }
+
+  &.focus .thumb,
+  body.dark &.focus .thumb {
+    box-shadow: 0px 0px 2px 3px #0099e0;
+  }
 `
 
-export default function ToggleDarkMode() {
-  const [dark, setDark] = useState(null)
+export default function ToggleDarkMode(props) {
+  const [dark, setDark] = useState(false)
+  const [focus, setFocus] = useState(false)
+  const input = useRef(null)
 
   useEffect(() => {
     setDark(window.__darkMode)
@@ -55,10 +62,23 @@ export default function ToggleDarkMode() {
   return (
     <Toggle
       onClick={() => {
-        window.__toggleDarkMode()
-        setDark(window.__darkMode)
+        input.current.focus()
+        input.current.click()
       }}
+      className={focus ? 'focus' : ''}
     >
+      <input
+        type="checkbox"
+        ref={input}
+        checked={dark}
+        onFocus={() => setFocus(true)}
+        onBlur={() => setFocus(false)}
+        onChange={() => {
+          window.__toggleDarkMode()
+          setDark(window.__darkMode)
+        }}
+        {...props}
+      />
       <div className="track">
         <div className="thumb" />
       </div>
