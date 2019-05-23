@@ -1,6 +1,5 @@
 import styled, { createGlobalStyle } from 'styled-components/macro'
-import { Container, BottomContainer } from './container'
-import { LightText } from './inline'
+import { Container, Footer } from './container'
 import A from './a'
 import Head from 'next/head'
 import { theme } from './theme'
@@ -63,14 +62,10 @@ export default function Layout(props) {
         <Container>
           <Markdown>{props.children}</Markdown>
         </Container>
-        <BottomContainer align="center">
-          <LightText>
-            Made with next.js and styled components ・{' '}
-            <A newtab href="https://github.com/lucleray/lucleray.me">
-              Code on Github
-            </A>
-          </LightText>
-        </BottomContainer>
+        <Footer>
+          Made with next.js and styled components ・{' '}
+          <A href="https://github.com/lucleray/lucleray.me">Code on Github</A>
+        </Footer>
       </LayoutDiv>
     </>
   )

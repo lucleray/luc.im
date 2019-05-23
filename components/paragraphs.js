@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro'
 import { theme } from './theme'
 
-const H1 = styled.h2`
+const H1 = styled.h1`
   font-size: 1.8em;
   text-align: center;
   color: ${theme.light.blue};
@@ -12,8 +12,16 @@ const H1 = styled.h2`
   }
 `
 
-const H2 = styled(H1)`
+const H2 = styled.h2`
   margin-top: 6em;
+  font-size: 1.8em;
+  text-align: center;
+  color: ${theme.light.blue};
+  margin-bottom: 0.7em;
+
+  body.dark & {
+    color: ${theme.dark.blue};
+  }
 `
 
 const H3 = styled.h3`
