@@ -1,16 +1,6 @@
 import styled from 'styled-components/macro'
 import { theme } from './theme'
 
-const LightText = styled.span`
-  color: ${theme.light.lightFg};
-  font-size: 0.8em;
-  line-height: 3px;
-
-  body.dark & {
-    color: ${theme.dark.lightFg};
-  }
-`
-
 const InlineCode = styled.span`
   font-family: Hack, 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo,
     Courier, monospace;
@@ -23,4 +13,4 @@ const InlineCode = styled.span`
   }
 `
 
-export { LightText, InlineCode }
+export { InlineCode }

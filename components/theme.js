@@ -1,5 +1,4 @@
 import React from 'react'
-import { ThemeProvider } from 'styled-components/macro'
 import color from 'color'
 
 const lightMainColor = '#111'
@@ -62,8 +61,4 @@ export const theme = {
       .string(),
     lightBlue2: 'rgba(0, 0, 0, 0.06)'
   }
-}
-
-export function Theme({ children }) {
-  return <ThemeProvider theme={theme}>{children}</ThemeProvider>
 }
