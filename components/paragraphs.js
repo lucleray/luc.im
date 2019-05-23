@@ -36,7 +36,7 @@ const H3 = styled.h3`
   }
 `
 
-const Card = styled.div`
+const Card = styled.p`
   margin: 0 0 0.4em 0;
   background: ${p => (p.highlight ? theme.light.blue : theme.light.bg)};
   border-radius: 10px;
