@@ -14,7 +14,7 @@ const Footer = styled.footer`
   text-align: center;
   color: ${theme.light.lightFg};
   font-size: 0.8em;
-  line-height: 3px;
+  line-height: 1.7em;
 
   body.dark & {
     color: ${theme.dark.lightFg};
