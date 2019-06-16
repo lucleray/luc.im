@@ -64,7 +64,7 @@ export default function Layout(props) {
         </Container>
         <Footer>
           Made with next.js and styled components ・{' '}
-          <A href="https://github.com/lucleray/lucleray.me">Code on Github</A>
+          <A href="https://github.com/lucleray/luc.im">Code on Github</A>
         </Footer>
       </LayoutDiv>
     </>
