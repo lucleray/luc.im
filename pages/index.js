@@ -86,7 +86,7 @@ const Links = () => (
 )
 
 export default () => (
-  <Layout meta={{ title: 'Luc Leray' }}>
+  <Layout meta={{ title: 'Luc L' }}>
     <main>
       <Presentation />
       <Articles />
