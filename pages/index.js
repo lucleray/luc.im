@@ -12,7 +12,7 @@ const Presentation = () => (
     <Card>I'm a french software engineer working in Paparis, France.</Card>
     <Card>
       I am cofounder and CTO at{' '}
-      <A href="https://sequence.work">Sequence.work</A>, a platform helping data
+      <A href="https://sequence.work">Sequence.work</A>, a platform  gdfgdf helping data
       scientists outsource manual and repetitive tasks to the crowd.
     </Card>
     <Card>
