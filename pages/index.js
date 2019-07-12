@@ -58,7 +58,7 @@ const Articles = () => (
 
 const Projects = () => (
   <section aria-labelledby="projects-title">
-    <H2 id="projects-title">projects</H2>
+    <H2 id="projects-title">projects ghfg</H2>
     <div>
       {projects.map(project => (
         <Card key={project.id}>
