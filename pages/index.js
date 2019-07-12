@@ -9,10 +9,10 @@ import links from '../lib/links'
 const Presentation = () => (
   <section aria-labelledby="presentation-title">
     <H1 id="presentation-title">hi, i'm luc</H1>
-    <Card>I'm a french software engineer working in Paris, France. b</Card>
+    <Card>I'm a french software engineer working in Paris, France. be</Card>
     <Card>
       I am cofounder and CTO at{' '}
-      <A href="https://sequence.work">Sequence.work</A>, a platform kjhkjhkhj gdfgdf helping data
+      <A href="https://sequence.work">Sequence.work</A>, a jhkhjk platform kjhkjhkhj gdfgdf helping data
       scientists outsource manual and repetitive tasks to the crowd.
     </Card>
     <Card>
