@@ -53,7 +53,7 @@ export default class MyDocument extends Document {
           />
           <meta
             name="description"
-            content="Software engineer with a passion for machine learning"
+            content="Software engineer with a passion for machines"
             key="description"
           />
           <link
