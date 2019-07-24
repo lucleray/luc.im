@@ -3,10 +3,7 @@
   "version": "0.0.1",
   "description": "",
   "scripts": {
-    "dev": "next",
-    "build": "next build",
-    "export": "next export",
-    "now-build": "next build && next export -o dist"
+    "dev": "next"
   },
   "author": "lucleray",
   "dependencies": {
