@@ -4,9 +4,7 @@
   "description": "",
   "scripts": {
     "dev": "next",
-    "build": "next build",
-    "export": "next export",
-    "now-build": "next build && next export -o dist"
+    "build": "next build"
   },
   "author": "lucleray",
   "dependencies": {
