@@ -8,11 +8,11 @@ import links from '../lib/links'
 
 const Presentation = () => (
   <section aria-labelledby="presentation-title">
-    <H1 id="presentation-title">hi, i'm luc</H1>
+    <H1 id="presentation-title">hi, i'm luc xxxxxxx</H1>
     <Card>
       I'm a french software engineer working at{' '}
       <A href="https://zeit.co">ZEIT</A>, building a for developers and
-      designers to deploy their applications to the cloud gfdgdf gfdgdf .
+      designers to deploy their applications to the cloud gfdgdf gfdgdf xxxxxx.
   <img src="https://source.unsplash.com/random/2000x2000" />
     </Card>
     <Card>
