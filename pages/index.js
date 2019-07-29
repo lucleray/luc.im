@@ -9,11 +9,10 @@ import links from '../lib/links'
 const Presentation = () => (
   <section aria-labelledby="presentation-title">
     <H1 id="presentation-title">hi, i'm luc</H1>
-    <Card>I'm a french software engineer working in Paris, France.</Card>
     <Card>
-      I am cofounder at{' '}
-      <A href="https://sequence.work">Sequence.work</A>, a platform helping data
-      scientists outsource manual and repetitive tasks to the crowd.
+      I'm a french software engineer working at{' '}
+      <A href="https://zeit.co">ZEIT</A>, building a platform for developers and
+      designers to deploy their applications to the cloud.
     </Card>
     <Card>
       I started learning about websites{' '}
@@ -22,11 +21,10 @@ const Presentation = () => (
       <A href="http://www.easyphp.org/">EasyPHP</A>.
     </Card>
     <Card>
-      Previously, I worked on Front-end, Back-end and Data Analysis at{' '}
-      <A href="https://www.supahands.com/">Supahands</A>,{' '}
-      <A href="https://worldline.com/">Worldline</A> and{' '}
-      <A href="https://www.contentsquare.com/">Content-Square</A>. You can read
-      more in my <A href="static/resume-luc-leray.pdf">CV</A> ✍.
+      Previously, I cofounded <A href="https://sequence.work">Sequence.work</A>,
+      a start-up helping data scientists outsource manual and repetitive tasks
+      to the crowd. You can read more in my{' '}
+      <A href="static/resume-luc-leray.pdf">CV</A> ✍.
     </Card>
     <Card>
       I am on <A href="https://twitter.com/lucleray">Twitter</A>,{' '}
