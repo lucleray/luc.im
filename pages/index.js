@@ -23,11 +23,8 @@ const Presentation = () => (
     <Card>
       Previously, I cofounded <A href="https://sequence.work">Sequence.work</A>,
       a start-up helping data scientists outsource manual and repetitive tasks
-      to the crowd. I worked on Front-end, Back-end and Data Analysis at{' '}
-      <A href="https://www.supahands.com/">Supahands</A>,{' '}
-      <A href="https://worldline.com/">Worldline</A> and{' '}
-      <A href="https://www.contentsquare.com/">Content-Square</A>. You can read
-      more in my <A href="static/resume-luc-leray.pdf">CV</A> ✍.
+      to the crowd. You can read more in my{' '}
+      <A href="static/resume-luc-leray.pdf">CV</A> ✍.
     </Card>
     <Card>
       I am on <A href="https://twitter.com/lucleray">Twitter</A>,{' '}
