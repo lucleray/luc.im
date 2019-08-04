@@ -13,7 +13,7 @@ const Presentation = () => (
       I'm a french software engineer working at{' '}
       <A href="https://zeit.co">ZEIT</A>, building a for developers and
       designers to deploy their applications to the cloud gfdgdf gfdgdf xxxxxx.
-  <img src="https://source.unsplash.com/random/1024x768" />
+  <img src="https://source.unsplash.com/random/800x600" />
     </Card>
     <Card>
       I started learning about websites{' '}
