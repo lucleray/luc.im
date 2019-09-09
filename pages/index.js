@@ -11,7 +11,7 @@ const Presentation = () => (
     <H1 id="presentation-title">hi, i'm eglzeglzelgzb</H1>
     <Card>
       I'm a french software engineer working at{' '}
-      <A href="https://zeit.co">ZEIT</A>, building a platform for developers and
+      <A href="https://zeit.co">ZEIT</A>, building a platform for developers dsfsdfdsfds and
       designers to deploy their applications to the cloud.
     </Card>
     <Card>
