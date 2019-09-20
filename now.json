@@ -2,7 +2,7 @@
   "routes": [
     {
       "src": "/static/(.*)",
-      "headers": { "cache-control": "maxage=604800" },
+      "headers": { "cache-control": "max-age=604800" },
       "dest": "/static/$1"
     }
   ]
