@@ -1,3 +1,7 @@
+<table><tr>
+  <td><b>Deploy yours:</b></td><td><a href="https://zeit.co/new/project?template=lucleray/object-detection"><img alt="Deploy to ZEIT Now" src="https://zeit.co/button" /></a></td>
+</table>
+
 [Local Setup](#local-setup)<br />
 [Deploy](#deploy)<br />
 [More](#more)
