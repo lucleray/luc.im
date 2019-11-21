@@ -4,7 +4,7 @@ import { ServerStyleSheet } from 'styled-components/macro'
 const darkModeCode = `(function() {
 
   function changeFavicon(v) {
-    var src = 'static/favicon-' + (v ? 'dark' : 'light');
+    var src = 'public/favicon-' + (v ? 'dark' : 'light');
     try {
       document.getElementById('favicon-32').href = src + '-32x32.png';
       document.getElementById('favicon-16').href = src + '-16x16.png';
@@ -61,22 +61,22 @@ export default class MyDocument extends Document {
             rel="icon"
             type="image/png"
             sizes="32x32"
-            href="static/favicon-light-32x32.png"
+            href="public/favicon-light-32x32.png"
           />
           <link
             id="favicon-16"
             rel="icon"
             type="image/png"
             sizes="16x16"
-            href="static/favicon-light-16x16.png"
+            href="public/favicon-light-16x16.png"
           />
           <meta
             property="og:image"
-            content="https://lucleray.me/static/cover.png"
+            content="https://lucleray.me/public/cover.png"
           />
           <meta
             property="og:image:secure_url"
-            content="https://lucleray.me/static/cover.png"
+            content="https://lucleray.me/public/cover.png"
           />
           {this.props.styleTags}
           <script

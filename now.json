@@ -1,9 +1,9 @@
 {
   "routes": [
     {
-      "src": "/static/(.*)",
+      "src": "/public/(.*)",
       "headers": { "cache-control": "max-age=604800" },
-      "dest": "/static/$1"
+      "dest": "/public/$1"
     }
   ]
 }

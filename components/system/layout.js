@@ -11,8 +11,8 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     src: 
       local("Inter UI"), 
-      url("/static/font/Inter-Regular.woff2") format("woff2"),
-      url("/static/font/Inter-Regular.woff") format("woff");
+      url("/public/font/Inter-Regular.woff2") format("woff2"),
+      url("/public/font/Inter-Regular.woff") format("woff");
     font-display: swap;
   }
 
