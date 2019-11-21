@@ -72,11 +72,11 @@ export default class MyDocument extends Document {
           />
           <meta
             property="og:image"
-            content="https://lucleray.me/public/cover.png"
+            content="https://lucleray.me/assets/cover.png"
           />
           <meta
             property="og:image:secure_url"
-            content="https://lucleray.me/public/cover.png"
+            content="https://lucleray.me/assets/cover.png"
           />
           {this.props.styleTags}
           <script

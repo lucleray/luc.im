@@ -35,7 +35,7 @@ export default () => (
       <p>I would like to challenge you with a small take-home project.</p>
       <p>
         Build a simple web page displaying the data of this json file :{' '}
-        <A newtab href="/static/articles/restaurants.json">
+        <A newtab href="/assets/articles/restaurants.json">
           restaurants.json
         </A>
       </p>
