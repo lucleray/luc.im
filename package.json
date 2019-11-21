@@ -15,7 +15,8 @@
     "styled-components": "4.4.1"
   },
   "devDependencies": {
-    "babel-plugin-macros": "2.7.0"
+    "babel-plugin-macros": "2.7.0",
+    "prettier": "1.19.1"
   },
   "prettier": {
     "semi": false,
