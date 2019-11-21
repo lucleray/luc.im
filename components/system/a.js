@@ -32,7 +32,7 @@ const AStyled = styled.a`
 `
 
 const A = props => {
-  if ((props.href || '').substring(0, 4) === 'http') {
+  if (props.external || (props.href || '').substring(0, 4) === 'http') {
     return <AStyled external target="_blank" rel="noreferrer" {...props} />
   }
 
