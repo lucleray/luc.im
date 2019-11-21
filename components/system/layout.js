@@ -1,9 +1,8 @@
 import styled, { createGlobalStyle } from 'styled-components/macro'
+import { A } from './a'
 import { Container, Footer } from './container'
-import A from './a'
-import Head from 'next/head'
 import { theme } from './theme'
-import Markdown from './markdown'
+import Head from 'next/head'
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -51,7 +50,7 @@ const LayoutDiv = styled.div`
   }
 `
 
-export default function Layout(props) {
+const Layout = props => {
   return (
     <>
       <Head>
@@ -59,9 +58,7 @@ export default function Layout(props) {
       </Head>
       <GlobalStyle />
       <LayoutDiv>
-        <Container>
-          <Markdown>{props.children}</Markdown>
-        </Container>
+        <Container>{props.children}</Container>
         <Footer>
           Made with next.js and styled components ・{' '}
           <A href="https://github.com/lucleray/luc.im">Code on Github</A>
@@ -70,3 +67,5 @@ export default function Layout(props) {
     </>
   )
 }
+
+export { Layout }

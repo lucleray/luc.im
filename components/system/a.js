@@ -31,7 +31,7 @@ const AStyled = styled.a`
     `}
 `
 
-export default function A(props) {
+const A = props => {
   if ((props.href || '').substring(0, 4) === 'http') {
     return <AStyled external target="_blank" rel="noreferrer" {...props} />
   }
@@ -42,3 +42,5 @@ export default function A(props) {
     </Link>
   )
 }
+
+export { A }

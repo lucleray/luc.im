@@ -1,4 +1,3 @@
-import React from 'react'
 import color from 'color'
 
 const lightMainColor = '#111'
@@ -10,7 +9,7 @@ const darkSecondaryColor = '#fff'
 const light2MainColor = '#888'
 const light2SecondaryColor = '#000'
 
-export const theme = {
+const theme = {
   font:
     'Inter UI,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol',
   light: {
@@ -62,3 +61,5 @@ export const theme = {
     lightBlue2: 'rgba(0, 0, 0, 0.06)'
   }
 }
+
+export { theme }

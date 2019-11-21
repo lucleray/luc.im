@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro'
 import { useState, useEffect, useRef } from 'react'
-import { theme } from './theme'
+import { theme } from './system'
 
 const Toggle = styled.div`
   display: inline-block;

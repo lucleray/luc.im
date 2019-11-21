@@ -1,6 +1,4 @@
-import Layout from '../components/layout'
-import { H1, H2, Card } from '../components/paragraphs'
-import A from '../components/a'
+import { Layout, H1, H2, Card, A } from '../components/system'
 import ToggleDarkMode from '../components/toggle-dark-mode'
 import articles from '../lib/articles'
 import projects from '../lib/projects'
@@ -11,8 +9,8 @@ const Presentation = () => (
     <H1 id="presentation-title">hi, i'm luc</H1>
     <Card>
       I'm a french software engineer working at{' '}
-      <A href="https://zeit.co">ZEIT</A>, building a platform for developers
-      to deploy their applications to the cloud.
+      <A href="https://zeit.co">ZEIT</A>, building a platform for developers to
+      deploy their applications to the cloud.
     </Card>
     <Card>
       I started learning about websites{' '}

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { theme } from './theme'
+import { theme } from './system'
 
 const Loader = () => (
   <div className="loader">
