@@ -2,17 +2,32 @@ import styled, { css } from 'styled-components/macro'
 import Link from 'next/link'
 import { theme } from './theme'
 
-const AStyled = styled.a`
-  color: ${p => (p.white ? theme.light.bg : theme.light.blue)};
-  border-bottom: 1px solid
-    ${p => (p.white ? theme.light.bg : theme.light.lightBlue)};
+const AStyled = styled.a.attrs(
+  ({ color = 'blue', underline = true, symbol = true }) => ({
+    color,
+    underline,
+    symbol
+  })
+)`
   text-decoration: none;
 
-  body.dark & {
-    color: ${p => (p.white ? theme.dark.bg : theme.dark.blue)};
-    border-bottom: 1px solid
-      ${p => (p.white ? theme.dark.bg : theme.dark.lightBlue)};
-  }
+  ${p =>
+    p.color &&
+    css`
+      color: ${p => theme.light[p.color]};
+      body.dark & {
+        color: ${p => theme.dark[p.color]};
+      }
+    `}
+
+  ${p =>
+    p.underline &&
+    css`
+      border-bottom: 1px solid ${p => theme.light[p.color]};
+      body.dark & {
+        border-bottom: 1px solid ${p => theme.dark[p.color]};
+      }
+    `}
 
   &:hover {
     border-color: transparent !important;
@@ -20,6 +35,7 @@ const AStyled = styled.a`
 
   ${p =>
     p.external &&
+    p.symbol &&
     css`
       margin-right: 0.1em;
 

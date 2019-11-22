@@ -1,8 +1,8 @@
-import styled from 'styled-components/macro'
+import styled, { css } from 'styled-components/macro'
 import { theme } from './theme'
 
 const H1 = styled.h1`
-  font-size: 1.8em;
+  font-size: ${p => (p.noMargin ? '0' : '1.8em')};
   text-align: center;
   color: ${theme.light.blue};
   margin-bottom: 0.7em;
@@ -13,7 +13,7 @@ const H1 = styled.h1`
 `
 
 const H2 = styled.h2`
-  margin-top: 6em;
+  margin-top: ${p => (p.noMargin ? '0' : '6em')};
   font-size: 1.8em;
   text-align: center;
   color: ${theme.light.blue};
@@ -44,7 +44,6 @@ const Card = styled.p`
   color: ${p => (p.highlight ? theme.light.bg : theme.light.fg)};
   transform: rotate(${p => Math.floor(Math.random() * 6 - 3) + 'deg'});
   border: ${p => (p.highlight ? '0px' : '1px')} solid ${theme.light.border};
-  transition: transform 0.2s ease 0.1s;
 
   body.dark & {
     background: ${p => (p.highlight ? theme.dark.blue : theme.dark.bg)};
@@ -52,10 +51,16 @@ const Card = styled.p`
     border: ${p => (p.highlight ? '0px' : '1px')} solid ${theme.dark.border};
   }
 
-  &:hover {
-    transform: translateX(20px)
-      rotate(${p => Math.floor(Math.random() * 6 - 3) + 'deg'});
-  }
+  ${p =>
+    !p.noHover &&
+    css`
+      transition: transform 0.2s ease 0.1s;
+
+      &:hover {
+        transform: translateX(20px)
+          rotate(${p => Math.floor(Math.random() * 6 - 3) + 'deg'});
+      }
+    `}
 `
 
 export { H1, H2, H3, Card }

@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from 'styled-components/macro'
+import styled, { css, createGlobalStyle } from 'styled-components/macro'
 import { A } from './a'
 import { Container, Footer } from './container'
 import { theme } from './theme'
@@ -43,11 +43,16 @@ const GlobalStyle = createGlobalStyle`
 
 const LayoutDiv = styled.div`
   width: 84%;
-  margin: 40px 8%;
+  padding: 0 8%;
+  margin: 40px ${p => (p.center ? 'auto' : '0')};
 
-  @media only screen and (min-width: 700px) {
-    width: 550px;
-  }
+  ${p =>
+    !p.wide &&
+    css`
+      @media only screen and (min-width: 700px) {
+        width: 550px;
+      }
+    `}
 `
 
 const Layout = props => {
@@ -57,7 +62,7 @@ const Layout = props => {
         <title>{props.meta.title}</title>
       </Head>
       <GlobalStyle />
-      <LayoutDiv>
+      <LayoutDiv {...props}>
         <Container>{props.children}</Container>
         <Footer>
           Made with next.js and styled components ・{' '}

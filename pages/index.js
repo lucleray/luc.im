@@ -1,4 +1,4 @@
-import { Layout, H1, H2, Card, A } from '../components/system'
+import { Layout, H1, H2, H3, Card, A } from '../components/system'
 import ToggleDarkMode from '../components/toggle-dark-mode'
 import articles from '../lib/articles'
 import projects from '../lib/projects'
@@ -46,11 +46,20 @@ const Articles = () => (
     <H2 id="articles-title">articles</H2>
     <div>
       {articles.map(article => (
-        <Card key={article.id}>
+        <Card key={article.id} noHover>
           <span>{article.date}</span> –{' '}
           <A href={article.url}>{article.title}</A> {article.about}
         </Card>
       ))}
+    </div>
+  </section>
+)
+
+const Photos = () => (
+  <section aria-labelledby="photos-title">
+    <H2 id="photos-title">photos</H2>
+    <div style={{ textAlign: 'center', marginTop: '50px' }}>
+      <A href="/photos">Go to the dedicated page →</A>
     </div>
   </section>
 )
@@ -60,7 +69,7 @@ const Projects = () => (
     <H2 id="projects-title">projects</H2>
     <div>
       {projects.map(project => (
-        <Card key={project.id}>
+        <Card key={project.id} noHover>
           <span>{project.date}</span> –{' '}
           <A href={project.url}>
             {project.title} {project.about && ` – ${project.about}`}
@@ -76,7 +85,7 @@ const Links = () => (
     <H2 id="links-title">links</H2>
     <div>
       {links.map(link => (
-        <Card key={link.id}>
+        <Card key={link.id} noHover>
           <A href={link.url}>{link.title}</A> {link.about}
         </Card>
       ))}
@@ -89,6 +98,7 @@ export default () => (
     <main>
       <Presentation />
       <Articles />
+      {/* <Photos /> */}
       <Projects />
       <Links />
     </main>
