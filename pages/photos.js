@@ -5,6 +5,71 @@ import * as countries from 'country-emoji'
 import color from 'color'
 import { useState } from 'react'
 
+const SmallGridSvg = props => {
+  const rAxis = [
+    Math.random() * 7,
+    Math.random() * 5 - 2,
+    Math.random() * 2 - 1
+  ]
+
+  const x = [40, 80, 120]
+  const y = [40, 80, 120, 160, 200, 240]
+
+  return (
+    <svg viewBox="0 0 180 300" {...props}>
+      {x.map(x =>
+        y.map(y => (
+          <rect
+            x={x}
+            y={y}
+            width="20"
+            height="20"
+            fill={props.color}
+            style={{
+              transform: `rotate3d(
+    ${rAxis.join(',')},
+    ${Math.random() * 12 + 5}deg
+  )
+  scale(1)`
+            }}
+          />
+        ))
+      )}
+    </svg>
+  )
+}
+
+const BigGridSvg = props => {
+  const rAxis = [
+    Math.random() * 7,
+    Math.random() * 5 - 2,
+    Math.random() * 2 - 1
+  ]
+
+  const y = [40, 100, 160, 220]
+
+  return (
+    <svg viewBox="0 0 180 300" {...props}>
+      {y.map(y => (
+        <rect
+          x={30}
+          y={y}
+          width="40"
+          height="40"
+          fill={props.color}
+          style={{
+            transform: `rotate3d(
+${rAxis.join(',')},
+${Math.random() * 12 + 5}deg
+)
+scale(1)`
+          }}
+        />
+      ))}
+    </svg>
+  )
+}
+
 const RotCard = styled.div`
   position: relative;
   float: left;
@@ -110,13 +175,26 @@ const Img = props => {
 }
 
 export default () => {
-  const [small, setSmall] = useState(false)
+  const [small, setSmall] = useState(true)
 
   return (
     <Layout center wide={small} meta={{ title: 'Photos' }}>
       <H1>photos</H1>
 
-      <Spacer v={3} />
+      <Spacer v={1} />
+
+      <div style={{ textAlign: 'center' }}>
+        <span
+          onClick={() => setSmall(small => !small)}
+          style={{ cursor: 'pointer', opacity: 1 }}
+        >
+          {!small ? (
+            <SmallGridSvg width="25" color={theme.light.blue} />
+          ) : (
+            <BigGridSvg width="25" color={theme.light.blue} />
+          )}
+        </span>
+      </div>
 
       <Spacer v={8} />
 
