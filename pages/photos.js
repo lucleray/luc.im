@@ -213,7 +213,7 @@ const Img = props => {
 }
 
 export default () => {
-  const [small, setSmall] = useState(true)
+  const [small, setSmall] = useState(false)
 
   return (
     <Layout center wide={small} meta={{ title: 'Photos' }}>
