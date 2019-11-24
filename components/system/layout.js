@@ -23,6 +23,7 @@ const GlobalStyle = createGlobalStyle`
     font-size: 18px;
     line-height: 27px;
     margin: 3.8em 0 3.9em 0;
+    overflow-x: hidden;
   }
 
   body.dark {
@@ -42,8 +43,6 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const LayoutDiv = styled.div`
-  width: 84%;
-  padding: 0 8%;
   margin: 40px ${p => (p.center ? 'auto' : '0')};
 
   ${p =>
@@ -55,6 +54,10 @@ const LayoutDiv = styled.div`
     `}
 `
 
+const LayoutPaddingDiv = styled.div`
+  padding: 0 50px;
+`
+
 const Layout = props => {
   return (
     <>
@@ -63,11 +66,13 @@ const Layout = props => {
       </Head>
       <GlobalStyle />
       <LayoutDiv {...props}>
-        <Container>{props.children}</Container>
-        <Footer>
-          Made with next.js and styled components ・{' '}
-          <A href="https://github.com/lucleray/luc.im">Code on Github</A>
-        </Footer>
+        <LayoutPaddingDiv>
+          <Container>{props.children}</Container>
+          <Footer>
+            Made with next.js and styled components ・{' '}
+            <A href="https://github.com/lucleray/luc.im">Code on Github</A>
+          </Footer>
+        </LayoutPaddingDiv>
       </LayoutDiv>
     </>
   )

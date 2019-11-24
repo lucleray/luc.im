@@ -1,9 +1,19 @@
-import styled from 'styled-components/macro'
+import styled, { css } from 'styled-components/macro'
 import { Layout, H1, A, Spacer, theme, Toggle } from '../components/system'
 import photos from '../lib/photos'
 import * as countries from 'country-emoji'
 import color from 'color'
 import { useState } from 'react'
+
+const StyledSvg = styled.svg`
+  & rect {
+    fill: ${p => theme.light[p.color || 'blue']};
+  }
+
+  body.dark & rect {
+    fill: ${p => theme.dark[p.color || 'blue']};
+  }
+`
 
 const SmallGridSvg = props => {
   const rAxis = [
@@ -16,7 +26,7 @@ const SmallGridSvg = props => {
   const y = [40, 80, 120, 160, 200, 240]
 
   return (
-    <svg viewBox="0 0 180 300" {...props}>
+    <StyledSvg viewBox="0 0 180 300" {...props}>
       {x.map(x =>
         y.map(y => (
           <rect
@@ -24,7 +34,6 @@ const SmallGridSvg = props => {
             y={y}
             width="20"
             height="20"
-            fill={props.color}
             style={{
               transform: `rotate3d(
     ${rAxis.join(',')},
@@ -35,7 +44,7 @@ const SmallGridSvg = props => {
           />
         ))
       )}
-    </svg>
+    </StyledSvg>
   )
 }
 
@@ -49,14 +58,13 @@ const BigGridSvg = props => {
   const y = [40, 100, 160, 220]
 
   return (
-    <svg viewBox="0 0 180 300" {...props}>
+    <StyledSvg viewBox="0 0 180 300" {...props}>
       {y.map(y => (
         <rect
           x={30}
           y={y}
           width="40"
           height="40"
-          fill={props.color}
           style={{
             transform: `rotate3d(
 ${rAxis.join(',')},
@@ -66,16 +74,29 @@ scale(1)`
           }}
         />
       ))}
-    </svg>
+    </StyledSvg>
   )
 }
 
 const RotCard = styled.div`
   position: relative;
-  float: left;
+  display: inline-block;
   z-index: ${() => ~~(Math.random() * 1000)};
-  width: ${p => (p.small ? '350px' : '100%')};
-  transition: transform 0.2s ease 0.1s;
+  transition: transform 0.2s ease 0.1s
+
+  ${p =>
+    p.small
+      ? css`
+          width: 130px;
+
+          @media only screen and (min-width: 700px) {
+            width: 350px;
+          }
+        `
+      : css`
+          width: 100%;
+        `}
+
 
   transform-origin: 55% 43%;
   transform: rotate3d(
@@ -87,10 +108,20 @@ const RotCard = styled.div`
   &:hover {
     transform: rotate3d(
         ${p => p.rAxis.join(',')},
-        ${() => Math.random() * 12 + 5}deg
+        ${() => Math.random() * 8 - 1}deg
       )
-      scale(${p => (p.small ? '1.5' : '1.2')});
-    z-index: 1000;
+      scale(${p => (p.small ? '1.5' : '0.9')});
+  }
+
+  @media only screen and (min-width: 700px) {
+    &:hover {
+      transform: rotate3d(
+          ${p => p.rAxis.join(',')},
+          ${() => Math.random() * 12 + 5}deg
+        )
+        scale(${p => (p.small ? '1.5' : '1.2')});
+      z-index: 1000;
+    }
   }
 `
 
@@ -127,6 +158,9 @@ const ImgSide = styled.div`
 `
 
 const Img = props => {
+  const [, setCount] = useState(0)
+  const rerender = () => setCount(count => count + 1)
+
   const rAxis = [
     Math.random() * 7,
     Math.random() * 5 - 2,
@@ -143,33 +177,37 @@ const Img = props => {
       className="rotation-card"
       rAxis={rAxis}
       small={props.small}
-      onClick={() => props.setSmall(small => !small)}
+      onClick={rerender}
     >
       <img
         src={`/assets/photos/${props.file}`}
         alt={alt}
         style={{ width: '100%' }}
       />
-      <ImgSide where="top">
-        <Spacer h={1} />
-        <Label>{props.date}</Label>
-        <Spacer h={1} />
-      </ImgSide>
-      <ImgSide where="bottom">
-        <Spacer h={1} />
-        <Label>
-          <A
-            symbol={false}
-            color="fg"
-            underline={false}
-            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-              alt
-            )}`}
-          >
-            <b>{props.place}</b> {countryFlag}
-          </A>
-        </Label>
-      </ImgSide>
+      {!props.small && (
+        <>
+          <ImgSide where="top">
+            <Spacer h={1} />
+            <Label>{props.date}</Label>
+            <Spacer h={1} />
+          </ImgSide>
+          <ImgSide where="bottom">
+            <Spacer h={1} />
+            <Label>
+              <A
+                symbol={false}
+                color="fg"
+                underline={false}
+                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                  alt
+                )}`}
+              >
+                <b>{props.place}</b> {countryFlag}
+              </A>
+            </Label>
+          </ImgSide>
+        </>
+      )}
     </RotCard>
   )
 }
@@ -188,19 +226,17 @@ export default () => {
           onClick={() => setSmall(small => !small)}
           style={{ cursor: 'pointer', opacity: 1 }}
         >
-          {!small ? (
-            <SmallGridSvg width="25" color={theme.light.blue} />
-          ) : (
-            <BigGridSvg width="25" color={theme.light.blue} />
-          )}
+          {!small ? <SmallGridSvg width="25" /> : <BigGridSvg width="25" />}
         </span>
       </div>
 
       <Spacer v={8} />
 
-      {photos.map(photo => (
-        <Img small={small} setSmall={setSmall} key={photo.file} {...photo} />
-      ))}
+      <div style={{ textAlign: 'center' }}>
+        {photos.map(photo => (
+          <Img small={small} key={photo.file} {...photo} />
+        ))}
+      </div>
 
       <Spacer v={5} />
 
