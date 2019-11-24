@@ -98,7 +98,7 @@ export default () => (
     <main>
       <Presentation />
       <Articles />
-      {/* <Photos /> */}
+      <Photos />
       <Projects />
       <Links />
     </main>
