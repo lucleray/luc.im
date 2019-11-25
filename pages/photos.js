@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components/macro'
-import { Layout, H1, A, Spacer, theme, Toggle } from '../components/system'
+import styled from 'styled-components/macro'
+import { Layout, H1, A, Spacer, theme } from '../components/system'
 import photos from '../lib/photos'
 import * as countries from 'country-emoji'
 import color from 'color'
