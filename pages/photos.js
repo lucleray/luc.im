@@ -82,21 +82,10 @@ const RotCard = styled.div`
   position: relative;
   display: inline-block;
   z-index: ${() => ~~(Math.random() * 1000)};
-  transition: transform 0.2s ease 0.1s
-
-  ${p =>
-    p.small
-      ? css`
-          width: 130px;
-
-          @media only screen and (min-width: 700px) {
-            width: 350px;
-          }
-        `
-      : css`
-          width: 100%;
-        `}
-
+  transition: transform 0.2s ease 0.1s;
+  width: ${p => (p.small ? '33%' : '100%')};
+  font-size: ${p => (p.small ? '10px' : '20px')};
+  line-height: 1.3em;
 
   transform-origin: 55% 43%;
   transform: rotate3d(
@@ -111,16 +100,19 @@ const RotCard = styled.div`
         ${() => Math.random() * 8 - 1}deg
       )
       scale(${p => (p.small ? '1.5' : '0.9')});
+    z-index: 1000;
   }
 
   @media only screen and (min-width: 700px) {
+    font-size: 20px;
+    line-height: 1.3em;
+
     &:hover {
       transform: rotate3d(
           ${p => p.rAxis.join(',')},
           ${() => Math.random() * 12 + 5}deg
         )
         scale(${p => (p.small ? '1.5' : '1.2')});
-      z-index: 1000;
     }
   }
 `
@@ -130,7 +122,7 @@ const Label = styled.span`
     .fade(0.5)
     .string()};
   background-blend-mode: overlay;
-  padding: 3px 7px;
+  padding: 0.2em 0.4em;
   border-radius: 3px;
 
   body.dark & {
@@ -143,13 +135,13 @@ const Label = styled.span`
 const ImgSide = styled.div`
   position: absolute;
   text-align: ${p => (p.where === 'top' ? 'right' : 'left')};
-  padding-top: 5px;
+  /* padding-top: 0.1em; */
   width: 100%;
   left: 0;
   top: 0;
   transform: rotate(-90deg);
   transform-origin: 100% 0;
-  font-size: 14px;
+  font-size: 0.6em;
   opacity: 0;
 
   .rotation-card:hover & {
@@ -158,9 +150,6 @@ const ImgSide = styled.div`
 `
 
 const Img = props => {
-  const [, setCount] = useState(0)
-  const rerender = () => setCount(count => count + 1)
-
   const rAxis = [
     Math.random() * 7,
     Math.random() * 5 - 2,
@@ -173,26 +162,20 @@ const Img = props => {
   const alt = `${props.place ? `${props.place}, ` : ''}${countryName}`
 
   return (
-    <RotCard
-      className="rotation-card"
-      rAxis={rAxis}
-      small={props.small}
-      onClick={rerender}
-    >
+    <RotCard className="rotation-card" rAxis={rAxis} small={props.small}>
       <img
         src={`/assets/photos/${props.file}`}
         alt={alt}
         style={{ width: '100%' }}
       />
-      {!props.small && (
+      {true && (
         <>
           <ImgSide where="top">
-            <Spacer h={1} />
             <Label>{props.date}</Label>
-            <Spacer h={1} />
+            {/* <Spacer h={1} /> */}
           </ImgSide>
           <ImgSide where="bottom">
-            <Spacer h={1} />
+            {/* <Spacer h={1} /> */}
             <Label>
               <A
                 symbol={false}
@@ -213,7 +196,7 @@ const Img = props => {
 }
 
 export default () => {
-  const [small, setSmall] = useState(false)
+  const [small, setSmall] = useState(true)
 
   return (
     <Layout center wide={small} meta={{ title: 'Photos' }}>
@@ -226,7 +209,7 @@ export default () => {
           onClick={() => setSmall(small => !small)}
           style={{ cursor: 'pointer', opacity: 1 }}
         >
-          {!small ? <SmallGridSvg width="25" /> : <BigGridSvg width="25" />}
+          {small ? <SmallGridSvg width="25" /> : <BigGridSvg width="25" />}
         </span>
       </div>
 
