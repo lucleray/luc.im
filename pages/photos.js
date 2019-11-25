@@ -83,7 +83,7 @@ const RotCard = styled.div`
   display: inline-block;
   z-index: ${() => ~~(Math.random() * 1000)};
   transition: transform 0.2s ease 0.1s;
-  width: ${p => (p.small ? '33%' : '100%')};
+  width: ${p => (p.small ? '33%' : '90%')};
   font-size: ${p => (p.small ? '10px' : '20px')};
   line-height: 1.3em;
 
@@ -99,7 +99,7 @@ const RotCard = styled.div`
         ${p => p.rAxis.join(',')},
         ${() => Math.random() * 8 - 1}deg
       )
-      scale(${p => (p.small ? '1.5' : '0.9')});
+      scale(${p => (p.small ? '1.5' : '0.97')});
     z-index: 1000;
   }
 
@@ -135,7 +135,6 @@ const Label = styled.span`
 const ImgSide = styled.div`
   position: absolute;
   text-align: ${p => (p.where === 'top' ? 'right' : 'left')};
-  /* padding-top: 0.1em; */
   width: 100%;
   left: 0;
   top: 0;

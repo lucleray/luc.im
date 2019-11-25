@@ -49,7 +49,7 @@ const LayoutDiv = styled.div`
     !p.wide &&
     css`
       @media only screen and (min-width: 700px) {
-        width: 550px;
+        width: 660px;
       }
     `}
 `
