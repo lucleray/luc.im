@@ -6,7 +6,7 @@ import links from '../lib/links'
 
 const Presentation = () => (
   <section aria-labelledby="presentation-title">
-    <H1 id="presentation-title">hi, i'm luc test</H1>
+    <H1 id="presentation-title">hi, i'm luc test test</H1>
     <Card>
       I'm a french software engineer working at{' '}
       <A href="https://zeit.co">ZEIT</A>, building a platform for developers to
