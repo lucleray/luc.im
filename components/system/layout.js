@@ -3,7 +3,7 @@ import { A } from './a'
 import { Container, Footer } from './container'
 import { theme } from './theme'
 import Head from 'next/head'
-import ToggleDarkMode from '../toggle-dark-mode'
+import ThemeButton from '../theme-button'
 
 const GlobalStyle = createGlobalStyle`
   @font-face {
@@ -70,7 +70,7 @@ const Layout = props => {
         <LayoutPaddingDiv>
           <Container>{props.children}</Container>
           <Footer>
-            <ToggleDarkMode /> ・ Made with next.js and styled components ・{' '}
+            <ThemeButton /> ・ Made with next.js and styled components ・{' '}
             <A href="https://github.com/lucleray/luc.im">Code on Github</A>
           </Footer>
         </LayoutPaddingDiv>
