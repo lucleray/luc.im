@@ -1,87 +1,86 @@
-import styled from 'styled-components/macro'
-import { useState, useEffect, useRef } from 'react'
-import { theme } from './system'
+import { useRef } from 'react'
+import styled, { css } from 'styled-components/macro'
+import { theme } from './system/theme'
 
-const Toggle = styled.div`
-  display: inline-block;
+const ThemeButtonStyled = styled.button`
+  /* reset style */
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  font-size: inherit;
+  line-height: 1em;
+  cursor: pointer;
 
-  input {
-    opacity: 0;
-    width: 0;
-    height: 0;
+  color: ${theme.light.blue};
+  /* border-bottom: 1px solid ${theme.light.blue}; */
+
+  &:hover {
+  box-shadow: ${theme.light.lightFg2} 0px 0px 90px;
   }
 
-  .track {
-    width: 26px;
-    height: 14px;
-    position: relative;
-    cursor: pointer;
-    border-radius: 16px;
-    background: ${theme.light.lightFg2};
+  /* background: ${theme.dark.bg}; */
+  padding: 5px;
+  border-radius: 2px;
+  color: ${theme.light.lightFg};
+  border: 1px solid ${theme.light.lightFg2};
+
+  body.dark & {
+  color: ${theme.dark.lightFg};
+  border: 1px solid ${theme.dark.lightFg2};
+
+  &:hover {
+  box-shadow: ${theme.dark.lightFg} 0px 0px 50px;
+  }
+  }
+
+  ${p =>
+    p.symbol &&
+    css`
+      &::after {
+        content: " ${p => p.symbol}";
+        opacity: 0.5;
+      }
+    `}
+
+  body.dark &.button-set-light {
     display: inline-block;
   }
 
-  .thumb {
-    position: absolute;
-    top: 1px;
-    left: 1px;
-    width: 12px;
-    height: 12px;
-    position: relative;
-    border-radius: 14px;
-    background: ${theme.light.bg};
-    box-shadow: ${theme.light.lightFg2} 0px 1px 2px 0px;
-    transition: left 0.28s cubic-bezier(0, 0, 0.2, 1) 0s;
-  }
-
-  body.dark & .track {
-    background: ${theme.dark.blue};
-  }
-
-  body.dark & .thumb {
-    background: ${theme.dark.bg};
-    box-shadow: none;
-    left: 13px;
-  }
-
-  &.focus .thumb,
-  body.dark &.focus .thumb {
-    box-shadow: 0px 0px 2px 3px #0099e0;
+  body.dark &.button-set-dark,
+  body &.button-set-light {
+    display: none;
   }
 `
 
-export default function ToggleDarkMode(props) {
-  const [dark, setDark] = useState(false)
-  const [focus, setFocus] = useState(false)
-  const input = useRef(null)
-
-  useEffect(() => {
-    setDark(window.__darkMode)
-  }, [])
+export default function ThemeButton() {
+  const darkButton = useRef()
+  const lightButton = useRef()
 
   return (
-    <Toggle
-      onClick={() => {
-        input.current.focus()
-        input.current.click()
-      }}
-      className={focus ? 'focus' : ''}
-    >
-      <input
-        type="checkbox"
-        ref={input}
-        checked={dark}
-        onFocus={() => setFocus(true)}
-        onBlur={() => setFocus(false)}
-        onChange={() => {
+    <>
+      <ThemeButtonStyled
+        ref={darkButton}
+        symbol="☾"
+        className="button-set-dark"
+        onClick={() => {
           window.__toggleDarkMode()
-          setDark(window.__darkMode)
+          lightButton.current.focus()
         }}
-        {...props}
-      />
-      <div className="track">
-        <div className="thumb" />
-      </div>
-    </Toggle>
+      >
+        Dark mode
+      </ThemeButtonStyled>
+      <ThemeButtonStyled
+        ref={lightButton}
+        symbol="☀︎"
+        className="button-set-light"
+        onClick={() => {
+          window.__toggleDarkMode()
+          darkButton.current.focus()
+        }}
+      >
+        Light mode
+      </ThemeButtonStyled>
+    </>
   )
 }

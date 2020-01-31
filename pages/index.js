@@ -1,5 +1,4 @@
 import { Layout, H1, H2, H3, Card, A } from '../components/system'
-import ToggleDarkMode from '../components/toggle-dark-mode'
 import articles from '../lib/articles'
 import projects from '../lib/projects'
 import links from '../lib/links'
@@ -28,12 +27,6 @@ const Presentation = () => (
       <A href="https://github.com/lucleray">Github</A> and{' '}
       <A href="https://www.linkedin.com/in/lucleray/">LinkedIn</A>.
     </Card>
-    <div style={{ textAlign: 'center', marginTop: '3em' }}>
-      <label htmlFor="toggle-dark-mode" style={{ cursor: 'pointer' }}>
-        Browse in Dark Mode?&nbsp;&nbsp;
-      </label>
-      <ToggleDarkMode id="toggle-dark-mode" />
-    </div>
   </section>
 )
 
