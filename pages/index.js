@@ -21,11 +21,7 @@ const Presentation = () => (
     <Card>
       Previously, I cofounded <A href="https://sequence.work">Sequence.work</A>,
       a start-up helping data scientists outsource manual and repetitive tasks
-      to the crowd. You can read more in my{' '}
-      <A href="/assets/resume-luc-leray.pdf" external>
-        CV
-      </A>{' '}
-      ✍.
+      to the crowd.
     </Card>
     <Card>
       I am on <A href="https://twitter.com/lucleray">Twitter</A>,{' '}
@@ -34,7 +30,7 @@ const Presentation = () => (
     </Card>
     <div style={{ textAlign: 'center', marginTop: '3em' }}>
       <label htmlFor="toggle-dark-mode" style={{ cursor: 'pointer' }}>
-        Do you prefer to browse this website in Dark Mode?&nbsp;&nbsp;
+        Browse in Dark Mode?&nbsp;&nbsp;
       </label>
       <ToggleDarkMode id="toggle-dark-mode" />
     </div>
