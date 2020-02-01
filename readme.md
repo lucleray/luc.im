@@ -1,8 +1,7 @@
 <b>Deploy yours:</b><br /><a href="https://zeit.co/new/project?template=lucleray/luc.im"><img alt="Deploy to ZEIT Now" src="https://zeit.co/button" /></a>
 
 [Local Setup](#local-setup)<br />
-[Deploy](#deploy)<br />
-[More](#more)
+[Deploy](#deploy)
 
 ### Local setup
 
@@ -23,10 +22,3 @@ yarn dev
 ### Deploy
 
 The `master` branch will be automatically deployed when you're pushing commits there.
-
-### More
-
-This project is using :
-
-- next.js (framework)
-- styled-components (css-in-js)
