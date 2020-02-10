@@ -48,7 +48,7 @@ const Photos = () => (
   <section aria-labelledby="photos-title">
     <H2 id="photos-title">photos</H2>
     <div style={{ textAlign: 'center', marginTop: '50px' }}>
-      <A href="/photos">Go to the dedicated page →</A>
+      <A href="/photos">Go to the Photos page →</A>
     </div>
   </section>
 )
