@@ -19,8 +19,7 @@ const Presentation = () => (
     </Card>
     <Card>
       Previously, I cofounded <A href="https://sequence.work">Sequence.work</A>,
-      a start-up helping data scientists outsource manual and repetitive tasks
-      to the crowd.
+      a start-up that helped data scientists to annotate datasets.
     </Card>
     <Card>
       I am on <A href="https://twitter.com/lucleray">Twitter</A>,{' '}
