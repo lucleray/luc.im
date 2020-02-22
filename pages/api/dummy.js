@@ -16,5 +16,10 @@ export default (req, res) => {
     )
   }
 
+  if (req.method === 'OPTIONS') {
+    res.end()
+    return
+  }
+
   res.json({ method, headers, body })
 }
