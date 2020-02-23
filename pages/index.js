@@ -2,6 +2,7 @@ import { Layout, H1, H2, H3, Card, A } from '../components/system'
 import articles from '../lib/articles'
 import projects from '../lib/projects'
 import links from '../lib/links'
+import missing from './missing'
 
 const Presentation = () => (
   <section aria-labelledby="presentation-title">
