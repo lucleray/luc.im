@@ -11,7 +11,7 @@ const light2SecondaryColor = '#000'
 
 const theme = {
   font:
-    'Inter UI,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol',
+    'Inter,-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol',
   light: {
     fg: lightMainColor,
     lightFg: color(lightMainColor)

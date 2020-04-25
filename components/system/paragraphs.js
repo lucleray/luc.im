@@ -6,6 +6,7 @@ const H1 = styled.h1`
   text-align: center;
   color: ${theme.light.blue};
   margin-bottom: 0.7em;
+  font-weight: 500;
 
   body.dark & {
     color: ${theme.dark.blue};
@@ -18,6 +19,7 @@ const H2 = styled.h2`
   text-align: center;
   color: ${theme.light.blue};
   margin-bottom: 0.7em;
+  font-weight: 500;
 
   body.dark & {
     color: ${theme.dark.blue};
@@ -30,6 +32,7 @@ const H3 = styled.h3`
   opacity: 0.4;
   margin-top: 0.7em;
   margin-bottom: 4em;
+  font-weight: 500;
 
   body.dark & {
     color: ${theme.dark.blue};

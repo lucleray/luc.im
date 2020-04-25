@@ -4,19 +4,9 @@ import { Container, Footer } from './container'
 import { theme } from './theme'
 import Head from 'next/head'
 import ThemeButton from '../theme-button'
+import FontStyle from './font'
 
 const GlobalStyle = createGlobalStyle`
-  @font-face {
-    font-family: "Inter UI";
-    font-style: normal;
-    font-weight: 400;
-    src: 
-      local("Inter UI"), 
-      url("/assets/font/Inter-Regular.woff2") format("woff2"),
-      url("/assets/font/Inter-Regular.woff") format("woff");
-    font-display: swap;
-  }
-
   body {
     font-family: ${theme.font};
     color: ${theme.light.fg};
@@ -66,6 +56,7 @@ const Layout = props => {
         <title>{props.meta.title}</title>
       </Head>
       <GlobalStyle />
+      <FontStyle />
       <LayoutDiv {...props}>
         <LayoutPaddingDiv>
           <Container>{props.children}</Container>
