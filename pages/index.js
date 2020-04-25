@@ -22,7 +22,7 @@ const Presentation = () => (
       a start-up that helped data scientists to annotate datasets.
     </Card>
     <Card>
-      I am on <A href="https://twitter.com/lucleray">Twitter</A>,{' '}
+      I am on <A href="https://twitter.com/lucleray">Twitter</A> and{' '}
       <A href="https://github.com/lucleray">Github</A>.
     </Card>
   </section>
