@@ -79,12 +79,6 @@ export default class MyDocument extends Document {
             content="https://lucleray.me/assets/cover.png"
           />
           {this.props.styleTags}
-          <script
-            async
-            defer
-            type="text/javascript"
-            src="https://plausible.io/js/plausible.js"
-          />
         </Head>
         <body>
           <script
