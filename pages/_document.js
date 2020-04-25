@@ -46,6 +46,13 @@ export default class MyDocument extends Document {
     return (
       <html lang="en">
         <Head>
+          <link
+            rel="preload"
+            href="/assets/font/inter-var-latin.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin="anonymous"
+          />
           <meta
             name="viewport"
             content="width=device-width, initial-scale=1.0"
