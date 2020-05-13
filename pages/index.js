@@ -8,7 +8,7 @@ const Presentation = () => (
     <H1 id="presentation-title">hi, i'm luc</H1>
     <Card>
       I'm a french software engineer working at{' '}
-      <A href="https://vercel.com">Vercel</A>, building a platform for developers to
+      <A href="https://vercel.com">Vercel</A>, building a platform for great developers to
       deploy their applications to the cloud.
     </Card>
     <Card>
