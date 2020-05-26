@@ -14,7 +14,7 @@ const Presentation = () => (
     <Card>
       I started learning about building websites{' '}
       <A href="http://lu.leray.free.fr/acceuil.html">15 years ago</A> with
-      XHMTL, <A href="https://notepad-plus-plus.org/">Notepad++</A> and{' '}
+      XHTML, <A href="https://notepad-plus-plus.org/">Notepad++</A> and{' '}
       <A href="http://www.easyphp.org/">EasyPHP</A>.
     </Card>
     <Card>
