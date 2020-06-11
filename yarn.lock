@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@ampproject/toolbox-core@^2.4.0-alpha.1", "@ampproject/toolbox-core@^2.5.1":
+"@ampproject/toolbox-core@^2.5.1":
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/@ampproject/toolbox-core/-/toolbox-core-2.5.1.tgz#f01895995a722254807106a3e1422cf1c6c25c13"
   integrity sha512-XMt7Y7/Ga5HskqILTNwAmkrQSXM6KJ4Xf3fiEMy/yTldVg51SebAeTSzjKH+oisKhSw00Ogo4VL7AB6a2IrT3g==
@@ -10,25 +10,28 @@
     cross-fetch "3.0.4"
     lru-cache "5.1.1"
 
-"@ampproject/toolbox-optimizer@2.4.0":
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/@ampproject/toolbox-optimizer/-/toolbox-optimizer-2.4.0.tgz#16bde73913f8b58a9bf617d37cdc1f21a1222f38"
-  integrity sha512-Bmb+eMF9/VB3H0qPdZy0V5yPSkWe5RwuGbXiMxzqYdJgmMat+NL75EtozQnlpa0uBlESnOGe7bMojm/SA1ImrA==
+"@ampproject/toolbox-optimizer@2.5.1":
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/@ampproject/toolbox-optimizer/-/toolbox-optimizer-2.5.1.tgz#0f5897d77d0e73957541c85f0f3f49a73e3449fe"
+  integrity sha512-C4pYFt9K9+sXngBeYB/+zrW+38mMhjG8Xu3iTO13WsPL6Ym/UNopLjmhK99mxsnQgn/lkzcACY0n7QH7WMp4JA==
   dependencies:
-    "@ampproject/toolbox-core" "^2.4.0-alpha.1"
-    "@ampproject/toolbox-runtime-version" "^2.4.0-alpha.1"
+    "@ampproject/toolbox-core" "^2.5.1"
+    "@ampproject/toolbox-runtime-version" "^2.5.1"
     "@ampproject/toolbox-script-csp" "^2.3.0"
     "@ampproject/toolbox-validator-rules" "^2.3.0"
+    cross-fetch "3.0.4"
     cssnano "4.1.10"
+    dom-serializer "1.0.1"
     domhandler "3.0.0"
     domutils "2.1.0"
     htmlparser2 "4.1.0"
     lru-cache "5.1.1"
     normalize-html-whitespace "1.0.0"
+    postcss "7.0.32"
     postcss-safe-parser "4.0.2"
-    terser "4.6.13"
+    terser "4.7.0"
 
-"@ampproject/toolbox-runtime-version@^2.4.0-alpha.1":
+"@ampproject/toolbox-runtime-version@^2.5.1":
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/@ampproject/toolbox-runtime-version/-/toolbox-runtime-version-2.5.1.tgz#904280984a75925ff1d7a851ab15645efaa5cd90"
   integrity sha512-udkXpuJX+f0ogd/GFlpifXg5K+BSyWpou9gg53uxoSpPTlPO4ZPepJ4PLfgdq0oxMq7f/IDN1YN5ZFFNJHbrzw==
@@ -1201,10 +1204,10 @@
   resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.7.5.tgz#77211291c1900a700b8a78cfafda3160d76949ed"
   integrity sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg==
 
-"@next/react-dev-overlay@9.4.5-canary.2":
-  version "9.4.5-canary.2"
-  resolved "https://registry.yarnpkg.com/@next/react-dev-overlay/-/react-dev-overlay-9.4.5-canary.2.tgz#2eb32cd0698784d726a9e8769e3b739406ecb9b1"
-  integrity sha512-qJFjUe8DiRvFTS3SyLJOrXp5twLV8TFOxLL8hGuUPcDqsdg7gQYoUqIjHSqzGD9b+kxHKbIRxSmP649Q7TSGgQ==
+"@next/react-dev-overlay@9.4.5-canary.11":
+  version "9.4.5-canary.11"
+  resolved "https://registry.yarnpkg.com/@next/react-dev-overlay/-/react-dev-overlay-9.4.5-canary.11.tgz#2d6df1d16200e05b95ab16ca13ac570087a19a1a"
+  integrity sha512-oEKPL2aMk6aJ+BufN/MC3lsbGIdu+3HVKCzcTBKSCY8baIyEgpr43GAFFXJSMhtmjqJWZiS4TapwO2Xu2KgFwA==
   dependencies:
     "@babel/code-frame" "7.8.3"
     ally.js "1.4.1"
@@ -1217,10 +1220,10 @@
     stacktrace-parser "0.1.10"
     strip-ansi "6.0.0"
 
-"@next/react-refresh-utils@9.4.5-canary.2":
-  version "9.4.5-canary.2"
-  resolved "https://registry.yarnpkg.com/@next/react-refresh-utils/-/react-refresh-utils-9.4.5-canary.2.tgz#5ed1d480fea75d17f004aaeafaf18e4f6acba185"
-  integrity sha512-HeF7rmH3uxXLONFhRVxwGiZRPwtx9mhkhBbEk+r/yBaU/xISUIkEwyfqQEP1WS3K1/BZE3PICb91y3NRBgh1Kw==
+"@next/react-refresh-utils@9.4.5-canary.11":
+  version "9.4.5-canary.11"
+  resolved "https://registry.yarnpkg.com/@next/react-refresh-utils/-/react-refresh-utils-9.4.5-canary.11.tgz#003fcbfae82c78fb8896dcece65a75079ebb54a7"
+  integrity sha512-LmYnpgWGcCiluLeyn5MXN7vR5ATR0gHw4a8ibB447OkqOx5i1+WZ5ccOEjDMM3qEz4BgdjyFxM8gTgN6EhEQXQ==
 
 "@types/color-name@^1.1.1":
   version "1.1.1"
@@ -2519,6 +2522,15 @@ dom-serializer@0, dom-serializer@^0.2.1:
   integrity sha512-2/xPb3ORsQ42nHYiSunXkDjPLBaEj/xTwUO4B7XCZQTRk7EBtTOPaygh10YAAh2OI1Qrp6NWfpAhzswj0ydt9g==
   dependencies:
     domelementtype "^2.0.1"
+    entities "^2.0.0"
+
+dom-serializer@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/dom-serializer/-/dom-serializer-1.0.1.tgz#79695eb49af3cd8abc8d93a73da382deb1ca0795"
+  integrity sha512-1Aj1Qy3YLbdslkI75QEOfdp9TkQ3o8LRISAzxOibjBs/xWwr1WxZFOQphFkZuepHFGo+kB8e5FVJSS0faAJ4Rw==
+  dependencies:
+    domelementtype "^2.0.1"
+    domhandler "^3.0.0"
     entities "^2.0.0"
 
 domain-browser@^1.1.1:
@@ -3888,12 +3900,12 @@ next-tick@~1.0.0:
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
   integrity sha1-yobR/ogoFpsBICCOPchCS524NCw=
 
-next@9.4.5-canary.2:
-  version "9.4.5-canary.2"
-  resolved "https://registry.yarnpkg.com/next/-/next-9.4.5-canary.2.tgz#c39adb4307f155d0e098ac9d5fa8e471950fdfbf"
-  integrity sha512-WPOnx0edg1VIMtH2meUGkHZJw82SEYi6B7ZrIMzBdCnygELN+/OR9Ugm+NVKFa2BpdfCtwqDI5X3BHXubqIXAQ==
+next@^9.4.5-canary.11:
+  version "9.4.5-canary.11"
+  resolved "https://registry.yarnpkg.com/next/-/next-9.4.5-canary.11.tgz#293df2170d19713abeab8a6130ac859b8ca88586"
+  integrity sha512-UxPlaQ4ATIIWeV99ynxjMeNjO4yy5k2i7PwxVAAGyTa32YnGhzq+/K65+k1OD1BT4oDdY9Bpg6t1oh2shVLKew==
   dependencies:
-    "@ampproject/toolbox-optimizer" "2.4.0"
+    "@ampproject/toolbox-optimizer" "2.5.1"
     "@babel/code-frame" "7.8.3"
     "@babel/core" "7.7.7"
     "@babel/plugin-proposal-class-properties" "7.8.3"
@@ -3911,8 +3923,8 @@ next@9.4.5-canary.2:
     "@babel/preset-typescript" "7.9.0"
     "@babel/runtime" "7.9.6"
     "@babel/types" "7.9.6"
-    "@next/react-dev-overlay" "9.4.5-canary.2"
-    "@next/react-refresh-utils" "9.4.5-canary.2"
+    "@next/react-dev-overlay" "9.4.5-canary.11"
+    "@next/react-refresh-utils" "9.4.5-canary.11"
     babel-plugin-syntax-jsx "6.18.0"
     babel-plugin-transform-define "2.0.0"
     babel-plugin-transform-react-remove-prop-types "0.4.24"
@@ -4645,6 +4657,15 @@ postcss@7.0.29:
   version "7.0.29"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.29.tgz#d3a903872bd52280b83bce38cdc83ce55c06129e"
   integrity sha512-ba0ApvR3LxGvRMMiUa9n0WR4HjzcYm7tS+ht4/2Nd0NLtHpPIH77fuB9Xh1/yJVz9O/E/95Y/dn8ygWsyffXtw==
+  dependencies:
+    chalk "^2.4.2"
+    source-map "^0.6.1"
+    supports-color "^6.1.0"
+
+postcss@7.0.32:
+  version "7.0.32"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.32.tgz#4310d6ee347053da3433db2be492883d62cec59d"
+  integrity sha512-03eXong5NLnNCD05xscnGKGDZ98CyzoqPSMjOe6SuoQY7Z2hIj0Ld1g/O/UQRuOle2aRtiIRDg9tDcTGAkLfKw==
   dependencies:
     chalk "^2.4.2"
     source-map "^0.6.1"
@@ -5551,10 +5572,10 @@ terser-webpack-plugin@^1.4.3:
     webpack-sources "^1.4.0"
     worker-farm "^1.7.0"
 
-terser@4.6.13:
-  version "4.6.13"
-  resolved "https://registry.yarnpkg.com/terser/-/terser-4.6.13.tgz#e879a7364a5e0db52ba4891ecde007422c56a916"
-  integrity sha512-wMvqukYgVpQlymbnNbabVZbtM6PN63AzqexpwJL8tbh/mRT9LE5o+ruVduAGL7D6Fpjl+Q+06U5I9Ul82odAhw==
+terser@4.7.0:
+  version "4.7.0"
+  resolved "https://registry.yarnpkg.com/terser/-/terser-4.7.0.tgz#15852cf1a08e3256a80428e865a2fa893ffba006"
+  integrity sha512-Lfb0RiZcjRDXCC3OSHJpEkxJ9Qeqs6mp2v4jf2MHfy8vGERmVDuvjXdd/EnP5Deme5F2yBRBymKmKHCBg2echw==
   dependencies:
     commander "^2.20.0"
     source-map "~0.6.1"
