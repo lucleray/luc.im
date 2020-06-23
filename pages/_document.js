@@ -86,6 +86,14 @@ export default class MyDocument extends Document {
             content="https://lucleray.me/assets/cover.png"
           />
           {this.props.styleTags}
+          {process.env.NODE_ENV === 'production' && (
+            <script
+              async
+              defer
+              data-domain="luc.im"
+              src="https://plausible.io/js/plausible.js"
+            ></script>
+          )}
         </Head>
         <body>
           <script
@@ -95,35 +103,6 @@ export default class MyDocument extends Document {
           />
           <Main />
           <NextScript />
-          {process.env.NODE_ENV === 'production' && (
-            <>
-              <script
-                id="chiffre:analytics-config"
-                type="application/json"
-                dangerouslySetInnerHTML={{
-                  __html: `{
-                "publicKey": "pk.f-oltyaKOEmD4jMgpjOoKRe3XjMsNzqRlRtTvKLrAVo",
-                "pushURL": "https://push.chiffre.io/event/eiLeMB2AULuXQlMy"
-              }`
-                }}
-              />
-              <script
-                src="https://embed.chiffre.io/analytics.js"
-                crossOrigin="anonymous"
-                async
-              ></script>
-              <noscript>
-                <img
-                  src="https://push.chiffre.io/noscript/eiLeMB2AULuXQlMy"
-                  alt="Chiffre.io anonymous visit counting for clients without JavaScript"
-                  crossOrigin="anonymous"
-                  width="1px"
-                  height="1px"
-                  style={{ display: 'none' }}
-                />
-              </noscript>
-            </>
-          )}
         </body>
       </html>
     )
