@@ -86,12 +86,14 @@ export default class MyDocument extends Document {
             content="https://lucleray.me/assets/cover.png"
           />
           {this.props.styleTags}
-          <script
-            async
-            defer
-            data-domain="luc.im"
-            src="https://plausible.io/js/plausible.js"
-          ></script>
+          {process.env.NODE_ENV === 'production' && (
+            <script
+              async
+              defer
+              data-domain="luc.im"
+              src="https://plausible.io/js/plausible.js"
+            ></script>
+          )}
         </Head>
         <body>
           <script
