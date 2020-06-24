@@ -1,5 +1,6 @@
 module.exports = {
   experimental: {
-    reactMode: 'concurrent'
+    reactMode: 'concurrent',
+    unstable_runtimeJS: false
   }
 }
