@@ -61,8 +61,9 @@ const Layout = props => {
         <LayoutPaddingDiv>
           <Container>{props.children}</Container>
           <Footer>
-            <ThemeButton /> ・ Made with next.js and styled components ・{' '}
-            <A href="https://github.com/lucleray/luc.im">Code on Github</A>
+            <ThemeButton /> ・{' '}
+            <A href="https://github.com/lucleray/luc.im">Code</A> ・{' '}
+            <A href="https://plausible.io/luc.im">Stats</A>
           </Footer>
         </LayoutPaddingDiv>
       </LayoutDiv>
