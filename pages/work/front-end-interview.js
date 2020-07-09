@@ -1,6 +1,10 @@
 import { A, H1, H3, Card, Layout } from '../../components/system'
 import JSFiddle from '../../components/jsfiddle'
 
+export const config = {
+  unstable_runtimeJS: false
+}
+
 export default () => (
   <Layout meta={{ title: 'Front-end job interview - Luc Leray' }}>
     <H1>Take-away project for a "front-end" job interview</H1>
