@@ -194,6 +194,10 @@ const Img = props => {
   )
 }
 
+export const config = {
+  unstable_runtimeJS: false
+}
+
 export default () => {
   const [small, setSmall] = useState(true)
 

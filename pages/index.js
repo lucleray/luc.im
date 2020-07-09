@@ -8,8 +8,8 @@ const Presentation = () => (
     <H1 id="presentation-title">hi, i'm luc</H1>
     <Card>
       I'm a french software engineer working at{' '}
-      <A href="https://vercel.com">Vercel</A>, building a platform for developers to
-      deploy their applications to the cloud.
+      <A href="https://vercel.com">Vercel</A>, building a platform for
+      developers to deploy their applications to the cloud.
     </Card>
     <Card>
       I started learning about building websites{' '}
@@ -79,6 +79,10 @@ const Links = () => (
     </div>
   </section>
 )
+
+export const config = {
+  unstable_runtimeJS: false
+}
 
 export default () => (
   <Layout meta={{ title: 'Luc Leray' }}>
