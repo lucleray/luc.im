@@ -1206,10 +1206,10 @@
   resolved "https://registry.yarnpkg.com/@emotion/unitless/-/unitless-0.7.5.tgz#77211291c1900a700b8a78cfafda3160d76949ed"
   integrity sha512-OWORNpfjMsSSUBVrRBVGECkhWcULOAJz9ZW8uK9qgxD+87M7jHRcvh/A96XXNhXTLmKcoYSQtBEX7lHMO7YRwg==
 
-"@next/react-dev-overlay@9.4.5-canary.18":
-  version "9.4.5-canary.18"
-  resolved "https://registry.yarnpkg.com/@next/react-dev-overlay/-/react-dev-overlay-9.4.5-canary.18.tgz#794b6e304ae3b977d6f831cdd24ac27ca15563b2"
-  integrity sha512-YK24EX42yj9BuKsNgOjTTLFWjrIpS/rkj9ew6Tb8jNX4YoBNH7Vw/HPDtFhqBT60rl6Gc8H8OybTdol1MjtrlA==
+"@next/react-dev-overlay@9.4.5-canary.30":
+  version "9.4.5-canary.30"
+  resolved "https://registry.yarnpkg.com/@next/react-dev-overlay/-/react-dev-overlay-9.4.5-canary.30.tgz#2d13ebf56ea72a2ac6937ee7d84d9e2b9b2351af"
+  integrity sha512-dNdRUHFozcfk0QD9nKTUapyF5hzLigzOy2i1cXUAS4lr3C3QlK5yvmTHomLQv+rphFGdpF+ywLw6EtL+qkyAqA==
   dependencies:
     "@babel/code-frame" "7.8.3"
     ally.js "1.4.1"
@@ -1222,10 +1222,10 @@
     stacktrace-parser "0.1.10"
     strip-ansi "6.0.0"
 
-"@next/react-refresh-utils@9.4.5-canary.18":
-  version "9.4.5-canary.18"
-  resolved "https://registry.yarnpkg.com/@next/react-refresh-utils/-/react-refresh-utils-9.4.5-canary.18.tgz#19093d6d0ccf13b4eb45c6d08d29a69f48efc741"
-  integrity sha512-xfr28jTPaTk74YWRVDquk1uNWc5AmJS2YMeT3TLNFuOWODdI7FKeYVXfTtyEDriPXEJgcE/0cEFNrKLiody8Ng==
+"@next/react-refresh-utils@9.4.5-canary.30":
+  version "9.4.5-canary.30"
+  resolved "https://registry.yarnpkg.com/@next/react-refresh-utils/-/react-refresh-utils-9.4.5-canary.30.tgz#2f96f5eafcbe603925ba35246eb15689aa4add86"
+  integrity sha512-ntYdp1zIdDhHy6ajuoBvyEjO5GQKbvxZej3jXvCeKenfIcURa2AYpkQ/1QdciFVxh2TH8NbJSbCfw9SUDiPrCg==
 
 "@types/color-name@^1.1.1":
   version "1.1.1"
@@ -2400,6 +2400,21 @@ cssnano-preset-default@^4.0.7:
     postcss-reduce-transforms "^4.0.2"
     postcss-svgo "^4.0.2"
     postcss-unique-selectors "^4.0.1"
+
+cssnano-preset-simple@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/cssnano-preset-simple/-/cssnano-preset-simple-1.1.3.tgz#c185f915afcfb803e78e357df48cc77f949eb1d4"
+  integrity sha512-7iDiM+OSkDlTrH/xGw748mr7FdQtFAy6qFRlTjJevAsG536DPOMeaDucJMqWzyAhcem0VQkTGveUk3bo3ux6hA==
+  dependencies:
+    postcss "^7.0.32"
+
+cssnano-simple@1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/cssnano-simple/-/cssnano-simple-1.0.4.tgz#2d56225795f4afbbb9c21df953cb43df6c589ae1"
+  integrity sha512-Em/QujEpiqfjT3wksbyHTYpBF2l7lfYuUiLjtCwurc6NqRFb4N/VZjC3djNuO7poFpO410tTcpJ38Qn8xWadcA==
+  dependencies:
+    cssnano-preset-simple "^1.1.3"
+    postcss "^7.0.32"
 
 cssnano-util-get-arguments@^4.0.0:
   version "4.0.0"
@@ -3897,10 +3912,10 @@ nanomatch@^1.2.9:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
-native-url@0.3.1:
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/native-url/-/native-url-0.3.1.tgz#5045c65d0eb4c3ee548d48e3cb50797eec5a3c54"
-  integrity sha512-VL0XRW8nNBdSpxqZCbLJKrLHmIMn82FZ8pJzriJgyBmErjdEtrUX6eZAJbtHjlkMooEWUV+EtJ0D5tOP3+1Piw==
+native-url@0.3.4:
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/native-url/-/native-url-0.3.4.tgz#29c943172aed86c63cee62c8c04db7f5756661f8"
+  integrity sha512-6iM8R99ze45ivyH8vybJ7X0yekIcPf5GgLV5K0ENCbmRcaRIDoj37BC8iLEmaaBfqqb8enuZ5p0uhY+lVAbAcA==
   dependencies:
     querystring "^0.2.0"
 
@@ -3914,10 +3929,10 @@ next-tick@~1.0.0:
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
   integrity sha1-yobR/ogoFpsBICCOPchCS524NCw=
 
-next@^9.4.5-canary.18:
-  version "9.4.5-canary.18"
-  resolved "https://registry.yarnpkg.com/next/-/next-9.4.5-canary.18.tgz#0579808708c4a6961774178bb46f8a6a98536f59"
-  integrity sha512-1hRdkZ9v4VwjVQUfsfUxUBEmY6efK8xa+JkQ5deJfokFh70Lp4FMUKg+wZm3IwkWM58//EkhzwWA0/Wk9Aa63w==
+next@^9.4.5-canary.30:
+  version "9.4.5-canary.30"
+  resolved "https://registry.yarnpkg.com/next/-/next-9.4.5-canary.30.tgz#5f403c6c44779ff775824cce1c79b4ed0683d31e"
+  integrity sha512-f0yQCYZTx1Y9b0lmZpyYcbtg7LzTRiLvVYMcPzNMgD4OJN/KgswKwnMwBSaUNUAW/2fCy7nAJS43cw6DnexDSQ==
   dependencies:
     "@ampproject/toolbox-optimizer" "2.5.3"
     "@babel/code-frame" "7.8.3"
@@ -3937,8 +3952,8 @@ next@^9.4.5-canary.18:
     "@babel/preset-typescript" "7.9.0"
     "@babel/runtime" "7.9.6"
     "@babel/types" "7.9.6"
-    "@next/react-dev-overlay" "9.4.5-canary.18"
-    "@next/react-refresh-utils" "9.4.5-canary.18"
+    "@next/react-dev-overlay" "9.4.5-canary.30"
+    "@next/react-refresh-utils" "9.4.5-canary.30"
     babel-plugin-syntax-jsx "6.18.0"
     babel-plugin-transform-define "2.0.0"
     babel-plugin-transform-react-remove-prop-types "0.4.24"
@@ -3946,15 +3961,16 @@ next@^9.4.5-canary.18:
     cacache "13.0.1"
     chokidar "2.1.8"
     css-loader "3.5.3"
+    cssnano-simple "1.0.4"
     find-cache-dir "3.3.1"
     jest-worker "24.9.0"
     loader-utils "2.0.0"
     mini-css-extract-plugin "0.8.0"
     mkdirp "0.5.3"
-    native-url "0.3.1"
+    native-url "0.3.4"
     neo-async "2.6.1"
     pnp-webpack-plugin "1.6.4"
-    postcss "7.0.29"
+    postcss "7.0.32"
     prop-types "15.7.2"
     prop-types-exact "1.2.0"
     react-is "16.13.1"
@@ -4667,16 +4683,7 @@ postcss@7.0.21:
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-postcss@7.0.29:
-  version "7.0.29"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.29.tgz#d3a903872bd52280b83bce38cdc83ce55c06129e"
-  integrity sha512-ba0ApvR3LxGvRMMiUa9n0WR4HjzcYm7tS+ht4/2Nd0NLtHpPIH77fuB9Xh1/yJVz9O/E/95Y/dn8ygWsyffXtw==
-  dependencies:
-    chalk "^2.4.2"
-    source-map "^0.6.1"
-    supports-color "^6.1.0"
-
-postcss@7.0.32:
+postcss@7.0.32, postcss@^7.0.32:
   version "7.0.32"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.32.tgz#4310d6ee347053da3433db2be492883d62cec59d"
   integrity sha512-03eXong5NLnNCD05xscnGKGDZ98CyzoqPSMjOe6SuoQY7Z2hIj0Ld1g/O/UQRuOle2aRtiIRDg9tDcTGAkLfKw==
