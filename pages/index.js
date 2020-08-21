@@ -3,8 +3,6 @@ import articles from '../lib/articles'
 import projects from '../lib/projects'
 import links from '../lib/links'
 
-import
-
 const Presentation = () => (
   <section aria-labelledby="presentation-title">
     <H1 id="presentation-title">hi, i'm luc</H1>
