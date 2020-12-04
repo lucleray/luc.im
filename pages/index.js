@@ -7,7 +7,7 @@ const Presentation = () => (
   <section aria-labelledby="presentation-title">
     <H1 id="presentation-title">hi, i'm luc</H1>
     <Card>
-      I'm a french software engineer working at{' '}
+      I'm a french software engineer working at fdsffdsf{' '}
       <A href="https://vercel.com">Vercel</A>, building a platform for developers to
       deploy their applications to the cloud.
     </Card>
