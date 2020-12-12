@@ -1,3 +1,4 @@
+import { Footer2 } from '../components/footer2'
 import { Nav2 } from '../components/nav2'
 
 import articles from '../lib/articles'
@@ -14,17 +15,6 @@ export default () => (
       </h1>
     ))}
 
-    <h1>
-      Find me on{' '}
-      <a
-        className="color"
-        target="_blank"
-        rel="noreferrer"
-        href="https://twitter.com/lucleray"
-      >
-        Twitter
-      </a>
-      .
-    </h1>
+    <Footer2 />
   </main>
 )
