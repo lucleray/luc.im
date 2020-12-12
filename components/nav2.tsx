@@ -2,7 +2,7 @@ export const Nav2 = () => (
   <>
     <ul>
       <li>
-        <a href="/index2">Luc Leray</a>
+        <a href="/">Luc Leray</a>
       </li>
       <li className="expand" />
       <li>
