@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import Head from 'next/head'
 
 import { Canvas } from '../components/canvas'
 import { navLinks } from '../components/nav2'
@@ -7,6 +8,10 @@ import { Footer2 } from '../components/footer2'
 
 export default () => (
   <Canvas>
+    <Head>
+      <title>Luc Leray</title>
+    </Head>
+
     <div className="layout">
       <header>
         <h1>Hi, I'm Luc</h1>

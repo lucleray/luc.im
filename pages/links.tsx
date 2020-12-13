@@ -1,3 +1,5 @@
+import Head from 'next/head'
+
 import { Nav2 } from '../components/nav2'
 import { Footer2 } from '../components/footer2'
 
@@ -5,6 +7,10 @@ import links from '../lib/links'
 
 export default () => (
   <div className="layout">
+    <Head>
+      <title>Luc Leray - Links</title>
+    </Head>
+
     <Nav2 />
 
     <header>
