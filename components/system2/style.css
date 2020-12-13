@@ -75,6 +75,10 @@ p {
   font-weight: var(--fweight2);
 }
 
+.center {
+  text-align: center;
+}
+
 a {
   color: var(--color);
   text-decoration: underline;

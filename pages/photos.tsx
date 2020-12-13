@@ -10,6 +10,46 @@ import { Footer2 } from '../components/footer2'
 
 import photos from '../lib/photos'
 
+const StyledSvg = styled.svg`
+  & rect {
+    fill: ${p => theme.light[p.color || 'blue']};
+  }
+
+  body.dark & rect {
+    fill: ${p => theme.dark[p.color || 'blue']};
+  }
+`
+
+const BigGridSvg = props => {
+  const rAxis = [
+    Math.random() * 7,
+    Math.random() * 5 - 2,
+    Math.random() * 2 - 1
+  ]
+
+  const y = [40, 100, 160, 220]
+
+  return (
+    <StyledSvg viewBox="0 0 180 300" {...props}>
+      {y.map(y => (
+        <rect
+          x={30}
+          y={y}
+          width="40"
+          height="40"
+          style={{
+            transform: `rotate3d(
+${rAxis.join(',')},
+${Math.random() * 12 + 5}deg
+)
+scale(1)`
+          }}
+        />
+      ))}
+    </StyledSvg>
+  )
+}
+
 const RotCard = styled.div`
   position: relative;
   display: inline-block;
@@ -137,6 +177,10 @@ export default () => (
     <header>
       <h1>A collection of photos I have taken between 2016 and 2020</h1>
     </header>
+
+    <p className="center">
+      <BigGridSvg width="25" />
+    </p>
 
     {photos.map(photo => (
       <Img key={photo.file} {...photo} />
