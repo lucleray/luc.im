@@ -4,17 +4,19 @@ import { Nav2 } from '../components/nav2'
 import articles from '../lib/articles'
 
 export default () => (
-  <main>
+  <div className="layout">
     <Nav2 />
 
-    {articles.map(link => (
-      <h1 key={link.id}>
-        <a href={link.url}>{link.title}</a>
-        <br />
-        <span className="fweight0">{link.date}</span>
-      </h1>
-    ))}
+    <main>
+      {articles.map(link => (
+        <h1 key={link.id}>
+          <a href={link.url}>{link.title}</a>
+          <br />
+          <span className="fweight0">{link.date}</span>
+        </h1>
+      ))}
+    </main>
 
     <Footer2 />
-  </main>
+  </div>
 )

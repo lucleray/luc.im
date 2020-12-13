@@ -4,17 +4,19 @@ import { Footer2 } from '../components/footer2'
 import links from '../lib/links'
 
 export default () => (
-  <main>
+  <div className="layout">
     <Nav2 />
 
-    <h1>A collection of links that inspired my work</h1>
+    <header>
+      <h1>A collection of links that inspired my work</h1>
+    </header>
 
     {links.map(link => (
-      <h1 key={link.id}>
+      <p key={link.id}>
         <a href={link.url}>{link.title}</a>
-      </h1>
+      </p>
     ))}
 
     <Footer2 />
-  </main>
+  </div>
 )

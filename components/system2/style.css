@@ -15,7 +15,10 @@ html {
   --fweight1: 700;
   --fweight2: 900;
 
-  --fsize: 16px;
+  --fsize0: 16px;
+  --fsize1: 40px;
+  --fsize2: 80px;
+
   --ffamily: Inter, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif,
     'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
@@ -34,34 +37,24 @@ body {
   padding: 0;
   margin: 0;
 
-  font-size: var(--fsize);
-  font-family: var(--ffamily);
+  font-size: var(--fsize0);
   font-weight: var(--fweight0);
+  font-family: var(--ffamily);
 }
 
-main {
+.layout {
   padding: 40px 50px;
   max-width: 500px;
 }
 
-hr {
-  background: var(--color);
-  height: var(--space0);
-  border: 0;
-  margin: 0 0 1em 0;
-}
-
-h1 {
-  font-size: 80px;
+h1,
+p {
+  font-size: var(--fsize2);
   font-weight: var(--fweight1);
   margin: 0 0 1em 0;
 
   line-height: 1em;
   letter-spacing: -0.06em;
-}
-
-p {
-  margin: 0 0 1em 0;
 }
 
 .fweight0 {

@@ -1,8 +1,8 @@
 import React from 'react'
 
 export const Footer2: React.FC = () => (
-  <>
-    <h1>
+  <footer>
+    <p>
       Find me on{' '}
       <a
         className="color"
@@ -13,9 +13,9 @@ export const Footer2: React.FC = () => (
         Twitter
       </a>
       .
-    </h1>
+    </p>
 
-    <h1>
+    <p>
       <a
         role="button"
         style={{ cursor: 'pointer' }}
@@ -26,6 +26,6 @@ export const Footer2: React.FC = () => (
       >
         Switch Light/Dark
       </a>
-    </h1>
-  </>
+    </p>
+  </footer>
 )

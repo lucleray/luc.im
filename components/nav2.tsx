@@ -9,7 +9,7 @@ export const navLinks = [
 ]
 
 export const Nav2: React.FC = () => (
-  <>
+  <nav>
     <ul>
       <li>
         <Link href="/">
@@ -29,5 +29,5 @@ export const Nav2: React.FC = () => (
 
     <br />
     <br />
-  </>
+  </nav>
 )
