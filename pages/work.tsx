@@ -19,7 +19,7 @@ export default () => (
 
     <main>
       {projects.map(link => (
-        <p key={link.id}>
+        <p className="h1" key={link.id}>
           <a target="_blank" rel="noreferrer" href={link.url}>
             {link.title}
           </a>

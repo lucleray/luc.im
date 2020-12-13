@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Footer2: React.FC = () => (
   <footer>
-    <p>
+    <p className="h1">
       Find me on{' '}
       <a
         className="color"
@@ -15,7 +15,7 @@ export const Footer2: React.FC = () => (
       .
     </p>
 
-    <p>
+    <p className="h1">
       <a
         role="button"
         tabIndex={0}

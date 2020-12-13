@@ -18,14 +18,14 @@ export default () => (
       </header>
 
       <main>
-        <p>
+        <p className="h1">
           I'm a french software engineer working at{' '}
           <a target="_blank" rel="noreferrer" href="https://vercel.com">
             ▲Vercel
           </a>
           .
         </p>
-        <p>
+        <p className="h1">
           I started building websites{' '}
           <a
             target="_blank"
@@ -36,7 +36,7 @@ export default () => (
           </a>{' '}
           with XHTML, Notepad++ and EasyPHP.
         </p>
-        <p>
+        <p className="h1">
           Previously, I cofounded{' '}
           <a target="_blank" rel="noreferrer" href="https://sequence.work">
             Sequence
@@ -58,7 +58,7 @@ export default () => (
       </main>
 
       <nav>
-        <p>
+        <p className="h1">
           More:
           {navLinks.map(link => (
             <React.Fragment key={link.href}>
