@@ -1,4 +1,8 @@
+import React from 'react'
+import Link from 'next/link'
+
 import { Canvas } from '../components/canvas'
+import { navLinks } from '../components/nav2'
 
 export default () => (
   <Canvas>
@@ -37,14 +41,14 @@ export default () => (
 
       <h1>
         More:
-        <br />
-        <a href="/work">Work</a>
-        <br />
-        <a href="/articles">Articles</a>
-        <br />
-        <a href="/photos">Photos</a>
-        <br />
-        <a href="/links">Links</a>
+        {navLinks.map(link => (
+          <React.Fragment key={link.href}>
+            <br />
+            <Link href={link.href}>
+              <a>{link.title}</a>
+            </Link>
+          </React.Fragment>
+        ))}
       </h1>
       <h1>
         Find me on{' '}
