@@ -8,12 +8,12 @@ const Presentation = () => (
     <H1 id="presentation-title">hi, i'm luc</H1>
     <Card>
       I'm a french software engineer working at{' '}
-      <A href="https://vercel.com">Vercel</A>, building a platform for developers to
-      deploy their applications to the cloud.
+      <A href="https://vercel.com">Vercel</A>, building a platform for
+      developers to deploy their applications to the cloud.
     </Card>
     <Card>
       I started learning about building websites{' '}
-      <A href="http://lu.leray.free.fr/acceuil.html">15 years ago</A> with
+      <A href="http://lu.leray.free.fr/acceuil.html">16 years ago</A> with
       XHTML, <A href="https://notepad-plus-plus.org/">Notepad++</A> and{' '}
       <A href="http://www.easyphp.org/">EasyPHP</A>.
     </Card>

@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 import { Canvas } from '../components/canvas'
 import { navLinks } from '../components/nav2'
+import { Footer2 } from '../components/footer2'
 
 export default () => (
   <Canvas>
@@ -16,8 +17,15 @@ export default () => (
         .
       </h1>
       <h1>
-        I started building websites 15 years ago with XHTML, Notepad++ and
-        EasyPHP.
+        I started building websites{' '}
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="http://lu.leray.free.fr/acceuil.html"
+        >
+          15 years ago
+        </a>{' '}
+        with XHTML, Notepad++ and EasyPHP.
       </h1>
       <h1>
         Previously, I cofounded{' '}
@@ -25,15 +33,15 @@ export default () => (
           Sequence.work
         </a>{' '}
         and worked at{' '}
-        <a target="_blank" rel="noreferrer" href="https://sequence.work">
+        <a target="_blank" rel="noreferrer" href="https://supahands.com">
           Supahands
         </a>
         ,{' '}
-        <a target="_blank" rel="noreferrer" href="https://sequence.work">
+        <a target="_blank" rel="noreferrer" href="https://worldline.com/">
           Worldline
         </a>{' '}
         and{' '}
-        <a target="_blank" rel="noreferrer" href="https://sequence.work">
+        <a target="_blank" rel="noreferrer" href="https://contentsquare.com">
           Content-Square
         </a>
         .
@@ -50,18 +58,8 @@ export default () => (
           </React.Fragment>
         ))}
       </h1>
-      <h1>
-        Find me on{' '}
-        <a
-          className="color"
-          target="_blank"
-          rel="noreferrer"
-          href="https://twitter.com/lucleray"
-        >
-          Twitter
-        </a>
-        .
-      </h1>
+
+      <Footer2 />
     </main>
   </Canvas>
 )
