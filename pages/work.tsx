@@ -13,11 +13,13 @@ export default () => (
 
     <main>
       {projects.map(link => (
-        <h1 key={link.id}>
-          <a href={link.url}>{link.title}</a>
+        <p key={link.id}>
+          <a target="_blank" rel="noreferrer" href={link.url}>
+            {link.title}
+          </a>
           <br />
           <span className="fweight0">{link.date}</span>
-        </h1>
+        </p>
       ))}
     </main>
 

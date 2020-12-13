@@ -13,7 +13,9 @@ export default () => (
 
     {links.map(link => (
       <p key={link.id}>
-        <a href={link.url}>{link.title}</a>
+        <a target="_blank" rel="noreferrer" href={link.url}>
+          {link.title}
+        </a>
       </p>
     ))}
 
