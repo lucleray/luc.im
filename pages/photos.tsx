@@ -1,26 +1,13 @@
 import Head from 'next/head'
 import styled from 'styled-components/macro'
 import * as countries from 'country-emoji'
-import color from 'color'
-
-import { A, theme } from '../components/system'
 
 import { Nav2 } from '../components/nav2'
 import { Footer2 } from '../components/footer2'
 
 import photos from '../lib/photos'
 
-const StyledSvg = styled.svg`
-  & rect {
-    fill: ${p => theme.light[p.color || 'blue']};
-  }
-
-  body.dark & rect {
-    fill: ${p => theme.dark[p.color || 'blue']};
-  }
-`
-
-const BigGridSvg = props => {
+const BigGridSvg = () => {
   const rAxis = [
     Math.random() * 7,
     Math.random() * 5 - 2,
@@ -30,7 +17,7 @@ const BigGridSvg = props => {
   const y = [40, 100, 160, 220]
 
   return (
-    <StyledSvg viewBox="0 0 180 300" {...props}>
+    <svg width="25" viewBox="0 0 180 300">
       {y.map(y => (
         <rect
           x={30}
@@ -42,11 +29,12 @@ const BigGridSvg = props => {
 ${rAxis.join(',')},
 ${Math.random() * 12 + 5}deg
 )
-scale(1)`
+scale(1)`,
+            fill: 'var(--color)'
           }}
         />
       ))}
-    </StyledSvg>
+    </svg>
   )
 }
 
@@ -106,21 +94,18 @@ const ImgSide = styled.div`
 `
 
 const Label = styled.span`
-  background: ${color(theme.light.bg)
-    .fade(0.5)
-    .string()};
+  background: var(--bg);
   background-blend-mode: overlay;
   padding: 0.2em 0.4em;
   border-radius: 3px;
-
-  body.dark & {
-    background: ${color(theme.dark.bg)
-      .fade(0.1)
-      .string()};
-  }
 `
 
-const Img = props => {
+const Img: React.FC<{
+  file: string
+  date: string
+  country: string
+  place?: string
+}> = props => {
   const rAxis = [
     Math.random() * 7,
     Math.random() * 5 - 2,
@@ -139,29 +124,23 @@ const Img = props => {
         alt={alt}
         style={{ width: '100%' }}
       />
-      {true && (
-        <>
-          <ImgSide where="top">
-            <Label>{props.date}</Label>
-            {/* <Spacer h={1} /> */}
-          </ImgSide>
-          <ImgSide where="bottom">
-            {/* <Spacer h={1} /> */}
-            <Label>
-              <A
-                symbol={false}
-                color="fg"
-                underline={false}
-                href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
-                  alt
-                )}`}
-              >
-                <b>{props.place}</b> {countryFlag}
-              </A>
-            </Label>
-          </ImgSide>
-        </>
-      )}
+      <ImgSide where="top">
+        <Label>{props.date}</Label>
+      </ImgSide>
+      <ImgSide where="bottom">
+        <Label>
+          <a
+            target="_blank"
+            rel="noreferrer"
+            style={{ textDecoration: 'none' }}
+            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+              alt
+            )}`}
+          >
+            <span className="fweight1">{props.place}</span> {countryFlag}
+          </a>
+        </Label>
+      </ImgSide>
     </RotCard>
   )
 }
@@ -179,7 +158,7 @@ export default () => (
     </header>
 
     <p className="center">
-      <BigGridSvg width="25" />
+      <BigGridSvg />
     </p>
 
     {photos.map(photo => (
