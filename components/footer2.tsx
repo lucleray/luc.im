@@ -18,10 +18,15 @@ export const Footer2: React.FC = () => (
     <p>
       <a
         role="button"
+        tabIndex={0}
         style={{ cursor: 'pointer' }}
         onClick={() => {
           // @ts-ignore
           window.__toggleDarkMode()
+        }}
+        onKeyUp={event => {
+          // @ts-ignore
+          if (['Enter', ' '].includes(event.key)) window.__toggleDarkMode()
         }}
       >
         Switch Light/Dark
