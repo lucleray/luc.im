@@ -11,7 +11,7 @@ html {
   --space4: calc(var(--space3) * var(--space-factor));
   --space5: calc(var(--space4) * var(--space-factor));
 
-  --fweight0: 200;
+  --fweight0: 300;
   --fweight1: 700;
   --fweight2: 900;
 
