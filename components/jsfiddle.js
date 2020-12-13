@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { theme } from './system'
 
 const Loader = () => (
   <div className="loader">
@@ -10,12 +9,8 @@ const Loader = () => (
         height: 170px;
         text-align: center;
         padding-top: 150px;
-        border: 1px solid ${theme.light.fg};
+        border: 1px solid var(--color);
         border-radius: 5px;
-      }
-
-      body.dark .loader {
-        border: 1px solid ${theme.dark.fg};
       }
     `}</style>
   </div>

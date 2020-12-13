@@ -1,0 +1,212 @@
+html {
+  --bg: rgb(255, 255, 255);
+  --color: rgb(0, 0, 0);
+  --blue: rgb(32, 89, 246);
+
+  --space-factor: 2;
+  --space0: 1px;
+  --space1: calc(var(--space0) * var(--space-factor));
+  --space2: calc(var(--space1) * var(--space-factor));
+  --space3: calc(var(--space2) * var(--space-factor));
+  --space4: calc(var(--space3) * var(--space-factor));
+  --space5: calc(var(--space4) * var(--space-factor));
+
+  --fweight0: 300;
+  --fweight1: 700;
+  --fweight2: 900;
+
+  --fsize0: 16px;
+  --fsize1: 25px;
+  --fsize2: 80px;
+
+  --ffamily: Inter, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+}
+
+.dark {
+  --bg: rgb(0, 0, 0);
+  --color: rgba(255, 255, 255, 0.85);
+  --blue: rgb(255, 255, 255);
+
+  --fweight1: 600;
+}
+
+body {
+  background: var(--bg);
+  color: var(--color);
+  padding: 0;
+  margin: 0;
+
+  font-size: var(--fsize1);
+  font-weight: var(--fweight0);
+  font-family: var(--ffamily);
+}
+
+.layout {
+  padding: 40px 50px;
+  max-width: 500px;
+}
+
+@media (max-width: 600px) {
+  html {
+    --fsize2: 40px;
+  }
+}
+
+h1,
+p.h1 {
+  font-size: var(--fsize2);
+  font-weight: var(--fweight1);
+  margin: 0 0 1em 0;
+
+  line-height: 1em;
+  letter-spacing: -0.06em;
+}
+
+h3 {
+  font-weight: var(--fweight1);
+  font-size: var(--fsize1);
+  margin: 0 0 1em 0;
+}
+
+p {
+  font-weight: var(--fweight0);
+  margin: 0 0 1em 0;
+}
+
+b {
+  font-weight: var(--fweight1);
+}
+
+blockquote {
+  padding: 1em 1em 0 1em;
+  margin: 0 0 1em 0;
+  border: 1px solid var(--color);
+  border-radius: var(--space2);
+}
+
+.fweight0 {
+  font-weight: var(--fweight0);
+}
+
+.fweight1 {
+  font-weight: var(--fweight1);
+}
+
+.fweight2 {
+  font-weight: var(--fweight2);
+}
+
+.center {
+  text-align: center;
+}
+
+a {
+  color: var(--color);
+  text-decoration: underline;
+}
+
+.color {
+  color: var(--blue);
+}
+
+nav {
+  font-size: var(--fsize0);
+}
+
+nav ul {
+  margin: 0 0 1em 0;
+  list-style: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav ul li {
+  flex: 0 0 auto;
+  font-weight: var(--fweight2);
+  margin-right: var(--space3);
+}
+
+nav ul li.expand {
+  flex: 1 0 auto;
+}
+
+/* font declarations */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/assets/font/inter-var-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+
+/* the following fonts are only used and downloaded when a special char is rendered
+in most cases, they are not downloaded at all */
+
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/assets/font/inter-var-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
+    U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* cyrillic */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/assets/font/inter-var-cyrillic.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/assets/font/inter-var-cyrillic-ext.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F,
+    U+FE2E-FE2F;
+}
+
+/* greek */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/assets/font/inter-var-greek.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
+}
+
+/* greek-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/assets/font/inter-var-greek-ext.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
+}
+
+/* vietnamese */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url(/assets/font/inter-var-vietnamese.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1,
+    U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
