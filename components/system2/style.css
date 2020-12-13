@@ -47,6 +47,12 @@ body {
   max-width: 500px;
 }
 
+@media (max-width: 600px) {
+  html {
+    --fsize2: 40px;
+  }
+}
+
 h1,
 p {
   font-size: var(--fsize2);
@@ -84,6 +90,7 @@ ul {
   padding: 0;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 ul li {

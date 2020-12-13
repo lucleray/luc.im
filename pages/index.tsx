@@ -34,7 +34,7 @@ export default () => (
         <p>
           Previously, I cofounded{' '}
           <a target="_blank" rel="noreferrer" href="https://sequence.work">
-            Sequence.work
+            Sequence
           </a>{' '}
           and worked at{' '}
           <a target="_blank" rel="noreferrer" href="https://supahands.com">
