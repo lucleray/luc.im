@@ -123,7 +123,7 @@ export const Canvas: React.FC = ({ children }) => {
   const onMouseUp = useCallback(() => {
     dispatch({ type: 'drawing-stop' })
   }, [])
-  const onMouseMove = useCallback(event => {
+  const onMouseMove = useCallback((event: React.MouseEvent) => {
     dispatch({
       type: 'drawing-move',
       x: event.clientX + window.scrollX,
