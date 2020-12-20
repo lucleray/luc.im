@@ -6,9 +6,8 @@ interface Point {
 }
 
 interface State {
-  mode: null | 'draw'
   draft: null | Point[]
-  shapes: Point[][]
+  drawings: Point[][]
 }
 
 type Action =
@@ -17,53 +16,34 @@ type Action =
   | { type: 'drawing-move'; x: number; y: number }
 
 function init() {
-  return {
-    mode: null,
-    draft: null,
-    shapes: []
-  }
+  return { draft: null, drawings: [] }
 }
 
 function reducer(state: State, action: Action): State {
   if (action.type === 'drawing-start') {
-    return { ...state, mode: 'draw' }
+    return { ...state, draft: [] }
   }
 
   if (action.type === 'drawing-stop') {
-    if (state.draft) {
-      return {
-        ...state,
-        mode: null,
-        draft: null,
-        shapes:
-          state.draft !== null ? [...state.shapes, state.draft] : state.shapes
-      }
-    }
-
     return {
       ...state,
-      mode: null,
       draft: null,
-      shapes:
-        state.draft !== null ? [...state.shapes, state.draft] : state.shapes
+      drawings:
+        state.draft !== null ? [...state.drawings, state.draft] : state.drawings
     }
   }
 
   if (action.type === 'drawing-move') {
-    if (state.mode === 'draw') {
-      const { x, y } = action
-      return {
-        ...state,
-        draft: [...(state.draft || []), { x, y }]
-      }
+    const point = { x: action.x, y: action.y }
+    return {
+      ...state,
+      draft: state.draft ? [...state.draft, point] : state.draft
     }
   }
-
-  return state
 }
 
 export const Canvas: React.FC = ({ children }) => {
-  const [{ draft, shapes }, dispatch] = useReducer(reducer, null, init)
+  const [{ draft, drawings }, dispatch] = useReducer(reducer, null, init)
 
   const containerRef = useRef<HTMLDivElement | null>(null)
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
@@ -105,7 +85,7 @@ export const Canvas: React.FC = ({ children }) => {
       context.stroke()
     }
 
-    for (let shape of shapes) {
+    for (let shape of drawings) {
       if (shape.length) {
         context.beginPath()
         context.strokeStyle = 'grey'
@@ -117,7 +97,7 @@ export const Canvas: React.FC = ({ children }) => {
         context.stroke()
       }
     }
-  }, [draft, shapes])
+  }, [draft, drawings])
 
   const onMouseDown = useCallback(() => dispatch({ type: 'drawing-start' }), [])
   const onMouseUp = useCallback(() => {
