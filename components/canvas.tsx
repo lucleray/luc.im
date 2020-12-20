@@ -171,22 +171,25 @@ export const Canvas: React.FC = ({ children }) => {
   }, [])
 
   return (
-    <div
-      onMouseDown={onMouseDown}
-      onMouseUp={onMouseUp}
-      onMouseMove={onMouseMove}
-      onTouchStart={onTouchStart}
-      onTouchEnd={onMouseUp}
-      onWheel={onMouseMove}
-      style={{ userSelect: 'none' }}
-    >
+    <div>
       <canvas
         ref={canvasRef}
         width={0}
         height={0}
         style={{ position: 'absolute', width: 0, height: 0, zIndex: -1 }}
       />
-      <div ref={containerRef}>{children}</div>
+      <div
+        onMouseDown={onMouseDown}
+        onMouseUp={onMouseUp}
+        onMouseMove={onMouseMove}
+        onTouchStart={onTouchStart}
+        onTouchEnd={onMouseUp}
+        onWheel={onMouseMove}
+        ref={containerRef}
+        style={{ userSelect: 'none' }}
+      >
+        {children}
+      </div>
     </div>
   )
 }
