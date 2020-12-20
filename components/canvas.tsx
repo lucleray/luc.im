@@ -25,6 +25,8 @@ function init() {
 }
 
 function reducer(state: State, action: Action): State {
+  console.log(action)
+
   if (action.type === 'mousedown') {
     return { ...state, mode: 'draw' }
   }
@@ -131,21 +133,68 @@ export const Canvas: React.FC = ({ children }) => {
     })
   }, [])
 
+  const doubleTouchRef = useRef(false)
+  const doubleTouchOnRef = useRef(false)
+  const onTouchStart = useCallback(() => {
+    if (doubleTouchOnRef.current) {
+      dispatch({ type: 'mousedown' })
+    }
+
+    if (doubleTouchRef.current) {
+      doubleTouchOnRef.current = !doubleTouchOnRef.current
+    } else {
+      doubleTouchRef.current = true
+      setTimeout(() => {
+        doubleTouchRef.current = false
+      }, 300)
+    }
+  }, [])
+  const onTouchEnd = useCallback(() => {
+    if (doubleTouchOnRef.current) {
+      dispatch({ type: 'mouseup' })
+    }
+  }, [])
+  const onTouchMove = useCallback((event: TouchEvent) => {
+    if (doubleTouchOnRef.current) {
+      event.preventDefault()
+
+      for (let i = 0; i < event.touches.length; i++) {
+        const touch = event.touches[i]
+        dispatch({
+          type: 'mousemove',
+          x: touch.clientX + window.scrollX,
+          y: touch.clientY + window.scrollY
+        })
+      }
+    }
+  }, [])
+
+  useEffect(() => {
+    containerRef.current.addEventListener('touchmove', onTouchMove)
+    return () =>
+      containerRef.current.removeEventListener('touchmove', onTouchMove)
+  }, [])
+
   return (
-    <div
-      onMouseDown={onMouseDown}
-      onMouseUp={onMouseUp}
-      onMouseMove={onMouseMove}
-      onWheel={onMouseMove}
-      style={{ userSelect: 'none' }}
-    >
+    <div>
       <canvas
         ref={canvasRef}
         width={0}
         height={0}
         style={{ position: 'absolute', width: 0, height: 0, zIndex: -1 }}
       />
-      <div ref={containerRef}>{children}</div>
+      <div
+        onMouseDown={onMouseDown}
+        onMouseUp={onMouseUp}
+        onMouseMove={onMouseMove}
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
+        onWheel={onMouseMove}
+        ref={containerRef}
+        style={{ userSelect: 'none' }}
+      >
+        {children}
+      </div>
     </div>
   )
 }
