@@ -12,9 +12,9 @@ interface State {
 }
 
 type Action =
-  | { type: 'mousedown' }
-  | { type: 'mouseup' }
-  | { type: 'mousemove'; x: number; y: number }
+  | { type: 'drawing-start' }
+  | { type: 'drawing-stop' }
+  | { type: 'drawing-move'; x: number; y: number }
 
 function init() {
   return {
@@ -25,13 +25,11 @@ function init() {
 }
 
 function reducer(state: State, action: Action): State {
-  console.log(action)
-
-  if (action.type === 'mousedown') {
+  if (action.type === 'drawing-start') {
     return { ...state, mode: 'draw' }
   }
 
-  if (action.type === 'mouseup') {
+  if (action.type === 'drawing-stop') {
     if (state.draft) {
       return {
         ...state,
@@ -51,7 +49,7 @@ function reducer(state: State, action: Action): State {
     }
   }
 
-  if (action.type === 'mousemove') {
+  if (action.type === 'drawing-move') {
     if (state.mode === 'draw') {
       const { x, y } = action
       return {
@@ -121,13 +119,13 @@ export const Canvas: React.FC = ({ children }) => {
     }
   }, [draft, shapes])
 
-  const onMouseDown = useCallback(() => dispatch({ type: 'mousedown' }), [])
+  const onMouseDown = useCallback(() => dispatch({ type: 'drawing-start' }), [])
   const onMouseUp = useCallback(() => {
-    dispatch({ type: 'mouseup' })
+    dispatch({ type: 'drawing-stop' })
   }, [])
   const onMouseMove = useCallback(event => {
     dispatch({
-      type: 'mousemove',
+      type: 'drawing-move',
       x: event.clientX + window.scrollX,
       y: event.clientY + window.scrollY
     })
@@ -137,7 +135,7 @@ export const Canvas: React.FC = ({ children }) => {
   const doubleTouchOnRef = useRef(false)
   const onTouchStart = useCallback(() => {
     if (doubleTouchOnRef.current) {
-      dispatch({ type: 'mousedown' })
+      dispatch({ type: 'drawing-start' })
     }
 
     if (doubleTouchRef.current) {
@@ -151,7 +149,7 @@ export const Canvas: React.FC = ({ children }) => {
   }, [])
   const onTouchEnd = useCallback(() => {
     if (doubleTouchOnRef.current) {
-      dispatch({ type: 'mouseup' })
+      dispatch({ type: 'drawing-stop' })
     }
   }, [])
   const onTouchMove = useCallback((event: TouchEvent) => {
@@ -161,7 +159,7 @@ export const Canvas: React.FC = ({ children }) => {
       for (let i = 0; i < event.touches.length; i++) {
         const touch = event.touches[i]
         dispatch({
-          type: 'mousemove',
+          type: 'drawing-move',
           x: touch.clientX + window.scrollX,
           y: touch.clientY + window.scrollY
         })
