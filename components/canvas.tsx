@@ -65,8 +65,8 @@ function reducer(state: State, action: Action): State {
 export const Canvas: React.FC = ({ children }) => {
   const [{ draft, shapes }, dispatch] = useReducer(reducer, null, init)
 
-  const containerRef = useRef<HTMLDivElement>(null)
-  const canvasRef = useRef<HTMLCanvasElement>(null)
+  const containerRef = useRef<HTMLDivElement | null>(null)
+  const canvasRef = useRef<HTMLCanvasElement | null>(null)
 
   // make canvas full page size
   useEffect(() => {
@@ -168,9 +168,9 @@ export const Canvas: React.FC = ({ children }) => {
   }, [])
 
   useEffect(() => {
-    containerRef.current.addEventListener('touchmove', onTouchMove)
+    containerRef.current?.addEventListener('touchmove', onTouchMove)
     return () =>
-      containerRef.current.removeEventListener('touchmove', onTouchMove)
+      containerRef.current?.removeEventListener('touchmove', onTouchMove)
   }, [])
 
   return (
