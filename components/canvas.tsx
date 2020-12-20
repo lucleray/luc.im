@@ -149,6 +149,11 @@ export const Canvas: React.FC = ({ children }) => {
       }, 300)
     }
   }, [])
+  const onTouchEnd = useCallback(() => {
+    if (doubleTouchOnRef.current) {
+      dispatch({ type: 'mouseup' })
+    }
+  }, [])
   const onTouchMove = useCallback((event: TouchEvent) => {
     if (doubleTouchOnRef.current) {
       event.preventDefault()
@@ -183,7 +188,7 @@ export const Canvas: React.FC = ({ children }) => {
         onMouseUp={onMouseUp}
         onMouseMove={onMouseMove}
         onTouchStart={onTouchStart}
-        onTouchEnd={onMouseUp}
+        onTouchEnd={onTouchEnd}
         onWheel={onMouseMove}
         ref={containerRef}
         style={{ userSelect: 'none' }}
