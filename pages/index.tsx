@@ -9,7 +9,7 @@ import { Footer2 } from '../components/footer2'
 export default () => (
   <Canvas>
     <Head>
-      <title>Luc Leray</title>
+      <title>Luc Leray 2</title>
     </Head>
 
     <div className="layout">
@@ -32,7 +32,7 @@ export default () => (
             rel="noreferrer"
             href="http://lu.leray.free.fr/acceuil.html"
           >
-            15 years ago
+            15 years ago 2
           </a>{' '}
           with XHTML, Notepad++ and EasyPHP.
         </p>
