@@ -1,4 +1,6 @@
 import { useReducer, useRef, useEffect, useCallback } from 'react'
+import { useRouter } from 'next/router'
+import { decodeBase64URL } from '../lib/b64url'
 
 interface Point {
   x: number
@@ -11,6 +13,7 @@ interface State {
 }
 
 type Action =
+  | { type: 'init'; state: State }
   | { type: 'drawing-start' }
   | { type: 'drawing-stop' }
   | { type: 'drawing-move'; x: number; y: number }
@@ -18,7 +21,8 @@ type Action =
 function report(state: State) {
   fetch('/api/report-sketch', {
     method: 'POST',
-    body: JSON.stringify(state)
+    body: JSON.stringify(state),
+    headers: { 'content-type': 'application/json' }
   })
 }
 
@@ -27,18 +31,23 @@ function init() {
 }
 
 function reducer(state: State, action: Action): State {
+  if (action.type === 'init') {
+    return action.state
+  }
+
   if (action.type === 'drawing-start') {
     return { ...state, draft: [] }
   }
 
   if (action.type === 'drawing-stop') {
-    report(state)
-    return {
+    const stateUpdate = {
       ...state,
       draft: null,
       drawings:
         state.draft !== null ? [...state.drawings, state.draft] : state.drawings
     }
+    report(stateUpdate)
+    return stateUpdate
   }
 
   if (action.type === 'drawing-move') {
@@ -160,6 +169,16 @@ export const Canvas: React.FC = ({ children }) => {
     return () =>
       containerRef.current?.removeEventListener('touchmove', onTouchMove)
   }, [])
+
+  const router = useRouter()
+  useEffect(() => {
+    try {
+      if (typeof router.query.sketch === 'string') {
+        const state = JSON.parse(decodeBase64URL(router.query.sketch))
+        dispatch({ type: 'init', state })
+      }
+    } catch (_) {}
+  }, [router.query])
 
   return (
     <div>
