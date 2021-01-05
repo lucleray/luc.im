@@ -5,8 +5,7 @@ const reportSketch: NextApiHandler = (req, res) => {
   console.log(
     'http://localhost:3000?sketch=' + encodeBase64URL(JSON.stringify(req.body))
   )
-
-  return res.send('ok')
+  return res.send(null)
 }
 
 export default reportSketch
