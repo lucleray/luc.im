@@ -170,6 +170,7 @@ export const Canvas: React.FC = ({ children }) => {
       containerRef.current?.removeEventListener('touchmove', onTouchMove)
   }, [])
 
+  // handle ?sketch
   const router = useRouter()
   useEffect(() => {
     try {
