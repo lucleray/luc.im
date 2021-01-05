@@ -4,18 +4,19 @@ import { encodeBase64URL } from '../../lib/b64url'
 const reportSketch: NextApiHandler = async (req, res) => {
   const b64sketch = encodeBase64URL(JSON.stringify(req.body))
   const origin = req.headers.origin ?? 'https://luc.im'
-  const previewSketchURL = `${origin}/?sketch=${b64sketch}`
+  const Preview = `${origin}/?sketch=${b64sketch}`
 
-  const sessionId =
+  const SessionId =
     typeof req.headers['x-session-id'] === 'string'
       ? req.headers['x-session-id']
       : undefined
 
-  const fields = {
-    Timestamp: new Date(),
-    Preview: previewSketchURL,
-    SessionId: sessionId
-  }
+  const UserAgent =
+    typeof req.headers['user-agent'] === 'string'
+      ? req.headers['user-agent']
+      : undefined
+
+  const fields = { Timestamp: new Date(), Preview, SessionId, UserAgent }
 
   if (!process.env.AIRTABLE_API_KEY) {
     console.log('Logging entry since no AIRTABLE API KEY has been defined')
