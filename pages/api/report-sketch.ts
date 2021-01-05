@@ -7,6 +7,7 @@ const reportSketch: NextApiHandler = (req, res) => {
   const previewSketchURL = `${origin}/?sketch=${b64sketch}`
 
   console.log(previewSketchURL)
+
   return res.send(null)
 }
 
