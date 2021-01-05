@@ -6,6 +6,11 @@ const reportSketch: NextApiHandler = async (req, res) => {
   const origin = req.headers.origin ?? 'https://luc.im'
   const previewSketchURL = `${origin}/?sketch=${b64sketch}`
 
+  const sessionId =
+    typeof req.headers['x-session-id'] === 'string'
+      ? req.headers['x-session-id']
+      : undefined
+
   const resAirtable = await fetch(
     'https://api.airtable.com/v0/appL5KS2qu2qvVyuA/Data',
     {
@@ -16,7 +21,13 @@ const reportSketch: NextApiHandler = async (req, res) => {
       },
       body: JSON.stringify({
         records: [
-          { fields: { Timestamp: new Date(), Preview: previewSketchURL } }
+          {
+            fields: {
+              Timestamp: new Date(),
+              Preview: previewSketchURL,
+              SessionId: sessionId
+            }
+          }
         ]
       })
     }
