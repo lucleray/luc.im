@@ -6,7 +6,7 @@ import { Nav2 } from '../components/nav2'
 import projects from '../lib/projects'
 
 export default () => (
-  <div className="layout">
+  <div className="layout spread">
     <Head>
       <title>Luc Leray - Work</title>
     </Head>

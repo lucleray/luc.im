@@ -6,7 +6,7 @@ import { Footer2 } from '../components/footer2'
 import links from '../lib/links'
 
 export default () => (
-  <div className="layout">
+  <div className="layout spread">
     <Head>
       <title>Luc Leray - Links</title>
     </Head>
@@ -17,13 +17,15 @@ export default () => (
       <h1>A collection of links that inspired my work</h1>
     </header>
 
-    {links.map(link => (
-      <p className="h1" key={link.id}>
-        <a target="_blank" rel="noreferrer" href={link.url}>
-          {link.title}
-        </a>
-      </p>
-    ))}
+    <main>
+      {links.map(link => (
+        <p className="h1" key={link.id}>
+          <a target="_blank" rel="noreferrer" href={link.url}>
+            {link.title}
+          </a>
+        </p>
+      ))}
+    </main>
 
     <Footer2 />
   </div>
