@@ -18,11 +18,26 @@ type Action =
   | { type: 'drawing-stop' }
   | { type: 'drawing-move'; x: number; y: number }
 
+let sessionId: string
+
+function getSessionId() {
+  if (!sessionId && typeof crypto?.getRandomValues === 'function') {
+    sessionId = window.crypto
+      .getRandomValues(new Uint32Array(1))[0]
+      .toString(36)
+  }
+
+  return sessionId
+}
+
 function report(state: State) {
   fetch('/api/report-sketch', {
     method: 'POST',
     body: JSON.stringify(state),
-    headers: { 'content-type': 'application/json' }
+    headers: {
+      'content-type': 'application/json',
+      'x-session-id': getSessionId()
+    }
   })
 }
 
