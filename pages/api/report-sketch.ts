@@ -11,6 +11,18 @@ const reportSketch: NextApiHandler = async (req, res) => {
       ? req.headers['x-session-id']
       : undefined
 
+  const fields = {
+    Timestamp: new Date(),
+    Preview: previewSketchURL,
+    SessionId: sessionId
+  }
+
+  if (!process.env.AIRTABLE_API_KEY) {
+    console.log('Logging entry since no AIRTABLE API KEY has been defined')
+    console.log(JSON.stringify(fields))
+    return res.send(null)
+  }
+
   const resAirtable = await fetch(
     'https://api.airtable.com/v0/appL5KS2qu2qvVyuA/Data',
     {
@@ -19,17 +31,7 @@ const reportSketch: NextApiHandler = async (req, res) => {
         authorization: `Bearer ${process.env.AIRTABLE_API_KEY}`,
         'content-type': 'application/json'
       },
-      body: JSON.stringify({
-        records: [
-          {
-            fields: {
-              Timestamp: new Date(),
-              Preview: previewSketchURL,
-              SessionId: sessionId
-            }
-          }
-        ]
-      })
+      body: JSON.stringify({ records: [{ fields }] })
     }
   )
   const jsonAirtable = await resAirtable.json()
