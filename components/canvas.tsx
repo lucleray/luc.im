@@ -15,6 +15,13 @@ type Action =
   | { type: 'drawing-stop' }
   | { type: 'drawing-move'; x: number; y: number }
 
+function report(state: State) {
+  fetch('/api/report-sketch', {
+    method: 'POST',
+    body: JSON.stringify(state)
+  })
+}
+
 function init() {
   return { draft: null, drawings: [] }
 }
@@ -25,6 +32,7 @@ function reducer(state: State, action: Action): State {
   }
 
   if (action.type === 'drawing-stop') {
+    report(state)
     return {
       ...state,
       draft: null,

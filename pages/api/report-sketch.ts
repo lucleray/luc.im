@@ -1,6 +1,7 @@
 import { NextApiHandler } from 'next'
 
-const reportSketch: NextApiHandler = (_, res) => {
+const reportSketch: NextApiHandler = (req, res) => {
+  console.log(req.body)
   return res.send('ok')
 }
 
