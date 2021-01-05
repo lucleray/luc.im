@@ -61,7 +61,11 @@ function reducer(state: State, action: Action): State {
       drawings:
         state.draft !== null ? [...state.drawings, state.draft] : state.drawings
     }
-    report(stateUpdate)
+
+    if (state.draft !== null) {
+      report(stateUpdate)
+    }
+
     return stateUpdate
   }
 
