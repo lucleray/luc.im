@@ -9,7 +9,7 @@ import { Footer2 } from '../components/footer2'
 export default () => (
   <Canvas>
     <Head>
-      <title>Luc Leray gfdgdgdf</title>
+      <title>Luc Leray gfdgdgd hfgh fghfgf</title>
     </Head>
 
     <div className="layout">
