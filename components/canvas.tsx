@@ -30,17 +30,6 @@ function getSessionId() {
   return sessionId
 }
 
-function report(state: State) {
-  fetch('/api/report-sketch', {
-    method: 'POST',
-    body: JSON.stringify(state),
-    headers: {
-      'content-type': 'application/json',
-      'x-session-id': getSessionId()
-    }
-  })
-}
-
 function init() {
   return { draft: null, drawings: [] }
 }
@@ -60,10 +49,6 @@ function reducer(state: State, action: Action): State {
       draft: null,
       drawings:
         state.draft !== null ? [...state.drawings, state.draft] : state.drawings
-    }
-
-    if (state.draft !== null) {
-      report(stateUpdate)
     }
 
     return stateUpdate
