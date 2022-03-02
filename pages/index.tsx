@@ -52,7 +52,6 @@ export default () => (
           and{' '}
           <a target="_blank" rel="noreferrer" href="https://contentsquare.com">
             Content-Square
-          </a>
           .
         </p>
       </main>
