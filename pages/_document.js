@@ -55,14 +55,6 @@ export default class MyDocument extends Document {
             key="description"
           />
           {this.props.styleTags}
-          {process.env.NODE_ENV === 'production' && (
-            <script
-              async
-              defer
-              data-domain="luc.im"
-              src="https://plausible.io/js/plausible.js"
-            ></script>
-          )}
         </Head>
         <body>
           <script
