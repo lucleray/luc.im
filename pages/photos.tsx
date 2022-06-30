@@ -6,7 +6,7 @@ import { Footer2 } from '../components/footer2'
 
 import photos from '../lib/photos'
 
-const BigGridSvg = () => {
+function BigGridSvg() {
   const rAxis = [
     Math.random() * 7,
     Math.random() * 5 - 2,
@@ -37,12 +37,12 @@ scale(1)`,
   )
 }
 
-const Img: React.FC<{
+function Img(props: {
   file: string
   date: string
   country: string
   place?: string
-}> = props => {
+}) {
   const rAxis = [
     Math.random() * 7,
     Math.random() * 5 - 2,
@@ -92,26 +92,28 @@ const Img: React.FC<{
   )
 }
 
-export default () => (
-  <div className="layout">
-    <Head>
-      <title>Luc Leray - Photos</title>
-    </Head>
+export default function PhotosPage() {
+  return (
+    <div className="layout">
+      <Head>
+        <title>Luc Leray - Photos</title>
+      </Head>
 
-    <Nav2 />
+      <Nav2 />
 
-    <header>
-      <h1>A collection of photos I have taken between 2016 and 2020</h1>
-    </header>
+      <header>
+        <h1>A collection of photos I have taken between 2016 and 2020</h1>
+      </header>
 
-    <p className="center">
-      <BigGridSvg />
-    </p>
+      <p className="center">
+        <BigGridSvg />
+      </p>
 
-    {photos.map(photo => (
-      <Img key={photo.file} {...photo} />
-    ))}
+      {photos.map(photo => (
+        <Img key={photo.file} {...photo} />
+      ))}
 
-    <Footer2 />
-  </div>
-)
+      <Footer2 />
+    </div>
+  )
+}

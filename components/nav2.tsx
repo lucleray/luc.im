@@ -8,26 +8,28 @@ export const navLinks = [
   { title: 'Links', href: '/links' }
 ]
 
-export const Nav2: React.FC = () => (
-  <nav>
-    <ul>
-      <li>
-        <Link href="/">
-          <a>Luc Leray</a>
-        </Link>
-      </li>
-      <li className="expand" />
-
-      {navLinks.map(link => (
-        <li key={link.href}>
-          <Link href={link.href}>
-            <a>{link.title}</a>
+export function Nav2() {
+  return (
+    <nav>
+      <ul>
+        <li>
+          <Link href="/">
+            <a>Luc Leray</a>
           </Link>
         </li>
-      ))}
-    </ul>
+        <li className="expand" />
 
-    <br />
-    <br />
-  </nav>
-)
+        {navLinks.map(link => (
+          <li key={link.href}>
+            <Link href={link.href}>
+              <a>{link.title}</a>
+            </Link>
+          </li>
+        ))}
+      </ul>
+
+      <br />
+      <br />
+    </nav>
+  )
+}

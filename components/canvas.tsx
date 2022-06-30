@@ -1,4 +1,4 @@
-import { useReducer, useRef, useEffect, useCallback } from 'react'
+import React, { useReducer, useRef, useEffect, useCallback } from 'react'
 import { useRouter } from 'next/router'
 import { decodeBase64URL } from '../lib/b64url'
 
@@ -78,7 +78,7 @@ function reducer(state: State, action: Action): State {
   }
 }
 
-export const Canvas: React.FC = ({ children }) => {
+export function Canvas({ children }: { children: React.ReactNode }) {
   const [{ draft, drawings }, dispatch] = useReducer(reducer, null, init)
 
   const containerRef = useRef<HTMLDivElement | null>(null)
