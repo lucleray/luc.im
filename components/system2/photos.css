@@ -1,0 +1,59 @@
+.rotation-card {
+  position: relative;
+  display: inline-block;
+  z-index: var(--zindex);
+  transition: transform 0.2s ease 0.1s;
+  width: 90%;
+  font-size: 20px;
+  line-height: 1.3em;
+  transform-origin: 55% 43%;
+
+  z-index: var(--zi);
+  transform: rotate3d(var(--rp),var(--ra)) scale(1);
+
+}
+
+.rotation-card:hover {
+  z-index: 1000;
+  transform: rotate3d(var(--rp),var(--rah)) scale(0.97);
+}
+
+@media only screen and (min-width: 700px) {
+  .rotation-card {
+    font-size: 20px;
+    line-height: 1.3em;
+  }
+  .rotation-card:hover {
+    transform: rotate3d(var(--rp),var(--rah)) scale(1.2);
+  }
+}
+
+.image-side {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  transform: rotate(-90deg);
+  transform-origin: 100% 0;
+  font-size: 0.6em;
+  opacity: 0;
+}
+
+.image-side.top {
+  text-align: right;
+}
+
+.image-side.bottom {
+  text-align: left;
+}
+
+.rotation-card:hover .image-side {
+  opacity: 0.75;
+}
+
+.image-side span {
+  background: var(--bg);
+  background-blend-mode: overlay;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+}
