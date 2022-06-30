@@ -89,10 +89,6 @@ export default function FrontEndInterviewPage() {
           believe anyone who can use jquery properly knows html.
         </p>
 
-        {/* <p>
-        <JSFiddle id="Lvu938b4" />
-      </p> */}
-
         <br />
         <br />
       </main>
