@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import styled from 'styled-components/macro'
 import * as countries from 'country-emoji'
 
 import { Nav2 } from '../components/nav2'
@@ -38,68 +37,6 @@ scale(1)`,
   )
 }
 
-const RotCard = styled.div`
-  position: relative;
-  display: inline-block;
-  z-index: ${() => ~~(Math.random() * 1000)};
-  transition: transform 0.2s ease 0.1s;
-  width: 90%;
-  font-size: 20px;
-  line-height: 1.3em;
-
-  transform-origin: 55% 43%;
-  transform: rotate3d(
-      ${p => p.rAxis.join(',')},
-      ${() => Math.random() * 12 + 5}deg
-    )
-    scale(1);
-
-  &:hover {
-    transform: rotate3d(
-        ${p => p.rAxis.join(',')},
-        ${() => Math.random() * 8 - 1}deg
-      )
-      scale(0.97);
-    z-index: 1000;
-  }
-
-  @media only screen and (min-width: 700px) {
-    font-size: 20px;
-    line-height: 1.3em;
-
-    &:hover {
-      transform: rotate3d(
-          ${p => p.rAxis.join(',')},
-          ${() => Math.random() * 12 + 5}deg
-        )
-        scale(1.2);
-    }
-  }
-`
-
-const ImgSide = styled.div`
-  position: absolute;
-  text-align: ${p => (p.where === 'top' ? 'right' : 'left')};
-  width: 100%;
-  left: 0;
-  top: 0;
-  transform: rotate(-90deg);
-  transform-origin: 100% 0;
-  font-size: 0.6em;
-  opacity: 0;
-
-  .rotation-card:hover & {
-    opacity: 0.75;
-  }
-`
-
-const Label = styled.span`
-  background: var(--bg);
-  background-blend-mode: overlay;
-  padding: 0.2em 0.4em;
-  border-radius: 3px;
-`
-
 const Img: React.FC<{
   file: string
   date: string
@@ -118,17 +55,27 @@ const Img: React.FC<{
   const alt = `${props.place ? `${props.place}, ` : ''}${countryName}`
 
   return (
-    <RotCard className="rotation-card" rAxis={rAxis}>
+    <div
+      style={
+        {
+          '--zi': ~~(Math.random() * 1000),
+          '--rp': rAxis.join(','),
+          '--ra': `${Math.random() * 12 + 5}deg`,
+          '--rah': `${Math.random() * 8 - 1}deg`
+        } as React.CSSProperties
+      }
+      className="rotation-card"
+    >
       <img
         src={`/assets/photos/${props.file}`}
         alt={alt}
         style={{ width: '100%' }}
       />
-      <ImgSide where="top">
-        <Label>{props.date}</Label>
-      </ImgSide>
-      <ImgSide where="bottom">
-        <Label>
+      <div className="image-side top">
+        <span>{props.date}</span>
+      </div>
+      <div className="image-side bottom">
+        <span>
           <a
             target="_blank"
             rel="noreferrer"
@@ -139,9 +86,9 @@ const Img: React.FC<{
           >
             <span className="fweight1">{props.place}</span> {countryFlag}
           </a>
-        </Label>
-      </ImgSide>
-    </RotCard>
+        </span>
+      </div>
+    </div>
   )
 }
 
