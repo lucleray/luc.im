@@ -1,7 +1,6 @@
 import React, { useReducer, useRef, useEffect, useCallback } from 'react'
 
 // todo
-// - add key shortcuts indications to button
 // - export button
 
 const EraserSize = 13
@@ -320,13 +319,13 @@ export default function Draw() {
           className={mode === Mode.draw ? 'pressed' : ''}
           onClick={onDrawButton}
         >
-          Draw
+          D – Draw
         </button>
         <button
           className={mode === Mode.erase ? 'pressed' : ''}
           onClick={onEraseButton}
         >
-          Erase
+          E – Erase
         </button>
         {/* <button>Export</button> */}
       </div>
