@@ -1,5 +1,9 @@
 import React, { useReducer, useRef, useEffect, useCallback } from 'react'
 
+// todo
+// - add key shortcuts indications to button
+// - export button
+
 const EraserSize = 13
 const EraserCursor = `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='${EraserSize}' height='${EraserSize}' viewBox='0 0 10 10'%3e %3ccircle id='r' cx='5' cy='5' r='5' fill='rgba(255,255,255,0.3)' /%3e %3c/svg%3e") ${EraserSize} ${EraserSize}, default`
 
@@ -22,6 +26,7 @@ interface State {
   mode: Mode
   draftStroke: null | Point[]
   strokes: Stroke[]
+  paintId: number
 }
 
 type Action =
@@ -33,12 +38,22 @@ type Action =
   | { type: 'drawing-start' }
   | { type: 'drawing-stop' }
   | { type: 'drawing-move'; x: number; y: number }
+  | { type: 'repaint' }
 
 function init() {
-  return { draftStroke: null, strokes: [], mode: Mode.draw }
+  return {
+    draftStroke: null,
+    strokes: [],
+    mode: Mode.draw,
+    paintId: Math.random(),
+  }
 }
 
 function reducer(state: State, action: Action): State {
+  if (action.type === 'repaint') {
+    return { ...state, paintId: Math.random() }
+  }
+
   if (action.type === 'click-draw') {
     return { ...state, mode: Mode.draw }
   }
@@ -166,7 +181,7 @@ function reducer(state: State, action: Action): State {
 }
 
 export default function Draw() {
-  const [{ mode, draftStroke, strokes }, dispatch] = useReducer(
+  const [{ mode, draftStroke, strokes, paintId }, dispatch] = useReducer(
     reducer,
     null,
     init
@@ -174,15 +189,31 @@ export default function Draw() {
 
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
 
-  // make canvas full page size
   useEffect(() => {
-    const pixelRatio = window.devicePixelRatio ?? 1
-    const width = window.innerWidth
-    const height = window.innerHeight
-    canvasRef.current!.width = width * pixelRatio
-    canvasRef.current!.height = height * pixelRatio
-    canvasRef.current!.style.width = width + 'px'
-    canvasRef.current!.style.height = height + 'px'
+    // make canvas full page size
+    const resizeCanvas = () => {
+      if (!canvasRef.current) return
+
+      const pixelRatio = window.devicePixelRatio ?? 1
+      const width = window.innerWidth
+      const height = window.innerHeight
+      canvasRef.current!.width = width * pixelRatio
+      canvasRef.current!.height = height * pixelRatio
+      canvasRef.current!.style.width = width + 'px'
+      canvasRef.current!.style.height = height + 'px'
+
+      // repaint because changing width/height clears the canvas
+      dispatch({ type: 'repaint' })
+    }
+
+    // run when component loads
+    resizeCanvas()
+
+    // run when the window is resized
+    window.addEventListener('resize', resizeCanvas)
+    return () => {
+      window.removeEventListener('resize', resizeCanvas)
+    }
   }, [])
 
   // draw drafts
@@ -224,7 +255,7 @@ export default function Draw() {
         context.stroke()
       }
     }
-  }, [draftStroke, strokes, mode])
+  }, [draftStroke, strokes, mode, paintId])
 
   const onMouseDown = useCallback(() => dispatch({ type: 'drawing-start' }), [])
   const onMouseUp = useCallback(() => {
