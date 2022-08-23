@@ -154,6 +154,26 @@ nav ul li.expand {
   flex: 1 0 auto;
 }
 
+button {
+  background: var(--bg);
+  color: var(--color);
+  border-color: var(--color);
+  border-style: outset;
+  border-radius: 5px;
+  border-width: 2px;
+  height: var(--space5);
+  cursor: pointer;
+  padding: var(--space2) var(--space3);
+  margin-right: var(--space3);
+  font-weight: var(--fweight1);
+}
+
+button:active, button.pressed {
+  border-style: inset;
+  color: var(--bg);
+  background: var(--color);
+}
+
 /* font declarations */
 @font-face {
   font-family: 'Inter';
