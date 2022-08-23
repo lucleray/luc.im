@@ -1,8 +1,5 @@
 import React, { useReducer, useRef, useEffect, useCallback } from 'react'
 
-// todo
-// - export button
-
 const EraserSize = 13
 const EraserCursor = `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='${EraserSize}' height='${EraserSize}' viewBox='0 0 10 10'%3e %3ccircle id='r' cx='5' cy='5' r='5' fill='rgba(255,255,255,0.3)' /%3e %3c/svg%3e") ${EraserSize} ${EraserSize}, default`
 
@@ -167,8 +164,6 @@ function reducer(state: State, action: Action): State {
         }
       }
 
-      console.log({ didEraseStroke, erasedStrokes })
-
       return {
         ...state,
         strokes: didEraseStroke ? erasedStrokes : state.strokes,
@@ -327,9 +322,61 @@ export default function Draw() {
         >
           E – Erase
         </button>
-        {/* <button>Export</button> */}
-      </div>
+        <button
+          onClick={() => {
+            // let's use a funny format
+            const WAVES_BINARY = '〜⌇'.split('')
+            const CARDS_COLORS = '♠︎♣︎♥︎♦︎'.split('')
+            const CARDS =
+              '🂡 🂢 🂣 🂤 🂥 🂦 🂧 🂨 🂩 🂪 🂫 🂬 🂭 🂮 🂱 🂲 🂳 🂴 🂵 🂶 🂷 🂸 🂹 🂺 🂻 🂼 🂽 🂾 🃁 🃂 🃃 🃄 🃅 🃆 🃇 🃈 🃉 🃊 🃋 🃌 🃍 🃎 🃑 🃒 🃓 🃔 🃕 🃖 🃗 🃘 🃙 🃚 🃛 🃜 🃝 🃞'.split(
+                ' '
+              )
+            const SIGNS = '⏁⏄⏇⏉⏀⏂⏅⏆┼⏊⏈'.split('')
+            const STARS =
+              '✢✣✤✥✦✧★☆✯✩✪✫✬✭✮✷✵✸✹✺❊✻✽✼❉✱✲✾❃❋✳︎✴︎❇︎❈※❅❆❄︎⚙︎✿❀❁❂'.split('')
+            const EMOJIS =
+              '🫶 🤲 👐 🙌 👏 🤝 👍 👎 👊 ✊ 🤛 🤜 🤞 🫰 🤟 🤘 👌 🤌 🤏 🫳 🫴 👈 👉 👆 👇 ✋ 🤚 🖐 🖖 👋 🤙 🫲 🫱 🙏 🫵'.split(
+                ' '
+              )
+            const NUMBERS = '0123456789'.split('')
+            const NUMBERS_LETTERS =
+              '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(
+                ''
+              )
 
+            const chars = NUMBERS_LETTERS
+            const charLength = chars.length
+
+            const makeItWavy = (num: number) => {
+              let output = ''
+              let v = num
+              while (v > 0) {
+                const remainder = v % charLength
+                output += chars[remainder]
+                v = (v - remainder) / charLength
+              }
+
+              return output
+            }
+
+            let str = strokes
+              .map((stroke) =>
+                stroke.points
+                  .map(
+                    (point) => `${makeItWavy(point.x)}.${makeItWavy(point.y)}`
+                  )
+                  .join('.')
+              )
+              .join(':')
+
+            console.log(str)
+
+            navigator.clipboard.writeText(str)
+          }}
+        >
+          Export
+        </button>
+      </div>
       {strokes.length > 0 ? (
         <div
           style={{
