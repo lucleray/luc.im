@@ -286,6 +286,31 @@ export default function Draw() {
     }
   }, [])
 
+  const onTouchStart = useCallback(() => {
+    dispatch({ type: 'drawing-start' })
+  }, [])
+  const onTouchEnd = useCallback(() => {
+    dispatch({ type: 'drawing-stop' })
+  }, [])
+  const onTouchMove = useCallback((event: TouchEvent) => {
+    event.preventDefault()
+
+    for (let i = 0; i < event.touches.length; i++) {
+      const touch = event.touches[i]
+      dispatch({
+        type: 'drawing-move',
+        x: touch.clientX + window.scrollX,
+        y: touch.clientY + window.scrollY,
+      })
+    }
+  }, [])
+
+  useEffect(() => {
+    canvasRef.current?.addEventListener('touchmove', onTouchMove)
+    return () =>
+      canvasRef.current?.removeEventListener('touchmove', onTouchMove)
+  }, [])
+
   return (
     <div>
       <canvas
@@ -294,6 +319,8 @@ export default function Draw() {
         onMouseUp={onMouseUp}
         onMouseMove={onMouseMove}
         onWheel={onMouseMove}
+        onTouchStart={onTouchStart}
+        onTouchEnd={onTouchEnd}
         width={0}
         height={0}
         style={{
