@@ -350,6 +350,7 @@ export default function Draw() {
           E – Erase
         </button>
         <button
+          style={{ display: 'none' }}
           onClick={() => {
             // let's use a funny format
             const WAVES_BINARY = '〜⌇'.split('')
