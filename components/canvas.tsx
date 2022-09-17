@@ -1,6 +1,7 @@
 import React, { useReducer, useRef, useEffect, useCallback } from 'react'
 import { useRouter } from 'next/router'
 import { decodeBase64URL } from '../lib/b64url'
+import table from '../lib/drawings/table.json'
 
 interface Point {
   x: number
@@ -36,13 +37,36 @@ function report(state: State) {
     body: JSON.stringify(state),
     headers: {
       'content-type': 'application/json',
-      'x-session-id': getSessionId()
-    }
+      'x-session-id': getSessionId(),
+    },
   })
 }
 
 function init() {
-  return { draft: null, drawings: [] }
+  if (typeof window !== 'undefined' && window?.innerWidth <= 600) {
+    return {
+      draft: null,
+      drawings: table.map((x) =>
+        x.points.map(({ x, y }) => ({ x: x / 3 - 50, y: y / 3 + 80 }))
+      ),
+    }
+  }
+
+  if (typeof window !== 'undefined' && window?.innerWidth <= 1000) {
+    return {
+      draft: null,
+      drawings: table.map((x) =>
+        x.points.map(({ x, y }) => ({ x: x / 2, y: y / 2 + 130 }))
+      ),
+    }
+  }
+
+  return {
+    draft: null,
+    drawings: table.map((x) =>
+      x.points.map(({ x, y }) => ({ x: x / 2 + 400, y: y / 2 + 200 }))
+    ),
+  }
 }
 
 function reducer(state: State, action: Action): State {
@@ -59,7 +83,9 @@ function reducer(state: State, action: Action): State {
       ...state,
       draft: null,
       drawings:
-        state.draft !== null ? [...state.drawings, state.draft] : state.drawings
+        state.draft !== null
+          ? [...state.drawings, state.draft]
+          : state.drawings,
     }
 
     if (state.draft !== null) {
@@ -73,7 +99,7 @@ function reducer(state: State, action: Action): State {
     const point = { x: action.x, y: action.y }
     return {
       ...state,
-      draft: state.draft ? [...state.draft, point] : state.draft
+      draft: state.draft ? [...state.draft, point] : state.draft,
     }
   }
 }
@@ -111,28 +137,32 @@ export function Canvas({ children }: { children: React.ReactNode }) {
       canvas.height / pixelRatio
     )
 
-    if (draft?.length) {
-      context.beginPath()
-      context.strokeStyle = 'rgb(32, 89, 246)'
-      context.moveTo(draft[0].x, draft[0].y)
-      for (let point of draft) {
-        context.lineTo(point.x, point.y)
-      }
-      context.stroke()
-    }
-
-    for (let shape of drawings) {
-      if (shape.length) {
+    const draw = async () => {
+      if (draft?.length) {
         context.beginPath()
-        context.strokeStyle = 'grey'
-        context.lineWidth = 2
-        context.moveTo(shape[0].x, shape[0].y)
-        for (let point of shape) {
+        context.strokeStyle = 'rgb(32, 89, 246)'
+        context.moveTo(draft[0].x, draft[0].y)
+        for (let point of draft) {
           context.lineTo(point.x, point.y)
         }
         context.stroke()
       }
+
+      for (let shape of drawings) {
+        if (shape.length) {
+          context.beginPath()
+          context.strokeStyle = 'grey'
+          context.lineWidth = 2
+          context.moveTo(shape[0].x, shape[0].y)
+          for (let point of shape) {
+            context.lineTo(point.x, point.y)
+          }
+          context.stroke()
+        }
+      }
     }
+
+    draw()
   }, [draft, drawings])
 
   const onMouseDown = useCallback(() => dispatch({ type: 'drawing-start' }), [])
@@ -143,7 +173,7 @@ export function Canvas({ children }: { children: React.ReactNode }) {
     dispatch({
       type: 'drawing-move',
       x: event.clientX + window.scrollX,
-      y: event.clientY + window.scrollY
+      y: event.clientY + window.scrollY,
     })
   }, [])
 
@@ -177,7 +207,7 @@ export function Canvas({ children }: { children: React.ReactNode }) {
         dispatch({
           type: 'drawing-move',
           x: touch.clientX + window.scrollX,
-          y: touch.clientY + window.scrollY
+          y: touch.clientY + window.scrollY,
         })
       }
     }

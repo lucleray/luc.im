@@ -17,7 +17,7 @@ export default function IndexPage() {
         <header>
           <h1>Hi, I'm Luc</h1>
         </header>
-
+        <div className="space1"></div>
         <main>
           <p className="h1">
             I'm a french software engineer working at{' '}
@@ -65,7 +65,7 @@ export default function IndexPage() {
         <nav>
           <p className="h1">
             More:
-            {navLinks.map(link => (
+            {navLinks.map((link) => (
               <React.Fragment key={link.href}>
                 <br />
                 <Link href={link.href}>
