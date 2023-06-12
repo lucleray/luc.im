@@ -68,9 +68,7 @@ export default function IndexPage() {
             {navLinks.map((link) => (
               <React.Fragment key={link.href}>
                 <br />
-                <Link href={link.href}>
-                  <a>{link.title}</a>
-                </Link>
+                <Link href={link.href}>{link.title}</Link>
               </React.Fragment>
             ))}
           </p>

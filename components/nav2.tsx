@@ -5,7 +5,7 @@ export const navLinks = [
   { title: 'Work', href: '/work' },
   { title: 'Articles', href: '/articles' },
   { title: 'Photos', href: '/photos' },
-  { title: 'Links', href: '/links' }
+  { title: 'Links', href: '/links' },
 ]
 
 export function Nav2() {
@@ -13,17 +13,13 @@ export function Nav2() {
     <nav>
       <ul>
         <li>
-          <Link href="/">
-            <a>Luc Leray</a>
-          </Link>
+          <Link href="/">Luc Leray</Link>
         </li>
         <li className="expand" />
 
-        {navLinks.map(link => (
+        {navLinks.map((link) => (
           <li key={link.href}>
-            <Link href={link.href}>
-              <a>{link.title}</a>
-            </Link>
+            <Link href={link.href}>{link.title}</Link>
           </li>
         ))}
       </ul>

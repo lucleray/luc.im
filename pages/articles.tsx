@@ -15,16 +15,14 @@ export default function ArticlesPage() {
 
       <Nav2 />
       <main>
-        {articles.map(link => (
+        {articles.map((link) => (
           <p className="h1" key={link.id}>
             {link.external ? (
               <a target="_blank" rel="noreferrer" href={link.url}>
                 {link.title}
               </a>
             ) : (
-              <Link href={link.url}>
-                <a>{link.title}</a>
-              </Link>
+              <Link href={link.url}>{link.title}</Link>
             )}
 
             <br />
