@@ -28,7 +28,7 @@ interface State {
 type Action =
   | { type: 'click-draw' }
   | { type: 'click-erase' }
-  | { type: 'erase-stroke'; strokeIndex: number }
+  | { type: 'click-stroke'; strokeIndex: number }
   | { type: 'highlight-stroke'; strokeIndex: number }
   | { type: 'reset-highlight' }
   | { type: 'drawing-start' }
@@ -56,13 +56,6 @@ function reducer(state: State, action: Action): State {
 
   if (action.type === 'click-erase') {
     return { ...state, mode: Mode.erase }
-  }
-
-  if (action.type === 'erase-stroke') {
-    return {
-      ...state,
-      strokes: state.strokes.filter((_, index) => index !== action.strokeIndex),
-    }
   }
 
   if (action.type === 'highlight-stroke') {
@@ -167,6 +160,15 @@ function reducer(state: State, action: Action): State {
       return {
         ...state,
         strokes: didEraseStroke ? erasedStrokes : state.strokes,
+      }
+    }
+
+    if (action.type === 'click-stroke') {
+      return {
+        ...state,
+        strokes: state.strokes.filter(
+          (_, index) => index !== action.strokeIndex
+        ),
       }
     }
   }
@@ -428,9 +430,7 @@ export default function Draw() {
                 dispatch({ type: 'highlight-stroke', strokeIndex })
               }}
               onClick={() => {
-                if (mode === Mode.erase) {
-                  dispatch({ type: 'erase-stroke', strokeIndex })
-                }
+                dispatch({ type: 'click-stroke', strokeIndex })
               }}
             >
               #{strokeIndex}
