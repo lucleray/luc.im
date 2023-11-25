@@ -228,7 +228,7 @@ export default function Draw() {
 
     if (draftStroke?.length && mode !== Mode.erase) {
       context.beginPath()
-      context.strokeStyle = 'grey'
+      context.strokeStyle = 'white'
       context.lineWidth = 2
       context.moveTo(draftStroke[0].x, draftStroke[0].y)
       for (let point of draftStroke) {
@@ -240,7 +240,7 @@ export default function Draw() {
     for (let stroke of strokes) {
       if (stroke.points.length) {
         context.beginPath()
-        context.strokeStyle = stroke.highlight ? 'white' : 'grey'
+        context.strokeStyle = stroke.highlight ? 'red' : 'white'
         context.lineWidth = 2
         context.moveTo(stroke.points[0].x, stroke.points[0].y)
         for (let point of stroke.points) {
@@ -350,59 +350,56 @@ export default function Draw() {
           E – Erase
         </button>
         <button
-          style={{ display: 'none' }}
           onClick={() => {
-            // let's use a funny format
-            const WAVES_BINARY = '〜⌇'.split('')
-            const CARDS_COLORS = '♠︎♣︎♥︎♦︎'.split('')
-            const CARDS =
-              '🂡 🂢 🂣 🂤 🂥 🂦 🂧 🂨 🂩 🂪 🂫 🂬 🂭 🂮 🂱 🂲 🂳 🂴 🂵 🂶 🂷 🂸 🂹 🂺 🂻 🂼 🂽 🂾 🃁 🃂 🃃 🃄 🃅 🃆 🃇 🃈 🃉 🃊 🃋 🃌 🃍 🃎 🃑 🃒 🃓 🃔 🃕 🃖 🃗 🃘 🃙 🃚 🃛 🃜 🃝 🃞'.split(
-                ' '
-              )
-            const SIGNS = '⏁⏄⏇⏉⏀⏂⏅⏆┼⏊⏈'.split('')
-            const STARS =
-              '✢✣✤✥✦✧★☆✯✩✪✫✬✭✮✷✵✸✹✺❊✻✽✼❉✱✲✾❃❋✳︎✴︎❇︎❈※❅❆❄︎⚙︎✿❀❁❂'.split('')
-            const EMOJIS =
-              '🫶 🤲 👐 🙌 👏 🤝 👍 👎 👊 ✊ 🤛 🤜 🤞 🫰 🤟 🤘 👌 🤌 🤏 🫳 🫴 👈 👉 👆 👇 ✋ 🤚 🖐 🖖 👋 🤙 🫲 🫱 🙏 🫵'.split(
-                ' '
-              )
-            const NUMBERS = '0123456789'.split('')
-            const NUMBERS_LETTERS =
-              '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'.split(
-                ''
-              )
-
-            const chars = NUMBERS_LETTERS
-            const charLength = chars.length
-
-            const makeItWavy = (num: number) => {
-              let output = ''
-              let v = num
-              while (v > 0) {
-                const remainder = v % charLength
-                output += chars[remainder]
-                v = (v - remainder) / charLength
+            let minX = +Infinity
+            let minY = +Infinity
+            let maxX = 0
+            let maxY = 0
+            for (const stroke of strokes) {
+              for (const point of stroke.points) {
+                if (point.x < minX) {
+                  minX = point.x
+                }
+                if (point.x > maxX) {
+                  maxX = point.x
+                }
+                if (point.y < minY) {
+                  minY = point.y
+                }
+                if (point.y > maxY) {
+                  maxY = point.y
+                }
               }
-
-              return output
             }
 
-            let str = strokes
-              .map((stroke) =>
-                stroke.points
-                  .map(
-                    (point) => `${makeItWavy(point.x)}.${makeItWavy(point.y)}`
-                  )
-                  .join('.')
-              )
-              .join(':')
+            console.log(minX, minY)
+
+            const width = maxX - minX
+            const height = maxY - minY
+
+            let str = `<svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">`
+
+            for (const stroke of strokes) {
+              let d = ``
+
+              for (let i = 0; i < stroke.points.length; i += 1) {
+                const point = stroke.points[i]
+                d += `${i === 0 ? 'M' : ' L'} ${point.x - minX} ${
+                  point.y - minY
+                }`
+              }
+
+              str += `<path stroke="white" strokeWidth="1" fill="none" d="${d}" />`
+            }
+
+            str += '</svg>'
 
             console.log(str)
 
             navigator.clipboard.writeText(str)
           }}
         >
-          Export
+          Export SVG
         </button>
       </div>
       {strokes.length > 0 ? (
