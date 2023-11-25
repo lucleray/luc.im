@@ -11,6 +11,7 @@ interface Point {
 enum Mode {
   draw,
   erase,
+  text,
 }
 
 interface Stroke {
@@ -18,40 +19,107 @@ interface Stroke {
   highlight?: boolean
 }
 
+interface Text {
+  anchor: Point
+  value: string
+}
+
 interface State {
   mode: Mode
   draftStroke: null | Point[]
+  draftText: null | Text
   strokes: Stroke[]
+  texts: Text[]
   paintId: number
 }
 
 type Action =
   | { type: 'click-draw' }
+  | { type: 'click-text' }
   | { type: 'click-erase' }
   | { type: 'click-stroke'; strokeIndex: number }
   | { type: 'highlight-stroke'; strokeIndex: number }
   | { type: 'reset-highlight' }
   | { type: 'drawing-start' }
-  | { type: 'drawing-stop' }
+  | { type: 'drawing-stop'; x: number; y: number }
   | { type: 'drawing-move'; x: number; y: number }
+  | { type: 'keydown'; key: string }
   | { type: 'repaint' }
 
 function init() {
   return {
     draftStroke: null,
+    draftText: null,
     strokes: [],
+    texts: [],
     mode: Mode.draw,
     paintId: Math.random(),
   }
 }
 
 function reducer(state: State, action: Action): State {
+  if (action.type === 'keydown') {
+    if (state.mode === Mode.text && state.draftText) {
+      console.log(action.key)
+
+      if (action.key === 'Backspace') {
+        return {
+          ...state,
+          draftText: {
+            ...state.draftText,
+            value: state.draftText.value.slice(0, -1),
+          },
+        }
+      }
+
+      if (action.key === 'Escape') {
+        return {
+          ...state,
+          texts: [...state.texts, state.draftText],
+          draftText: null,
+        }
+      }
+
+      let value: string
+      // Ignore special values (Shift, Enter, ...)
+      if (action.key.length === 1) {
+        value = action.key
+      } else if (action.key === 'Enter') {
+        value = '\n'
+      } else {
+        value = ''
+      }
+
+      return {
+        ...state,
+        draftText: {
+          ...state.draftText,
+          value: `${state.draftText.value}${value}`,
+        },
+      }
+    }
+
+    if (action.key === 'e') {
+      return { ...state, mode: Mode.erase }
+    }
+    if (action.key === 'd') {
+      return { ...state, mode: Mode.draw }
+    }
+    if (action.key === 't') {
+      return { ...state, mode: Mode.text }
+    }
+  }
+
   if (action.type === 'repaint') {
     return { ...state, paintId: Math.random() }
   }
 
   if (action.type === 'click-draw') {
     return { ...state, mode: Mode.draw }
+  }
+
+  if (action.type === 'click-text') {
+    return { ...state, mode: Mode.text }
   }
 
   if (action.type === 'click-erase') {
@@ -100,6 +168,19 @@ function reducer(state: State, action: Action): State {
         draftStroke: state.draftStroke
           ? [...state.draftStroke, point]
           : state.draftStroke,
+      }
+    }
+  }
+
+  if (state.mode === Mode.text) {
+    if (action.type === 'drawing-stop') {
+      const point = { x: action.x, y: action.y }
+      return {
+        ...state,
+        texts: state.draftText
+          ? [...state.texts, state.draftText]
+          : state.texts,
+        draftText: { anchor: point, value: '' },
       }
     }
   }
@@ -177,11 +258,8 @@ function reducer(state: State, action: Action): State {
 }
 
 export default function Draw() {
-  const [{ mode, draftStroke, strokes, paintId }, dispatch] = useReducer(
-    reducer,
-    null,
-    init
-  )
+  const [{ mode, draftStroke, strokes, draftText, texts, paintId }, dispatch] =
+    useReducer(reducer, null, init)
 
   const canvasRef = useRef<HTMLCanvasElement | null>(null)
 
@@ -251,11 +329,27 @@ export default function Draw() {
         context.stroke()
       }
     }
-  }, [draftStroke, strokes, mode, paintId])
+
+    if (draftText) {
+      context.font = '30px sans-serif'
+      context.fillStyle = 'red'
+      context.fillText(draftText.value, draftText.anchor.x, draftText.anchor.y)
+    }
+
+    for (let text of texts) {
+      context.font = '30px sans-serif'
+      context.fillStyle = 'red'
+      context.fillText(text.value, text.anchor.x, text.anchor.y)
+    }
+  }, [draftStroke, strokes, draftText, texts, mode, paintId])
 
   const onMouseDown = useCallback(() => dispatch({ type: 'drawing-start' }), [])
-  const onMouseUp = useCallback(() => {
-    dispatch({ type: 'drawing-stop' })
+  const onMouseUp = useCallback((event: React.MouseEvent) => {
+    dispatch({
+      type: 'drawing-stop',
+      x: event.clientX,
+      y: event.clientY,
+    })
   }, [])
   const onMouseMove = useCallback((event: React.MouseEvent) => {
     dispatch({
@@ -271,28 +365,44 @@ export default function Draw() {
   const onEraseButton = useCallback(() => {
     dispatch({ type: 'click-erase' })
   }, [])
+  const onTextButton = useCallback(() => {
+    dispatch({ type: 'click-text' })
+  }, [])
 
   useEffect(() => {
     const listener = (event: KeyboardEvent) => {
-      if (event.key === 'e') {
-        dispatch({ type: 'click-erase' })
-      }
-      if (event.key === 'd') {
-        dispatch({ type: 'click-draw' })
-      }
+      dispatch({ type: 'keydown', key: event.key })
     }
 
-    document.addEventListener('keypress', listener)
+    document.addEventListener('keydown', listener)
     return () => {
-      document.removeEventListener('keypress', listener)
+      document.removeEventListener('keydown', listener)
     }
   }, [])
 
   const onTouchStart = useCallback(() => {
     dispatch({ type: 'drawing-start' })
   }, [])
-  const onTouchEnd = useCallback(() => {
-    dispatch({ type: 'drawing-stop' })
+  const onTouchEnd = useCallback((event: React.TouchEvent) => {
+    event.preventDefault()
+
+    for (let i = 0; i < event.touches.length; i++) {
+      const touch = event.touches[i]
+
+      if (i === event.touches.length - 1) {
+        dispatch({
+          type: 'drawing-stop',
+          x: touch.clientX + window.scrollX,
+          y: touch.clientY + window.scrollY,
+        })
+      }
+
+      dispatch({
+        type: 'drawing-move',
+        x: touch.clientX + window.scrollX,
+        y: touch.clientY + window.scrollY,
+      })
+    }
   }, [])
   const onTouchMove = useCallback((event: TouchEvent) => {
     event.preventDefault()
@@ -344,6 +454,12 @@ export default function Draw() {
           onClick={onDrawButton}
         >
           D – Draw
+        </button>
+        <button
+          className={mode === Mode.text ? 'pressed' : ''}
+          onClick={onTextButton}
+        >
+          T – Text
         </button>
         <button
           className={mode === Mode.erase ? 'pressed' : ''}
