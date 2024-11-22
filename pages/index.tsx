@@ -15,7 +15,7 @@ export default function IndexPage() {
 
       <div className="layout">
         <header>
-          <h1>Hi, I'm Luc</h1>
+          <h1>Hello, I'm Luc</h1>
         </header>
         <div className="space1"></div>
         <main>
