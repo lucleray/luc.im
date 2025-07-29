@@ -9,6 +9,7 @@
   "author": "lucleray",
   "dependencies": {
     "@vercel/analytics": "1.0.1",
+    "@vercel/speed-insights": "1.2.0",
     "country-emoji": "1.5.0",
     "next": "13.4.5",
     "react": "18.2.0",
@@ -23,5 +24,6 @@
   "prettier": {
     "semi": false,
     "singleQuote": true
-  }
+  },
+  "packageManager": "pnpm@10.10.0+sha512.d615db246fe70f25dcfea6d8d73dee782ce23e2245e3c4f6f888249fb568149318637dca73c2c5c8ef2a4ca0d5657fb9567188bfab47f566d1ee6ce987815c39"
 }
