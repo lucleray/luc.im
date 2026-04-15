@@ -1,0 +1,9 @@
+name: Test Trigger
+on:
+  pull_request:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello
+        run: echo "Workflow triggered on $(date)"
